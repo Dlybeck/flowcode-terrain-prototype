@@ -588,8 +588,12 @@
       const id = state.selected;
       const node = id ? model.byId.get(id) : null;
       if (node) {
-        const owner = model.parent.get(id);
-        $('#node-detail').innerHTML = `<strong>${node.label}</strong><br><small>${node.qname}</small><br>relevance ${((model.scores.get(id) || 0) * 100).toFixed(1)}% · criticality ${((node.criticality || 0) * 100).toFixed(1)}% · novelty ${((node.novelty || 0) * 100).toFixed(1)}%<br>height ${model.heights.get(id).toFixed(1)}${owner ? ` · dropped ${model.drops.get(id).toFixed(1)} from ${model.byId.get(owner)?.label || owner}` : ' · summit'}`;
+        if (id === '__project__') {
+          $('#node-detail').innerHTML = `<strong>${node.label}</strong><br><small>True project summit</small><br>${model.children.get(id)?.length || 0} connected entry branches begin below this point.`;
+        } else {
+          const owner = model.parent.get(id);
+          $('#node-detail').innerHTML = `<strong>${node.label}</strong><br><small>${node.qname}</small><br>relevance ${((model.scores.get(id) || 0) * 100).toFixed(1)}% · criticality ${((node.criticality || 0) * 100).toFixed(1)}% · novelty ${((node.novelty || 0) * 100).toFixed(1)}%<br>height ${model.heights.get(id).toFixed(1)}${owner ? ` · dropped ${model.drops.get(id).toFixed(1)} from ${model.byId.get(owner)?.label || owner}` : ' · summit'}`;
+        }
       } else $('#node-detail').textContent = 'Select a point on the terrain.';
       const path = selectedPath();
       $('#state').textContent = JSON.stringify({
@@ -611,9 +615,12 @@
     function rebuild({preserveSelection = true} = {}) {
       model = buildModel();
       if (!preserveSelection || !state.selected || !model.byId.has(state.selected)) {
-        const pathDepth = id => { let depth = 0; while (model.parent.has(id)) { depth++; id = model.parent.get(id); } return depth; };
-        state.selected = model.nodes.filter(node => node.id !== '__project__' && !model.orphans.includes(node.id)).sort((a, b) =>
-          ((model.scores.get(b.id) || 0) + pathDepth(b.id) * .08) - ((model.scores.get(a.id) || 0) + pathDepth(a.id) * .08) || a.id.localeCompare(b.id))[0]?.id;
+        if (model.byId.has('__project__') && state.tour === 'free') state.selected = '__project__';
+        else {
+          const pathDepth = id => { let depth = 0; while (model.parent.has(id)) { depth++; id = model.parent.get(id); } return depth; };
+          state.selected = model.nodes.filter(node => node.id !== '__project__' && !model.orphans.includes(node.id)).sort((a, b) =>
+            ((model.scores.get(b.id) || 0) + pathDepth(b.id) * .08) - ((model.scores.get(a.id) || 0) + pathDepth(a.id) * .08) || a.id.localeCompare(b.id))[0]?.id;
+        }
       }
       drawTerrain(!preserveSelection); drawProfile(); renderText();
     }

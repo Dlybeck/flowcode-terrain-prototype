@@ -21971,6 +21971,61 @@ function createTerrainView(canvas, onSelect) {
   let currentModel = null;
   let currentPositions = /* @__PURE__ */ new Map();
   let selectedId = null;
+  let hoveredId = null;
+  let focusTarget = null;
+  const labelHost = canvas.parentElement;
+  const relevanceKey = document.createElement("div");
+  Object.assign(relevanceKey.style, {
+    position: "absolute",
+    zIndex: "3",
+    top: "12px",
+    right: "12px",
+    width: "190px",
+    padding: "8px 10px",
+    borderRadius: "7px",
+    background: "rgba(7,27,25,.84)",
+    color: "#d5e5dd",
+    font: "11px/1.3 ui-rounded, system-ui, sans-serif",
+    pointerEvents: "none"
+  });
+  const keyTitle = document.createElement("strong");
+  keyTitle.textContent = "NODE RELEVANCE";
+  keyTitle.style.display = "block";
+  const keyGradient = document.createElement("i");
+  Object.assign(keyGradient.style, {
+    display: "block",
+    height: "6px",
+    margin: "5px 0 4px",
+    borderRadius: "999px",
+    background: "linear-gradient(90deg, #64877b, #f4d06f)"
+  });
+  const keyCopy = document.createElement("span");
+  keyCopy.textContent = "small green: low \xB7 larger gold: high \xB7 high descends gently";
+  relevanceKey.append(keyTitle, keyGradient, keyCopy);
+  labelHost.append(relevanceKey);
+  const focusLabel = document.createElement("div");
+  Object.assign(focusLabel.style, {
+    position: "absolute",
+    zIndex: "4",
+    pointerEvents: "none",
+    transform: "translate(-50%, -115%)",
+    width: "max-content",
+    maxWidth: "220px",
+    padding: "5px 7px",
+    borderRadius: "5px",
+    background: "#f4d06f",
+    color: "#173b35",
+    boxShadow: "0 3px 9px #0007",
+    font: "11px/1.25 ui-rounded, system-ui, sans-serif"
+  });
+  const focusTitle = document.createElement("strong");
+  focusTitle.style.display = "block";
+  const focusMeta = document.createElement("span");
+  focusMeta.style.display = "block";
+  focusMeta.style.marginTop = "2px";
+  focusLabel.append(focusTitle, focusMeta);
+  focusLabel.hidden = true;
+  labelHost.append(focusLabel);
   function dispose(object) {
     object.traverse((child) => {
       child.geometry?.dispose();
@@ -21984,8 +22039,11 @@ function createTerrainView(canvas, onSelect) {
     nodeMeshes.length = 0;
     edgeLines.length = 0;
     labels.splice(0).forEach((item) => item.element.remove());
+    focusTarget = null;
+    focusLabel.hidden = true;
     nodeById.clear();
     currentPositions = /* @__PURE__ */ new Map();
+    hoveredId = null;
   }
   function scaledPositions(model) {
     const active = [...model.positions.entries()].filter(([id]) => !model.orphans.includes(id));
@@ -22115,15 +22173,15 @@ function createTerrainView(canvas, onSelect) {
       });
       const mesh = new Mesh(geometry, material);
       mesh.position.copy(position).add(new Vector3(0, 0.48, 0));
-      mesh.scale.setScalar(project ? 2.25 : branch ? 1.55 : orphan ? 0.65 : 0.9 + Math.min(0.55, score * 0.55));
-      mesh.userData = { id: node.id, base };
+      mesh.scale.setScalar(project ? 2.1 : orphan ? 0.55 : 0.72 + score * 0.72);
+      mesh.userData = { id: node.id, base, branch, score };
       nodeById.set(node.id, mesh);
       nodeMeshes.push(mesh);
       world.add(mesh);
-      if (project || branch) {
+      if (project) {
         const element = document.createElement("div");
         element.textContent = node.label;
-        element.dataset.kind = project ? "project" : "branch";
+        element.dataset.kind = "project";
         Object.assign(element.style, {
           position: "absolute",
           zIndex: "3",
@@ -22133,16 +22191,16 @@ function createTerrainView(canvas, onSelect) {
           overflow: "hidden",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
-          padding: project ? "4px 7px" : "2px 5px",
+          padding: "4px 7px",
           borderRadius: "4px",
-          background: project ? "#fff4cb" : "rgba(248,241,217,.9)",
+          background: "#fff4cb",
           color: "#173b35",
-          fontSize: project ? "12px" : "10px",
-          fontWeight: project ? "700" : "500",
+          fontSize: "11px",
+          fontWeight: "700",
           boxShadow: "0 2px 7px #0005"
         });
         canvas.parentElement.append(element);
-        labels.push({ element, mesh, project });
+        labels.push({ element, mesh });
       }
     }
   }
@@ -22158,13 +22216,31 @@ function createTerrainView(canvas, onSelect) {
     select(selectedId);
     if (resetView) reset();
   }
+  function showFocus(id) {
+    const node = currentModel?.byId.get(id);
+    const mesh = nodeById.get(id);
+    if (!node || !mesh || id === "__project__") {
+      focusTarget = null;
+      focusLabel.hidden = true;
+      return;
+    }
+    const score = currentModel.scores.get(id) ?? 0;
+    const drop = currentModel.drops.get(id);
+    const ownerId = currentModel.parent.get(id);
+    const owner = ownerId ? currentModel.byId.get(ownerId) : null;
+    focusTitle.textContent = `${id === selectedId ? "SELECTED \xB7 " : ""}${node.label}`;
+    focusMeta.textContent = `relevance ${(score * 100).toFixed(0)}%${drop == null ? "" : ` \xB7 drops ${drop.toFixed(1)} from ${owner?.label || "parent"}`}`;
+    focusTarget = mesh;
+    focusLabel.hidden = false;
+  }
   function select(id) {
     selectedId = nodeById.has(id) ? id : null;
     for (const mesh of nodeMeshes) {
       const active = mesh.userData.id === selectedId;
-      mesh.material.color.copy(active ? new Color(16748400) : mesh.userData.base);
-      mesh.material.emissive.copy(active ? new Color(16748400) : mesh.userData.base);
-      mesh.material.emissiveIntensity = active ? 0.4 : 0.05;
+      const highlighted = active && mesh.userData.id !== "__project__";
+      mesh.material.color.copy(highlighted ? new Color(16748400) : mesh.userData.base);
+      mesh.material.emissive.copy(highlighted ? new Color(16748400) : mesh.userData.base);
+      mesh.material.emissiveIntensity = highlighted ? 0.4 : 0.05;
     }
     const family = /* @__PURE__ */ new Set();
     if (selectedId && currentModel) {
@@ -22180,6 +22256,7 @@ function createTerrainView(canvas, onSelect) {
       line.material.color.copy(active ? GOLD : line.userData.secondary ? new Color(12175549) : INK);
       line.material.opacity = selectedId ? active ? 1 : 0.28 : line.userData.secondary ? 0.58 : 0.9;
     }
+    showFocus(hoveredId || selectedId);
   }
   function reset() {
     const box = new Box3().setFromObject(world);
@@ -22211,33 +22288,64 @@ function createTerrainView(canvas, onSelect) {
   const raycaster = new Raycaster();
   const pointer = new Vector2();
   let press = null;
-  canvas.addEventListener("pointerdown", (event) => {
-    press = { x: event.clientX, y: event.clientY };
-  });
-  canvas.addEventListener("pointerup", (event) => {
-    if (!press || Math.hypot(event.clientX - press.x, event.clientY - press.y) > 5) {
-      press = null;
-      return;
-    }
-    press = null;
+  function pickNode(event) {
     const rect = canvas.getBoundingClientRect();
     pointer.x = (event.clientX - rect.left) / rect.width * 2 - 1;
     pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
     raycaster.setFromCamera(pointer, camera);
-    const hit = raycaster.intersectObjects(nodeMeshes, false)[0];
-    if (hit) onSelect?.(hit.object.userData.id);
+    return raycaster.intersectObjects(nodeMeshes, false)[0]?.object.userData.id || null;
+  }
+  canvas.addEventListener("pointerdown", (event) => {
+    press = { x: event.clientX, y: event.clientY, dragged: false };
+  });
+  canvas.addEventListener("pointermove", (event) => {
+    if (press && Math.hypot(event.clientX - press.x, event.clientY - press.y) > 5) press.dragged = true;
+    if (press?.dragged) return;
+    hoveredId = pickNode(event);
+    showFocus(hoveredId || selectedId);
+  });
+  canvas.addEventListener("pointerleave", () => {
+    hoveredId = null;
+    showFocus(selectedId);
+  });
+  canvas.addEventListener("pointerup", (event) => {
+    if (!press || press.dragged || Math.hypot(event.clientX - press.x, event.clientY - press.y) > 5) {
+      press = null;
+      return;
+    }
+    press = null;
+    const hit = pickNode(event);
+    if (hit) onSelect?.(hit);
   });
   function frame() {
     requestAnimationFrame(frame);
     controls.update();
     const rect = canvas.getBoundingClientRect();
-    for (const { element, mesh, project } of labels) {
+    let projectScreen = null;
+    for (const { element, mesh } of labels) {
       const point = mesh.position.clone().project(camera);
-      const visible = Math.abs(point.x) <= 1 && Math.abs(point.y) <= 1 && Math.abs(point.z) <= 1 && (project || rect.width > 760);
+      const visible = Math.abs(point.x) <= 1 && Math.abs(point.y) <= 1 && Math.abs(point.z) <= 1;
       element.hidden = !visible;
       if (visible) {
-        element.style.left = `${canvas.offsetLeft + (point.x + 1) * rect.width / 2}px`;
-        element.style.top = `${canvas.offsetTop + (1 - point.y) * rect.height / 2}px`;
+        const x = canvas.offsetLeft + (point.x + 1) * rect.width / 2;
+        const y = canvas.offsetTop + (1 - point.y) * rect.height / 2;
+        element.style.left = `${x}px`;
+        element.style.top = `${y}px`;
+        projectScreen = { x, y };
+      }
+    }
+    if (focusTarget) {
+      const point = focusTarget.position.clone().project(camera);
+      const visible = Math.abs(point.x) <= 1 && Math.abs(point.y) <= 1 && Math.abs(point.z) <= 1;
+      focusLabel.hidden = !visible;
+      if (visible) {
+        const x = canvas.offsetLeft + (point.x + 1) * rect.width / 2;
+        let y = canvas.offsetTop + (1 - point.y) * rect.height / 2;
+        const collides = projectScreen && Math.abs(x - projectScreen.x) < 120 && Math.abs(y - projectScreen.y) < 52;
+        focusLabel.style.transform = collides ? "translate(-50%, 12px)" : "translate(-50%, -115%)";
+        if (collides) y += 5;
+        focusLabel.style.left = `${x}px`;
+        focusLabel.style.top = `${y}px`;
       }
     }
     renderer.render(scene, camera);
