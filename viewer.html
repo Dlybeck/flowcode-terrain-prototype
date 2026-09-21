@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#233b35" />
+    <title>Flow-Code · Hybrid terrain prototype</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><path d=%22M4 54 25 16l9 15 7-11 19 34z%22 fill=%22%23f5eedd%22/><path d=%22m20 25 5-9 6 10-5-2z%22 fill=%22%23233b35%22/></svg>" />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+  </head>
+  <body>
+    <script id="viewer-config" type="application/json">{"project":"scribblescan","projects":[{"id":"scribblescan","label":"ScribbleScan"},{"id":"flowcode","label":"Flow-Code"},{"id":"redblack","label":"Red-black word index"},{"id":"fieldhouse","label":"Fieldhouse reservations"}],"dataRoot":"maps","homeUrl":"./","returnLabel":"↖ terrain prototype","aboutUrl":"https://github.com/Dlybeck/Flow-Code"}</script>
+    <div id="map-background" aria-hidden="true"></div>
+
+    <header id="portfolio-header" data-ui>
+      <a class="paper home-link" href="./">Flow-Code <span>↖ terrain prototype</span></a>
+      <a class="compare" href="https://github.com/Dlybeck/Flow-Code">About Flow-Code ↗</a>
+    </header>
+
+    <nav id="map-tools" data-ui aria-label="Code map options">
+      <label>Project <select id="project-picker"></select></label>
+      <label class="scope-control">View <select id="scope-picker"><option value="feature">Featured path</option><option value="overview">All functions</option></select></label>
+      <label>Theme <select id="map-theme"></select></label>
+      <button id="share-map" type="button">Copy link</button>
+      <span id="theme-error" role="status"></span>
+    </nav>
+
+    <section id="hud" data-ui>
+      <p class="eyebrow">One summit. Connected branch ridges.</p>
+      <h1>Explore<br />the mountain.</h1>
+      <p class="intro">The project is the summit.<br />Each connected entry begins a ridge.</p>
+      <div class="graph-label"><span class="graph-dot"></span> Exploring ScribbleScan</div>
+      <p id="graph-count" class="snapshot">Loading the terrain…</p>
+    </section>
+
+    <aside id="info" class="paper" aria-label="Function details" data-ui>
+      <div class="note-header"><span>Field notes</span><button id="clear-selection" type="button" aria-label="Clear selected function">×</button></div>
+      <div id="empty-info">
+        <h2>Pick a point.</h2>
+        <p>Click a function to keep its connections in view.</p>
+        <button id="start-exploring" type="button" class="ink-link">Start at the true summit →</button>
+      </div>
+      <div id="selected-info" hidden>
+        <div class="qname" id="i-qname">—</div>
+        <div class="desc" id="i-desc"></div>
+        <nav id="source-tour" aria-label="Source tour" hidden>
+          <div id="tour-navigation">
+            <button id="tour-previous" type="button" class="ink-link" aria-label="Previous source tour stop">← Back</button>
+            <span id="tour-progress" aria-live="polite"></span>
+            <button id="tour-next" type="button" class="ink-link" aria-label="Next source tour stop">Next →</button>
+          </div>
+          <small id="tour-evidence"></small>
+          <button id="tour-restart" type="button" class="ink-link" hidden>Return to source tour →</button>
+        </nav>
+        <div class="cones" id="i-cones"></div>
+        <details><summary>Similar code</summary><ul id="similar-functions"></ul></details>
+        <details>
+          <summary>Source &amp; connections</summary>
+          <div class="sub" id="i-sub">—</div>
+          <div class="stats" id="i-stats"></div>
+          <ul id="connection-evidence"></ul>
+        </details>
+      </div>
+      <label class="function-label" for="function-picker">Or choose a point</label>
+      <select id="function-picker"><option value="">Browse the terrain…</option></select>
+    </aside>
+
+    <fieldset id="controls" class="paper" data-ui>
+      <legend>Terrain structure</legend>
+      <label><input type="radio" name="layout" value="fan" checked /> Call paths</label>
+      <label class="alternate-layout"><input type="radio" name="layout" value="umap" /> <span id="alternate-layout-label">Code similarity</span></label>
+      <button id="reset-view" type="button" class="ink-link">Reset view ↺</button>
+      <small class="confidence-key">Solid: ridge · Dashed: secondary connection</small>
+    </fieldset>
+
+    <footer id="legend" data-ui>
+      <div class="key"><span class="selected">Selected</span><span class="up">Calls this</span><span class="down">Called by this</span></div>
+      <p>Drag to turn · Scroll or pinch to zoom · Click a point to explore</p>
+      <small>Higher means earlier in execution · project-critical functions descend gently</small>
+      <details id="snapshot-notes"><summary>How this prototype works</summary><p id="snapshot-summary"></p></details>
+    </footer>
+
+    <div id="load-error" role="alert" class="paper" hidden></div>
+    <div id="node-label" class="paper" aria-hidden="true" hidden></div>
+    <script type="module">
+      import("./dist/app.js").catch((error) => {
+        if (document.body.dataset.renderer === "canvas2d") return;
+        const notice = document.getElementById("load-error");
+        notice.hidden = false;
+        notice.textContent = `The 3D viewer could not start: ${error.message}`;
+        console.error(error);
+      });
+    </script>
+  </body>
+</html>
