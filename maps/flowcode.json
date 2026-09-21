@@ -1,0 +1,2465 @@
+{
+  "root": "Flow-Code parsing path",
+  "n_nodes": 45,
+  "n_edges": 40,
+  "max_depth": 5,
+  "peaks": [
+    "project:flowcode",
+    "py:fn:flowcode.cli.main",
+    "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope",
+    "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+    "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+    "py:fn:flowcode.ts_indexer._SymbolExtractor.visit"
+  ],
+  "embedding_model": "precomputed deterministic code vectors",
+  "embedding_dim": 768,
+  "constrained_spines": true,
+  "nodes": [
+    {
+      "id": "project:flowcode",
+      "qname": "Flow-Code",
+      "label": "Flow-Code",
+      "displayName": "Flow-Code",
+      "file": "Project",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0,
+      "y_fan": 0,
+      "height": 20.0,
+      "raw_height": 0.0,
+      "x_umap": 0,
+      "y_umap": 0,
+      "semantic_height": 20.0,
+      "importance": 1,
+      "novelty_importance": 0,
+      "purpose_similarity": 1,
+      "semantic_density": 0,
+      "is_orphan": false,
+      "description": "Flow-Code, represented as the one true summit. Its connected execution branches begin immediately below it.",
+      "source_lines": 0,
+      "n_callees": 5,
+      "language": "project",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.application_edges._owner",
+      "qname": "flowcode.application_edges._owner",
+      "label": "_owner",
+      "displayName": "_owner",
+      "file": "flowcode/application_edges.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": 15.87632813237315,
+      "y_fan": 1.3522988684908992,
+      "height": 6.768260909816706,
+      "raw_height": -98.75700687141344,
+      "x_umap": 15.87632813237315,
+      "y_umap": 1.3522988684908992,
+      "semantic_height": 6.768260909816706,
+      "importance": 0.10920744772553753,
+      "novelty_importance": 0.681228,
+      "purpose_similarity": 0.283123,
+      "semantic_density": 0.31877200000000006,
+      "is_orphan": false,
+      "description": "Project relevance 11%. Descends 44.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._collect_function_local_imports",
+          "cosine": 0.449726
+        },
+        {
+          "id": "py:fn:flowcode.terrain.export_terrain",
+          "cosine": 0.442269
+        }
+      ],
+      "drop_from_parent": 44.64883506144866
+    },
+    {
+      "id": "py:fn:flowcode.application_edges._python_routes",
+      "qname": "flowcode.application_edges._python_routes",
+      "label": "_python_routes",
+      "displayName": "_python_routes",
+      "file": "flowcode/application_edges.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": 12.028055981014681,
+      "y_fan": 10.350641650754348,
+      "height": 7.196945278821451,
+      "raw_height": -95.55745880846243,
+      "x_umap": 12.028055981014681,
+      "y_umap": 10.350641650754348,
+      "semantic_height": 7.196945278821451,
+      "importance": 0.17450434696943576,
+      "novelty_importance": 0.901868,
+      "purpose_similarity": 0.300756,
+      "semantic_density": 0.098132,
+      "is_orphan": false,
+      "description": "Project relevance 17%. Descends 41.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.application_edges._python_service_links",
+          "cosine": 0.641281
+        },
+        {
+          "id": "py:fn:flowcode.application_edges.attach_application_edges",
+          "cosine": 0.590844
+        }
+      ],
+      "drop_from_parent": 41.44928699849765
+    },
+    {
+      "id": "py:fn:flowcode.application_edges._python_service_links",
+      "qname": "flowcode.application_edges._python_service_links",
+      "label": "_python_service_links",
+      "displayName": "_python_service_links",
+      "file": "flowcode/application_edges.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": 14.528784763534297,
+      "y_fan": 6.104638050979904,
+      "height": 7.914685393783681,
+      "raw_height": -90.20050119449301,
+      "x_umap": 14.528784763534297,
+      "y_umap": 6.104638050979904,
+      "semantic_height": 7.914685393783681,
+      "importance": 0.2838300125606482,
+      "novelty_importance": 0.751306,
+      "purpose_similarity": 0.36332,
+      "semantic_density": 0.24869399999999997,
+      "is_orphan": false,
+      "description": "Project relevance 28%. Descends 36.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.application_edges.attach_application_edges",
+          "cosine": 0.641368
+        },
+        {
+          "id": "py:fn:flowcode.application_edges._python_routes",
+          "cosine": 0.641281
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.514194
+        }
+      ],
+      "drop_from_parent": 36.092329384528234
+    },
+    {
+      "id": "py:fn:flowcode.application_edges.attach_application_edges",
+      "qname": "flowcode.application_edges.attach_application_edges",
+      "label": "attach_application_edges",
+      "displayName": "attach_application_edges",
+      "file": "flowcode/application_edges.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": 9.815407585534311,
+      "y_fan": 6.074469114276754,
+      "height": 12.750436301006356,
+      "raw_height": -54.10817180996478,
+      "x_umap": 9.815407585534311,
+      "y_umap": 6.074469114276754,
+      "semantic_height": 12.750436301006356,
+      "importance": 0.8096027387138881,
+      "novelty_importance": 0.494215,
+      "purpose_similarity": 0.570807,
+      "semantic_density": 0.5057849999999999,
+      "is_orphan": false,
+      "description": "Project relevance 81%. Descends 10.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 4,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.728937
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+          "cosine": 0.686568
+        }
+      ],
+      "drop_from_parent": 10.329465803019483
+    },
+    {
+      "id": "py:fn:flowcode.application_edges.attach_application_edges.add",
+      "qname": "flowcode.application_edges.attach_application_edges.add",
+      "label": "add",
+      "displayName": "add",
+      "file": "flowcode/application_edges/attach_application_edges.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": 8.2814573495216,
+      "y_fan": 13.586274051002395,
+      "height": 6.916103456841501,
+      "raw_height": -97.65356254463956,
+      "x_umap": 8.2814573495216,
+      "y_umap": 13.586274051002395,
+      "semantic_height": 6.916103456841501,
+      "importance": 0.13172671970051475,
+      "novelty_importance": 0.747091,
+      "purpose_similarity": 0.290367,
+      "semantic_density": 0.25290900000000005,
+      "is_orphan": false,
+      "description": "Project relevance 13%. Descends 43.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.application_edges.attach_application_edges",
+          "cosine": 0.540127
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._append_unknown",
+          "cosine": 0.486785
+        }
+      ],
+      "drop_from_parent": 43.545390734674776
+    },
+    {
+      "id": "py:fn:flowcode.cli.main",
+      "qname": "flowcode.cli.main",
+      "label": "main",
+      "displayName": "main",
+      "file": "flowcode/cli.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": -2.1702569118475115,
+      "y_fan": 2.9596234938302612,
+      "height": 18.74950564040892,
+      "raw_height": -9.333246311848876,
+      "x_umap": -2.1702569118475115,
+      "y_umap": 2.9596234938302612,
+      "semantic_height": 18.74950564040892,
+      "importance": 0.829933748737778,
+      "novelty_importance": 0.685005,
+      "purpose_similarity": 0.557628,
+      "semantic_density": 0.314995,
+      "is_orphan": false,
+      "description": "Project relevance 83%. Descends 9.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 3,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.terrain.export_terrain",
+          "cosine": 0.643052
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer.index_ts_repo",
+          "cosine": 0.568588
+        }
+      ],
+      "drop_from_parent": 9.333246311848876
+    },
+    {
+      "id": "py:fn:flowcode.embeddings.CodeEmbedder.__init__",
+      "qname": "flowcode.embeddings.CodeEmbedder.__init__",
+      "label": "__init__",
+      "displayName": "__init__",
+      "file": "flowcode/embeddings/CodeEmbedder.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 24.139706425633573,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": -3.2,
+      "y_umap": 24.139706425633573,
+      "semantic_height": 2.1,
+      "importance": 0.46340171908479666,
+      "novelty_importance": 0.475331,
+      "purpose_similarity": 0.458725,
+      "semantic_density": 0.524669,
+      "is_orphan": true,
+      "description": "Project relevance 46%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.embeddings.CodeEmbedder._load",
+          "cosine": 0.604335
+        },
+        {
+          "id": "py:fn:flowcode.embeddings.CodeEmbedder.encode",
+          "cosine": 0.543642
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.embeddings.CodeEmbedder._load",
+      "qname": "flowcode.embeddings.CodeEmbedder._load",
+      "label": "_load",
+      "displayName": "_load",
+      "file": "flowcode/embeddings/CodeEmbedder.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 24.139706425633573,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": -1.6,
+      "y_umap": 24.139706425633573,
+      "semantic_height": 2.1,
+      "importance": 0.3042780090141122,
+      "novelty_importance": 0.829958,
+      "purpose_similarity": 0.365792,
+      "semantic_density": 0.17004200000000003,
+      "is_orphan": true,
+      "description": "Project relevance 30%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.embeddings.CodeEmbedder.__init__",
+          "cosine": 0.604335
+        },
+        {
+          "id": "py:fn:flowcode.embeddings.CodeEmbedder.encode",
+          "cosine": 0.369197
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.embeddings.CodeEmbedder.encode",
+      "qname": "flowcode.embeddings.CodeEmbedder.encode",
+      "label": "encode",
+      "displayName": "encode",
+      "file": "flowcode/embeddings/CodeEmbedder.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 24.139706425633573,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 0.0,
+      "y_umap": 24.139706425633573,
+      "semantic_height": 2.1,
+      "importance": 0.536454202891412,
+      "novelty_importance": 0.940645,
+      "purpose_similarity": 0.444038,
+      "semantic_density": 0.05935500000000005,
+      "is_orphan": true,
+      "description": "Project relevance 54%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.terrain.export_terrain",
+          "cosine": 0.595738
+        },
+        {
+          "id": "py:fn:flowcode.embeddings.CodeEmbedder.__init__",
+          "cosine": 0.543642
+        },
+        {
+          "id": "py:fn:flowcode.terrain._semantic_signals",
+          "cosine": 0.529679
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir._build_execution_ir",
+      "qname": "flowcode.execution_ir._build_execution_ir",
+      "label": "_build_execution_ir",
+      "displayName": "_build_execution_ir",
+      "file": "flowcode/execution_ir.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -2.7923029137160844,
+      "y_fan": 11.683037120682547,
+      "height": 9.670942420806496,
+      "raw_height": -77.0924217422358,
+      "x_umap": -2.7923029137160844,
+      "y_umap": 11.683037120682547,
+      "semantic_height": 9.670942420806496,
+      "importance": 0.3405364135655001,
+      "novelty_importance": 0.425769,
+      "purpose_similarity": 0.415191,
+      "semantic_density": 0.5742309999999999,
+      "is_orphan": false,
+      "description": "Project relevance 34%. Descends 33.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 3,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.build_execution_ir",
+          "cosine": 0.772909
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.627397
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+          "cosine": 0.623786
+        }
+      ],
+      "drop_from_parent": 33.3137157352905
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.build_execution_ir",
+      "qname": "flowcode.execution_ir.build_execution_ir",
+      "label": "build_execution_ir",
+      "displayName": "build_execution_ir",
+      "file": "flowcode/execution_ir.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 2.992785713353511,
+      "y_fan": 7.259957233244609,
+      "height": 14.134406925232387,
+      "raw_height": -43.7787060069453,
+      "x_umap": 2.992785713353511,
+      "y_umap": 7.259957233244609,
+      "semantic_height": 14.134406925232387,
+      "importance": 0.3174395980592567,
+      "novelty_importance": 0.304001,
+      "purpose_similarity": 0.416769,
+      "semantic_density": 0.695999,
+      "is_orphan": false,
+      "description": "Project relevance 32%. Descends 34.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 2,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir._build_execution_ir",
+          "cosine": 0.772909
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.692352
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+          "cosine": 0.630927
+        }
+      ],
+      "drop_from_parent": 34.445459695096424
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.layout.dfs_visit_order",
+      "qname": "flowcode.execution_ir.layout.dfs_visit_order",
+      "label": "dfs_visit_order",
+      "displayName": "dfs_visit_order",
+      "file": "flowcode/execution_ir/layout.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 24.139706425633573,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 1.6,
+      "y_umap": 24.139706425633573,
+      "semantic_height": 2.1,
+      "importance": 0.07881437332216831,
+      "novelty_importance": 0.576289,
+      "purpose_similarity": 0.273925,
+      "semantic_density": 0.42371099999999995,
+      "is_orphan": true,
+      "description": "Project relevance 8%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.__init__",
+      "qname": "flowcode.execution_ir.python_from_raw._CallGraphVisitor.__init__",
+      "label": "__init__",
+      "displayName": "__init__",
+      "file": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 24.139706425633573,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 3.2,
+      "y_umap": 24.139706425633573,
+      "semantic_height": 2.1,
+      "importance": 0.2630396768711672,
+      "novelty_importance": 0.277863,
+      "purpose_similarity": 0.395195,
+      "semantic_density": 0.722137,
+      "is_orphan": true,
+      "description": "Project relevance 26%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.__init__",
+          "cosine": 0.984227
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.__init__",
+          "cosine": 0.737849
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._append_unknown",
+      "qname": "flowcode.execution_ir.python_from_raw._CallGraphVisitor._append_unknown",
+      "label": "_append_unknown",
+      "displayName": "_append_unknown",
+      "file": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 25.739706425633575,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": -3.2,
+      "y_umap": 25.739706425633575,
+      "semantic_height": 2.1,
+      "importance": 0.19738812403024408,
+      "novelty_importance": 0.332196,
+      "purpose_similarity": 0.359088,
+      "semantic_density": 0.6678040000000001,
+      "is_orphan": true,
+      "description": "Project relevance 20%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+          "cosine": 0.563887
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.517359
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope",
+      "qname": "flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope",
+      "label": "_enter_function_scope",
+      "displayName": "_enter_function_scope",
+      "file": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": -0.0776896222567847,
+      "y_fan": -4.499329319197874,
+      "height": 13.300860612649146,
+      "raw_height": -50.0,
+      "x_umap": -0.0776896222567847,
+      "y_umap": -4.499329319197874,
+      "semantic_height": 13.300860612649146,
+      "importance": 0.0,
+      "novelty_importance": 0.347183,
+      "purpose_similarity": 0.241531,
+      "semantic_density": 0.652817,
+      "is_orphan": false,
+      "description": "Project relevance 0%. Descends 50.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._collect_function_local_imports",
+          "cosine": 0.744697
+        }
+      ],
+      "drop_from_parent": 50.0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._snippet",
+      "qname": "flowcode.execution_ir.python_from_raw._CallGraphVisitor._snippet",
+      "label": "_snippet",
+      "displayName": "_snippet",
+      "file": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 25.739706425633575,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": -1.6,
+      "y_umap": 25.739706425633575,
+      "semantic_height": 2.1,
+      "importance": 0.27079772430608573,
+      "novelty_importance": 0.533049,
+      "purpose_similarity": 0.375752,
+      "semantic_density": 0.466951,
+      "is_orphan": true,
+      "description": "Project relevance 27%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+          "cosine": 0.475528
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer._node_text",
+          "cosine": 0.475528
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+      "qname": "flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+      "label": "visit_Call",
+      "displayName": "visit_Call",
+      "file": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": 4.118083168383836,
+      "y_fan": -1.2203373022475483,
+      "height": 14.646100862812531,
+      "raw_height": -39.95960397014999,
+      "x_umap": 4.118083168383836,
+      "y_umap": -1.2203373022475483,
+      "semantic_height": 14.646100862812531,
+      "importance": 0.20490604142551042,
+      "novelty_importance": 0.381796,
+      "purpose_similarity": 0.358327,
+      "semantic_density": 0.618204,
+      "is_orphan": false,
+      "description": "Project relevance 20%. Descends 40.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+          "cosine": 0.864461
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+          "cosine": 0.618808
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer._collect_call_expressions",
+          "cosine": 0.584634
+        }
+      ],
+      "drop_from_parent": 39.95960397014999
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_ClassDef",
+      "qname": "flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_ClassDef",
+      "label": "visit_ClassDef",
+      "displayName": "visit_ClassDef",
+      "file": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 25.739706425633575,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 0.0,
+      "y_umap": 25.739706425633575,
+      "semantic_height": 2.1,
+      "importance": 0.07493165529640669,
+      "novelty_importance": 0.217982,
+      "purpose_similarity": 0.302787,
+      "semantic_density": 0.782018,
+      "is_orphan": true,
+      "description": "Project relevance 7%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+          "cosine": 0.648793
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_FunctionDef",
+      "qname": "flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_FunctionDef",
+      "label": "visit_FunctionDef",
+      "displayName": "visit_FunctionDef",
+      "file": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 25.739706425633575,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 1.6,
+      "y_umap": 25.739706425633575,
+      "semantic_height": 2.1,
+      "importance": 0.06695071792724676,
+      "novelty_importance": 0.123528,
+      "purpose_similarity": 0.306714,
+      "semantic_density": 0.876472,
+      "is_orphan": true,
+      "description": "Project relevance 7%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+          "cosine": 0.687526
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._collect_function_local_imports",
+      "qname": "flowcode.execution_ir.python_from_raw._collect_function_local_imports",
+      "label": "_collect_function_local_imports",
+      "displayName": "_collect_function_local_imports",
+      "file": "flowcode/execution_ir/python_from_raw.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": -0.15427223856411554,
+      "y_fan": -8.934547317215145,
+      "height": 7.022684829146988,
+      "raw_height": -96.85807698938501,
+      "x_umap": -0.15427223856411554,
+      "y_umap": -8.934547317215145,
+      "semantic_height": 7.022684829146988,
+      "importance": 0.06412087776765264,
+      "novelty_importance": 0.397569,
+      "purpose_similarity": 0.280115,
+      "semantic_density": 0.6024309999999999,
+      "is_orphan": false,
+      "description": "Project relevance 6%. Descends 46.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope",
+          "cosine": 0.744697
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._build_import_map",
+          "cosine": 0.715105
+        }
+      ],
+      "drop_from_parent": 46.85807698938502
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+      "qname": "flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+      "label": "build_execution_ir_from_raw",
+      "displayName": "build_execution_ir_from_raw",
+      "file": "flowcode/execution_ir/python_from_raw.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": 3.644591911777897,
+      "y_fan": 15.249027025643823,
+      "height": 8.444346052630372,
+      "raw_height": -86.2473019235032,
+      "x_umap": 3.644591911777897,
+      "y_umap": 15.249027025643823,
+      "semantic_height": 8.444346052630372,
+      "importance": 0.8335738738516858,
+      "novelty_importance": 0.185752,
+      "purpose_similarity": 0.61213,
+      "semantic_density": 0.814248,
+      "is_orphan": false,
+      "description": "Project relevance 83%. Descends 9.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+          "cosine": 0.942755
+        },
+        {
+          "id": "py:fn:flowcode.application_edges.attach_application_edges",
+          "cosine": 0.728937
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.build_execution_ir",
+          "cosine": 0.692352
+        }
+      ],
+      "drop_from_parent": 9.154880181267396
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw.flow_fn_id",
+      "qname": "flowcode.execution_ir.python_from_raw.flow_fn_id",
+      "label": "flow_fn_id",
+      "displayName": "flow_fn_id",
+      "file": "flowcode/execution_ir/python_from_raw.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 8.327759215372389,
+      "y_fan": -2.467816894199127,
+      "height": 8.665033057828515,
+      "raw_height": -84.60017240105411,
+      "x_umap": 8.327759215372389,
+      "y_umap": -2.467816894199127,
+      "semantic_height": 8.665033057828515,
+      "importance": 0.1093761544713445,
+      "novelty_importance": 0.162255,
+      "purpose_similarity": 0.328171,
+      "semantic_density": 0.837745,
+      "is_orphan": false,
+      "description": "Project relevance 11%. Descends 44.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 44.64056843090412
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.__init__",
+      "qname": "flowcode.execution_ir.typescript_from_raw._CallVisitor.__init__",
+      "label": "__init__",
+      "displayName": "__init__",
+      "file": "flowcode/execution_ir/typescript_from_raw/_CallVisitor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 25.739706425633575,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 3.2,
+      "y_umap": 25.739706425633575,
+      "semantic_height": 2.1,
+      "importance": 0.3039024210033741,
+      "novelty_importance": 0.236263,
+      "purpose_similarity": 0.417395,
+      "semantic_density": 0.763737,
+      "is_orphan": true,
+      "description": "Project relevance 30%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.__init__",
+          "cosine": 0.984227
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.__init__",
+          "cosine": 0.778303
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+      "qname": "flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+      "label": "_visit_call",
+      "displayName": "_visit_call",
+      "file": "flowcode/execution_ir/typescript_from_raw/_CallVisitor.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": 3.1633711148190065,
+      "y_fan": -2.782422221172042,
+      "height": 15.185511514097126,
+      "raw_height": -35.933634214220625,
+      "x_umap": 3.1633711148190065,
+      "y_umap": -2.782422221172042,
+      "semantic_height": 15.185511514097126,
+      "importance": 0.2870686895057016,
+      "novelty_importance": 0.30961,
+      "purpose_similarity": 0.403011,
+      "semantic_density": 0.6903900000000001,
+      "is_orphan": false,
+      "description": "Project relevance 29%. Descends 35.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+          "cosine": 0.864461
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer._collect_call_expressions",
+          "cosine": 0.639708
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+          "cosine": 0.601794
+        }
+      ],
+      "drop_from_parent": 35.933634214220625
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+      "qname": "flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+      "label": "visit",
+      "displayName": "visit",
+      "file": "flowcode/execution_ir/typescript_from_raw/_CallVisitor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 27.339706425633572,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": -3.2,
+      "y_umap": 27.339706425633572,
+      "semantic_height": 2.1,
+      "importance": 0.3294276285003571,
+      "novelty_importance": 0.373672,
+      "purpose_similarity": 0.415336,
+      "semantic_density": 0.626328,
+      "is_orphan": true,
+      "description": "Project relevance 33%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+          "cosine": 0.850679
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_FunctionDef",
+          "cosine": 0.660107
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._build_import_map",
+      "qname": "flowcode.execution_ir.typescript_from_raw._build_import_map",
+      "label": "_build_import_map",
+      "displayName": "_build_import_map",
+      "file": "flowcode/execution_ir/typescript_from_raw.py",
+      "class": null,
+      "depth": 5,
+      "x_fan": -4.681629908849271,
+      "y_fan": 19.58800950345068,
+      "height": 2.0,
+      "raw_height": -134.34561485604513,
+      "x_umap": -4.681629908849271,
+      "y_umap": 19.58800950345068,
+      "semantic_height": 2.0,
+      "importance": 0.07000960520158611,
+      "novelty_importance": 0.366882,
+      "purpose_similarity": 0.286427,
+      "semantic_density": 0.6331180000000001,
+      "is_orphan": false,
+      "description": "Project relevance 7%. Descends 46.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer._extract_imports",
+          "cosine": 0.729258
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._collect_function_local_imports",
+          "cosine": 0.715105
+        }
+      ],
+      "drop_from_parent": 46.56952934512228
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+      "qname": "flowcode.execution_ir.typescript_from_raw._node_text",
+      "label": "_node_text",
+      "displayName": "_node_text",
+      "file": "flowcode/execution_ir/typescript_from_raw.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 6.49907028337894,
+      "y_fan": -5.7164198941821205,
+      "height": 8.864293475421348,
+      "raw_height": -83.11296332783292,
+      "x_umap": 6.49907028337894,
+      "y_umap": -5.7164198941821205,
+      "semantic_height": 8.864293475421348,
+      "importance": 0.05756471196709604,
+      "novelty_importance": 0.154086,
+      "purpose_similarity": 0.297998,
+      "semantic_density": 0.845914,
+      "is_orphan": false,
+      "description": "Project relevance 6%. Descends 47.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer._node_text",
+          "cosine": 1.0
+        }
+      ],
+      "drop_from_parent": 47.1793291136123
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+      "qname": "flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+      "label": "build_execution_ir_from_ts_raw",
+      "displayName": "build_execution_ir_from_ts_raw",
+      "file": "flowcode/execution_ir/typescript_from_raw.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": -3.6518445142714158,
+      "y_fan": 15.279372022863537,
+      "height": 8.239515365726001,
+      "raw_height": -87.77608551092285,
+      "x_umap": -3.6518445142714158,
+      "y_umap": 15.279372022863537,
+      "semantic_height": 8.239515365726001,
+      "importance": 0.8023742088023051,
+      "novelty_importance": 0.279253,
+      "purpose_similarity": 0.591858,
+      "semantic_density": 0.720747,
+      "is_orphan": false,
+      "description": "Project relevance 80%. Descends 10.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.942755
+        },
+        {
+          "id": "py:fn:flowcode.application_edges.attach_application_edges",
+          "cosine": 0.686568
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer.index_ts_repo",
+          "cosine": 0.662886
+        }
+      ],
+      "drop_from_parent": 10.683663768687047
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "qname": "flowcode.execution_ir.validate.validate_execution_ir",
+      "label": "validate_execution_ir",
+      "displayName": "validate_execution_ir",
+      "file": "flowcode/execution_ir/validate.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": -10.43490485865705,
+      "y_fan": 12.293351828855304,
+      "height": 5.513495091968868,
+      "raw_height": -108.12213383247544,
+      "x_umap": -10.43490485865705,
+      "y_umap": 12.293351828855304,
+      "semantic_height": 5.513495091968868,
+      "importance": 0.3871487328522523,
+      "novelty_importance": 0.560807,
+      "purpose_similarity": 0.421894,
+      "semantic_density": 0.43919299999999994,
+      "is_orphan": false,
+      "description": "Project relevance 39%. Descends 31.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.677154
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+          "cosine": 0.622451
+        }
+      ],
+      "drop_from_parent": 31.029712090239638
+    },
+    {
+      "id": "py:fn:flowcode.generate_graph",
+      "qname": "flowcode.generate_graph",
+      "label": "generate_graph",
+      "displayName": "generate_graph",
+      "file": "flowcode.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -9.745001593154965,
+      "y_fan": 6.094960795521611,
+      "height": 13.07183841491081,
+      "raw_height": -51.70934044282442,
+      "x_umap": -9.745001593154965,
+      "y_umap": 6.094960795521611,
+      "semantic_height": 13.07183841491081,
+      "importance": 0.1759980789596828,
+      "novelty_importance": 0.53627,
+      "purpose_similarity": 0.330643,
+      "semantic_density": 0.46373,
+      "is_orphan": false,
+      "description": "Project relevance 18%. Descends 41.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer.index_ts_repo",
+          "cosine": 0.658239
+        },
+        {
+          "id": "py:fn:flowcode.language_adapter.index_repo_auto",
+          "cosine": 0.631515
+        },
+        {
+          "id": "py:fn:flowcode.index.index_repo",
+          "cosine": 0.621728
+        }
+      ],
+      "drop_from_parent": 41.376094130975545
+    },
+    {
+      "id": "py:fn:flowcode.index.index_repo",
+      "qname": "flowcode.index.index_repo",
+      "label": "index_repo",
+      "displayName": "index_repo",
+      "file": "flowcode/index.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -4.510047762618807,
+      "y_fan": -11.420438828424933,
+      "height": 7.920479226227742,
+      "raw_height": -90.157258084378,
+      "x_umap": -4.510047762618807,
+      "y_umap": -11.420438828424933,
+      "semantic_height": 7.920479226227742,
+      "importance": 0.13265275964830184,
+      "novelty_importance": 0.482009,
+      "purpose_similarity": 0.312551,
+      "semantic_density": 0.517991,
+      "is_orphan": false,
+      "description": "Project relevance 13%. Descends 43.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer.index_ts_repo",
+          "cosine": 0.836135
+        },
+        {
+          "id": "py:fn:flowcode.language_adapter.index_repo_auto",
+          "cosine": 0.776337
+        },
+        {
+          "id": "py:fn:flowcode.generate_graph",
+          "cosine": 0.621728
+        }
+      ],
+      "drop_from_parent": 43.50001477723321
+    },
+    {
+      "id": "py:fn:flowcode.language_adapter.index_repo_auto",
+      "qname": "flowcode.language_adapter.index_repo_auto",
+      "label": "index_repo_auto",
+      "displayName": "index_repo_auto",
+      "file": "flowcode/language_adapter.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": -5.689931278986664,
+      "y_fan": -5.496771225516987,
+      "height": 13.748732473117885,
+      "raw_height": -46.65724330714479,
+      "x_umap": -5.689931278986664,
+      "y_umap": -5.496771225516987,
+      "semantic_height": 13.748732473117885,
+      "importance": 0.258693938871512,
+      "novelty_importance": 0.477698,
+      "purpose_similarity": 0.375121,
+      "semantic_density": 0.522302,
+      "is_orphan": false,
+      "description": "Project relevance 26%. Descends 37.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 2,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.index.index_repo",
+          "cosine": 0.776337
+        },
+        {
+          "id": "py:fn:flowcode.ts_indexer.index_ts_repo",
+          "cosine": 0.764995
+        },
+        {
+          "id": "py:fn:flowcode.generate_graph",
+          "cosine": 0.631515
+        }
+      ],
+      "drop_from_parent": 37.323996995295914
+    },
+    {
+      "id": "py:fn:flowcode.terrain._layout",
+      "qname": "flowcode.terrain._layout",
+      "label": "_layout",
+      "displayName": "_layout",
+      "file": "flowcode/terrain.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -10.899468096435255,
+      "y_fan": 2.8481192693486332,
+      "height": 14.572803668671924,
+      "raw_height": -40.50666822648572,
+      "x_umap": -10.899468096435255,
+      "y_umap": 2.8481192693486332,
+      "semantic_height": 14.572803668671924,
+      "importance": 0.40462404255843165,
+      "novelty_importance": 0.588859,
+      "purpose_similarity": 0.42623,
+      "semantic_density": 0.411141,
+      "is_orphan": false,
+      "description": "Project relevance 40%. Descends 30.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.terrain.export_terrain",
+          "cosine": 0.668856
+        }
+      ],
+      "drop_from_parent": 30.173421914636847
+    },
+    {
+      "id": "py:fn:flowcode.terrain._semantic_signals",
+      "qname": "flowcode.terrain._semantic_signals",
+      "label": "_semantic_signals",
+      "displayName": "_semantic_signals",
+      "file": "flowcode/terrain.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -11.136393444649622,
+      "y_fan": -0.5319803513151693,
+      "height": 15.336658175728505,
+      "raw_height": -34.8055291480925,
+      "x_umap": -11.136393444649622,
+      "y_umap": -0.5319803513151693,
+      "semantic_height": 15.336658175728505,
+      "importance": 0.5209738196684974,
+      "novelty_importance": 0.798779,
+      "purpose_similarity": 0.450533,
+      "semantic_density": 0.20122099999999998,
+      "is_orphan": false,
+      "description": "Project relevance 52%. Descends 24.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.terrain.export_terrain",
+          "cosine": 0.565106
+        }
+      ],
+      "drop_from_parent": 24.472282836243625
+    },
+    {
+      "id": "py:fn:flowcode.terrain.export_terrain",
+      "qname": "flowcode.terrain.export_terrain",
+      "label": "export_terrain",
+      "displayName": "export_terrain",
+      "file": "flowcode/terrain.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": -6.9371363242696615,
+      "y_fan": 1.8127298932791678,
+      "height": 18.615522852661904,
+      "raw_height": -10.333246311848876,
+      "x_umap": -6.9371363242696615,
+      "y_umap": 1.8127298932791678,
+      "semantic_height": 18.615522852661904,
+      "importance": 1.0,
+      "novelty_importance": 0.452822,
+      "purpose_similarity": 0.629198,
+      "semantic_density": 0.5471779999999999,
+      "is_orphan": false,
+      "description": "Project relevance 100%. Descends 1.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 3,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.terrain._layout",
+          "cosine": 0.668856
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+          "cosine": 0.651284
+        }
+      ],
+      "drop_from_parent": 1.0
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.__init__",
+      "qname": "flowcode.ts_indexer._SymbolExtractor.__init__",
+      "label": "__init__",
+      "displayName": "__init__",
+      "file": "flowcode/ts_indexer/_SymbolExtractor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 27.339706425633572,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": -1.6,
+      "y_umap": 27.339706425633572,
+      "semantic_height": 2.1,
+      "importance": 0.2458057286407408,
+      "novelty_importance": 0.23184,
+      "purpose_similarity": 0.391598,
+      "semantic_density": 0.76816,
+      "is_orphan": true,
+      "description": "Project relevance 25%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.__init__",
+          "cosine": 0.778303
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.__init__",
+          "cosine": 0.737849
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._SymbolExtractor._add_fn",
+      "qname": "flowcode.ts_indexer._SymbolExtractor._add_fn",
+      "label": "_add_fn",
+      "displayName": "_add_fn",
+      "file": "flowcode/ts_indexer/_SymbolExtractor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 27.339706425633572,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 0.0,
+      "y_umap": 27.339706425633572,
+      "semantic_height": 2.1,
+      "importance": 0.13009383543087952,
+      "novelty_importance": 0.424204,
+      "purpose_similarity": 0.316113,
+      "semantic_density": 0.575796,
+      "is_orphan": true,
+      "description": "Project relevance 13%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+          "cosine": 0.605635
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._SymbolExtractor._visit_body",
+      "qname": "flowcode.ts_indexer._SymbolExtractor._visit_body",
+      "label": "_visit_body",
+      "displayName": "_visit_body",
+      "file": "flowcode/ts_indexer/_SymbolExtractor.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 27.339706425633572,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 1.6,
+      "y_umap": 27.339706425633572,
+      "semantic_height": 2.1,
+      "importance": 0.2027177794744231,
+      "novelty_importance": 0.233651,
+      "purpose_similarity": 0.370782,
+      "semantic_density": 0.766349,
+      "is_orphan": true,
+      "description": "Project relevance 20%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+          "cosine": 0.612592
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+          "cosine": 0.553327
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_FunctionDef",
+          "cosine": 0.524676
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+      "qname": "flowcode.ts_indexer._SymbolExtractor.visit",
+      "label": "visit",
+      "displayName": "visit",
+      "file": "flowcode/ts_indexer/_SymbolExtractor.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": 1.7079377869064933,
+      "y_fan": -3.8654018885204295,
+      "height": 15.100251629975975,
+      "raw_height": -36.56998374504347,
+      "x_umap": 1.7079377869064933,
+      "y_umap": -3.8654018885204295,
+      "semantic_height": 15.100251629975975,
+      "importance": 0.274081964386868,
+      "novelty_importance": 0.402619,
+      "purpose_similarity": 0.388698,
+      "semantic_density": 0.5973809999999999,
+      "is_orphan": false,
+      "description": "Project relevance 27%. Descends 36.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+          "cosine": 0.850679
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_FunctionDef",
+          "cosine": 0.687526
+        }
+      ],
+      "drop_from_parent": 36.56998374504347
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._collect_call_expressions",
+      "qname": "flowcode.ts_indexer._collect_call_expressions",
+      "label": "_collect_call_expressions",
+      "displayName": "_collect_call_expressions",
+      "file": "flowcode/ts_indexer.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 27.339706425633572,
+      "height": 2.1,
+      "raw_height": -134.34561485604513,
+      "x_umap": 3.2,
+      "y_umap": 27.339706425633572,
+      "semantic_height": 2.1,
+      "importance": 0.29300667438366623,
+      "novelty_importance": 0.431947,
+      "purpose_similarity": 0.394413,
+      "semantic_density": 0.5680529999999999,
+      "is_orphan": true,
+      "description": "Project relevance 29%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+          "cosine": 0.639708
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+          "cosine": 0.584634
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._extract_imports",
+      "qname": "flowcode.ts_indexer._extract_imports",
+      "label": "_extract_imports",
+      "displayName": "_extract_imports",
+      "file": "flowcode/ts_indexer.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": -15.013556511083173,
+      "y_fan": -6.57312025705827,
+      "height": 3.777212234650545,
+      "raw_height": -121.08113316749994,
+      "x_umap": -15.013556511083173,
+      "y_umap": -6.57312025705827,
+      "semantic_height": 3.777212234650545,
+      "importance": 0.2352006009408172,
+      "novelty_importance": 0.293833,
+      "purpose_similarity": 0.380813,
+      "semantic_density": 0.706167,
+      "is_orphan": false,
+      "description": "Project relevance 24%. Descends 38.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._build_import_map",
+          "cosine": 0.729258
+        }
+      ],
+      "drop_from_parent": 38.47517055389996
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._get_language",
+      "qname": "flowcode.ts_indexer._get_language",
+      "label": "_get_language",
+      "displayName": "_get_language",
+      "file": "flowcode/ts_indexer.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": -11.047680151546016,
+      "y_fan": -12.305947992182766,
+      "height": 2.8052447049269156,
+      "raw_height": -128.33555402310174,
+      "x_umap": -11.047680151546016,
+      "y_umap": -12.305947992182766,
+      "semantic_height": 2.8052447049269156,
+      "importance": 0.08715119572445386,
+      "novelty_importance": 0.590352,
+      "purpose_similarity": 0.277744,
+      "semantic_density": 0.409648,
+      "is_orphan": false,
+      "description": "Project relevance 9%. Descends 45.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.language_adapter.index_repo_auto",
+          "cosine": 0.512049
+        }
+      ],
+      "drop_from_parent": 45.729591409501765
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._node_text",
+      "qname": "flowcode.ts_indexer._node_text",
+      "label": "_node_text",
+      "displayName": "_node_text",
+      "file": "flowcode/ts_indexer.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 3.5033827128082287,
+      "y_fan": -7.928849784878115,
+      "height": 8.779033591300195,
+      "raw_height": -83.74931285865577,
+      "x_umap": 3.5033827128082287,
+      "y_umap": -7.928849784878115,
+      "semantic_height": 8.779033591300195,
+      "importance": 0.05756471196709604,
+      "novelty_importance": 0.154086,
+      "purpose_similarity": 0.297998,
+      "semantic_density": 0.845914,
+      "is_orphan": false,
+      "description": "Project relevance 6%. Descends 47.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+          "cosine": 1.0
+        }
+      ],
+      "drop_from_parent": 47.1793291136123
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer.index_ts_repo",
+      "qname": "flowcode.ts_indexer.index_ts_repo",
+      "label": "index_ts_repo",
+      "displayName": "index_ts_repo",
+      "file": "flowcode/ts_indexer.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -9.825877501407735,
+      "y_fan": -7.103403051678685,
+      "height": 8.932222844504004,
+      "raw_height": -82.60596261359998,
+      "x_umap": -9.825877501407735,
+      "y_umap": -7.103403051678685,
+      "semantic_height": 8.932222844504004,
+      "importance": 0.2867608304805064,
+      "novelty_importance": 0.382214,
+      "purpose_similarity": 0.39617,
+      "semantic_density": 0.617786,
+      "is_orphan": false,
+      "description": "Project relevance 29%. Descends 35.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 2,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:flowcode.index.index_repo",
+          "cosine": 0.836135
+        },
+        {
+          "id": "py:fn:flowcode.language_adapter.index_repo_auto",
+          "cosine": 0.764995
+        },
+        {
+          "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+          "cosine": 0.662886
+        }
+      ],
+      "drop_from_parent": 35.94871930645519
+    }
+  ],
+  "edges": [
+    {
+      "id": "project:flowcode->py:fn:flowcode.cli.main",
+      "from": "project:flowcode",
+      "to": "py:fn:flowcode.cli.main",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:flowcode->py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope",
+      "from": "project:flowcode",
+      "to": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:flowcode->py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+      "from": "project:flowcode",
+      "to": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:flowcode->py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+      "from": "project:flowcode",
+      "to": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:flowcode->py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+      "from": "project:flowcode",
+      "to": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.application_edges._python_service_links->py:fn:flowcode.application_edges._owner",
+      "from": "py:fn:flowcode.application_edges._python_service_links",
+      "to": "py:fn:flowcode.application_edges._owner",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/application_edges.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.application_edges.attach_application_edges->py:fn:flowcode.application_edges._owner",
+      "from": "py:fn:flowcode.application_edges.attach_application_edges",
+      "to": "py:fn:flowcode.application_edges._owner",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/application_edges.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.application_edges.attach_application_edges->py:fn:flowcode.application_edges._python_routes",
+      "from": "py:fn:flowcode.application_edges.attach_application_edges",
+      "to": "py:fn:flowcode.application_edges._python_routes",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/application_edges.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.application_edges.attach_application_edges->py:fn:flowcode.application_edges._python_service_links",
+      "from": "py:fn:flowcode.application_edges.attach_application_edges",
+      "to": "py:fn:flowcode.application_edges._python_service_links",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/application_edges.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.application_edges.attach_application_edges->py:fn:flowcode.application_edges.attach_application_edges.add",
+      "from": "py:fn:flowcode.application_edges.attach_application_edges",
+      "to": "py:fn:flowcode.application_edges.attach_application_edges.add",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/application_edges.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.cli.main->py:fn:flowcode.execution_ir.build_execution_ir",
+      "from": "py:fn:flowcode.cli.main",
+      "to": "py:fn:flowcode.execution_ir.build_execution_ir",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/cli.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.cli.main->py:fn:flowcode.language_adapter.index_repo_auto",
+      "from": "py:fn:flowcode.cli.main",
+      "to": "py:fn:flowcode.language_adapter.index_repo_auto",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/cli.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.cli.main->py:fn:flowcode.terrain.export_terrain",
+      "from": "py:fn:flowcode.cli.main",
+      "to": "py:fn:flowcode.terrain.export_terrain",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/cli.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir._build_execution_ir->py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+      "from": "py:fn:flowcode.execution_ir._build_execution_ir",
+      "to": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir._build_execution_ir->py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+      "from": "py:fn:flowcode.execution_ir._build_execution_ir",
+      "to": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir._build_execution_ir->py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "from": "py:fn:flowcode.execution_ir._build_execution_ir",
+      "to": "py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.build_execution_ir->py:fn:flowcode.application_edges.attach_application_edges",
+      "from": "py:fn:flowcode.execution_ir.build_execution_ir",
+      "to": "py:fn:flowcode.application_edges.attach_application_edges",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.build_execution_ir->py:fn:flowcode.execution_ir._build_execution_ir",
+      "from": "py:fn:flowcode.execution_ir.build_execution_ir",
+      "to": "py:fn:flowcode.execution_ir._build_execution_ir",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.build_execution_ir->py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "from": "py:fn:flowcode.execution_ir.build_execution_ir",
+      "to": "py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope->py:fn:flowcode.execution_ir.python_from_raw._collect_function_local_imports",
+      "from": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor._enter_function_scope",
+      "to": "py:fn:flowcode.execution_ir.python_from_raw._collect_function_local_imports",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call->py:fn:flowcode.execution_ir.python_from_raw.flow_fn_id",
+      "from": "py:fn:flowcode.execution_ir.python_from_raw._CallGraphVisitor.visit_Call",
+      "to": "py:fn:flowcode.execution_ir.python_from_raw.flow_fn_id",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/python_from_raw/_CallGraphVisitor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw->py:fn:flowcode.execution_ir.python_from_raw.flow_fn_id",
+      "from": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+      "to": "py:fn:flowcode.execution_ir.python_from_raw.flow_fn_id",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/python_from_raw.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw->py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "from": "py:fn:flowcode.execution_ir.python_from_raw.build_execution_ir_from_raw",
+      "to": "py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/python_from_raw.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call->py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+      "from": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor._visit_call",
+      "to": "py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/typescript_from_raw/_CallVisitor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit->py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+      "from": "py:fn:flowcode.execution_ir.typescript_from_raw._CallVisitor.visit",
+      "to": "py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "4 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/typescript_from_raw/_CallVisitor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw._build_import_map->py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+      "from": "py:fn:flowcode.execution_ir.typescript_from_raw._build_import_map",
+      "to": "py:fn:flowcode.execution_ir.typescript_from_raw._node_text",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "4 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/typescript_from_raw.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw->py:fn:flowcode.execution_ir.typescript_from_raw._build_import_map",
+      "from": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+      "to": "py:fn:flowcode.execution_ir.typescript_from_raw._build_import_map",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/typescript_from_raw.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw->py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "from": "py:fn:flowcode.execution_ir.typescript_from_raw.build_execution_ir_from_ts_raw",
+      "to": "py:fn:flowcode.execution_ir.validate.validate_execution_ir",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/execution_ir/typescript_from_raw.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.generate_graph->py:fn:flowcode.execution_ir.build_execution_ir",
+      "from": "py:fn:flowcode.generate_graph",
+      "to": "py:fn:flowcode.execution_ir.build_execution_ir",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.generate_graph->py:fn:flowcode.language_adapter.index_repo_auto",
+      "from": "py:fn:flowcode.generate_graph",
+      "to": "py:fn:flowcode.language_adapter.index_repo_auto",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.language_adapter.index_repo_auto->py:fn:flowcode.index.index_repo",
+      "from": "py:fn:flowcode.language_adapter.index_repo_auto",
+      "to": "py:fn:flowcode.index.index_repo",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/language_adapter.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.language_adapter.index_repo_auto->py:fn:flowcode.ts_indexer.index_ts_repo",
+      "from": "py:fn:flowcode.language_adapter.index_repo_auto",
+      "to": "py:fn:flowcode.ts_indexer.index_ts_repo",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/language_adapter.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.terrain.export_terrain->py:fn:flowcode.generate_graph",
+      "from": "py:fn:flowcode.terrain.export_terrain",
+      "to": "py:fn:flowcode.generate_graph",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/terrain.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.terrain.export_terrain->py:fn:flowcode.terrain._layout",
+      "from": "py:fn:flowcode.terrain.export_terrain",
+      "to": "py:fn:flowcode.terrain._layout",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/terrain.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.terrain.export_terrain->py:fn:flowcode.terrain._semantic_signals",
+      "from": "py:fn:flowcode.terrain.export_terrain",
+      "to": "py:fn:flowcode.terrain._semantic_signals",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/terrain.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit->py:fn:flowcode.ts_indexer._node_text",
+      "from": "py:fn:flowcode.ts_indexer._SymbolExtractor.visit",
+      "to": "py:fn:flowcode.ts_indexer._node_text",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "4 static call site(s)",
+      "callsite": {
+        "path": "flowcode/ts_indexer/_SymbolExtractor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._collect_call_expressions->py:fn:flowcode.ts_indexer._node_text",
+      "from": "py:fn:flowcode.ts_indexer._collect_call_expressions",
+      "to": "py:fn:flowcode.ts_indexer._node_text",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/ts_indexer.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer._extract_imports->py:fn:flowcode.ts_indexer._node_text",
+      "from": "py:fn:flowcode.ts_indexer._extract_imports",
+      "to": "py:fn:flowcode.ts_indexer._node_text",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/ts_indexer.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer.index_ts_repo->py:fn:flowcode.ts_indexer._extract_imports",
+      "from": "py:fn:flowcode.ts_indexer.index_ts_repo",
+      "to": "py:fn:flowcode.ts_indexer._extract_imports",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "flowcode/ts_indexer.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:flowcode.ts_indexer.index_ts_repo->py:fn:flowcode.ts_indexer._get_language",
+      "from": "py:fn:flowcode.ts_indexer.index_ts_repo",
+      "to": "py:fn:flowcode.ts_indexer._get_language",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "flowcode/ts_indexer.py",
+        "line": 1
+      }
+    }
+  ],
+  "entries": [
+    "project:flowcode"
+  ],
+  "prototype": {
+    "height_rule": "child = parent - drop(relevance)",
+    "branch_summits": 5,
+    "detached_foothills": 15,
+    "seam_gap_degrees": 26.88362068965514
+  }
+}

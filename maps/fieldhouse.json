@@ -1,0 +1,2356 @@
+{
+  "root": "Fieldhouse reservations",
+  "n_nodes": 42,
+  "n_edges": 29,
+  "max_depth": 4,
+  "peaks": [
+    "project:fieldhouse",
+    "ts:fn:public.js.addLocation.$callback_2_47",
+    "ts:fn:public.js.getlocation.gotLocations",
+    "ts:fn:public.js.getreservation.buttonListener",
+    "ts:fn:public.js.getusers.gotUsers",
+    "ts:fn:public.js.home.$callback_1_47",
+    "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25"
+  ],
+  "embedding_model": "precomputed deterministic code vectors",
+  "embedding_dim": 768,
+  "constrained_spines": true,
+  "nodes": [
+    {
+      "id": "project:fieldhouse",
+      "qname": "Fieldhouse reservations",
+      "label": "Fieldhouse reservations",
+      "displayName": "Fieldhouse reservations",
+      "file": "Project",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0,
+      "y_fan": 0,
+      "height": 20.0,
+      "raw_height": 0.0,
+      "x_umap": 0,
+      "y_umap": 0,
+      "semantic_height": 20.0,
+      "importance": 1,
+      "novelty_importance": 0,
+      "purpose_similarity": 1,
+      "semantic_density": 0,
+      "is_orphan": false,
+      "description": "Fieldhouse reservations, represented as the one true summit. Its connected execution branches begin immediately below it.",
+      "source_lines": 0,
+      "n_callees": 6,
+      "language": "project",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_103_33",
+      "qname": "index.$callback_103_33",
+      "label": "GET /reservationByUserID",
+      "displayName": "GET /reservationByUserID",
+      "file": "index.js",
+      "class": null,
+      "depth": 4,
+      "x_fan": 14.028334873175506,
+      "y_fan": -4.558082305645682,
+      "height": 14.763221974211985,
+      "raw_height": -40.76294521731013,
+      "x_umap": 14.028334873175506,
+      "y_umap": -4.558082305645682,
+      "semantic_height": 14.763221974211985,
+      "importance": 1.0,
+      "novelty_importance": 0.126973,
+      "purpose_similarity": 0.671604,
+      "semantic_density": 0.873027,
+      "is_orphan": false,
+      "description": "Project relevance 100%. Descends 1.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_141_27",
+          "cosine": 0.892898
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+          "cosine": 0.739848
+        },
+        {
+          "id": "ts:fn:index.$callback_52_22",
+          "cosine": 0.732152
+        }
+      ],
+      "drop_from_parent": 1.0
+    },
+    {
+      "id": "ts:fn:index.$callback_121_23",
+      "qname": "index.$callback_121_23",
+      "label": "GET /locations",
+      "displayName": "GET /locations",
+      "file": "index.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": -11.74638461750744,
+      "y_fan": 4.650722672181908,
+      "height": 6.183881124215103,
+      "raw_height": -107.5443133308515,
+      "x_umap": -11.74638461750744,
+      "y_umap": 4.650722672181908,
+      "semantic_height": 6.183881124215103,
+      "importance": 0.41528224945579933,
+      "novelty_importance": 0.058565,
+      "purpose_similarity": 0.42668,
+      "semantic_density": 0.941435,
+      "is_orphan": false,
+      "description": "Project relevance 42%. Descends 29.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_52_22",
+          "cosine": 0.843237
+        },
+        {
+          "id": "ts:fn:index.$callback_131_26",
+          "cosine": 0.824503
+        },
+        {
+          "id": "ts:fn:index.$callback_64_19",
+          "cosine": 0.817182
+        }
+      ],
+      "drop_from_parent": 29.651169776665835
+    },
+    {
+      "id": "ts:fn:index.$callback_131_26",
+      "qname": "index.$callback_131_26",
+      "label": "GET /reservations",
+      "displayName": "GET /reservations",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 19.28137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": -3.2,
+      "y_umap": 19.28137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.5289062022248663,
+      "novelty_importance": 0.0,
+      "purpose_similarity": 0.476226,
+      "semantic_density": 1.0,
+      "is_orphan": true,
+      "description": "Project relevance 53%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_52_22",
+          "cosine": 0.893123
+        },
+        {
+          "id": "ts:fn:index.$callback_64_19",
+          "cosine": 0.837291
+        },
+        {
+          "id": "ts:fn:index.$callback_141_27",
+          "cosine": 0.830439
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_141_27",
+      "qname": "index.$callback_141_27",
+      "label": "GET /reservations2",
+      "displayName": "GET /reservations2",
+      "file": "index.js",
+      "class": null,
+      "depth": 4,
+      "x_fan": 8.3854464393437,
+      "y_fan": -12.338809738695954,
+      "height": 13.70411773898431,
+      "raw_height": -49.00698529451206,
+      "x_umap": 8.3854464393437,
+      "y_umap": -12.338809738695954,
+      "semantic_height": 13.70411773898431,
+      "importance": 0.9111727162614353,
+      "novelty_importance": 0.023699,
+      "purpose_similarity": 0.636919,
+      "semantic_density": 0.976301,
+      "is_orphan": false,
+      "description": "Project relevance 91%. Descends 5.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_103_33",
+          "cosine": 0.892898
+        },
+        {
+          "id": "ts:fn:index.$callback_52_22",
+          "cosine": 0.839271
+        },
+        {
+          "id": "ts:fn:index.$callback_131_26",
+          "cosine": 0.830439
+        }
+      ],
+      "drop_from_parent": 5.352536903189672
+    },
+    {
+      "id": "ts:fn:index.$callback_154_25",
+      "qname": "index.$callback_154_25",
+      "label": "DELETE /database",
+      "displayName": "DELETE /database",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 19.28137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": -1.6,
+      "y_umap": 19.28137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.6508146649343794,
+      "novelty_importance": 0.306569,
+      "purpose_similarity": 0.519349,
+      "semantic_density": 0.693431,
+      "is_orphan": true,
+      "description": "Project relevance 65%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_222_21",
+          "cosine": 0.781777
+        },
+        {
+          "id": "ts:fn:index.$callback_52_22",
+          "cosine": 0.65299
+        },
+        {
+          "id": "ts:fn:index.$callback_121_23",
+          "cosine": 0.611781
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_165_19",
+      "qname": "index.$callback_165_19",
+      "label": "POST /user",
+      "displayName": "POST /user",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 19.28137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 0.0,
+      "y_umap": 19.28137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.0,
+      "novelty_importance": 0.258618,
+      "purpose_similarity": 0.245973,
+      "semantic_density": 0.741382,
+      "is_orphan": true,
+      "description": "Project relevance 0%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_187_26",
+          "cosine": 0.883281
+        },
+        {
+          "id": "ts:fn:index.$callback_176_23",
+          "cosine": 0.770788
+        },
+        {
+          "id": "ts:fn:index.$callback_203_33",
+          "cosine": 0.667435
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_176_23",
+      "qname": "index.$callback_176_23",
+      "label": "POST /location",
+      "displayName": "POST /location",
+      "file": "index.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": -11.90700804634204,
+      "y_fan": -4.7143179865266465,
+      "height": 5.096391744679478,
+      "raw_height": -116.00930263994995,
+      "x_umap": -11.90700804634204,
+      "y_umap": -4.7143179865266465,
+      "semantic_height": 5.096391744679478,
+      "importance": 0.3183957532499161,
+      "novelty_importance": 0.227128,
+      "purpose_similarity": 0.381209,
+      "semantic_density": 0.772872,
+      "is_orphan": false,
+      "description": "Project relevance 32%. Descends 34.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_165_19",
+          "cosine": 0.770788
+        },
+        {
+          "id": "ts:fn:index.$callback_121_23",
+          "cosine": 0.707076
+        },
+        {
+          "id": "ts:fn:index.$callback_187_26",
+          "cosine": 0.696055
+        }
+      ],
+      "drop_from_parent": 34.39860809075411
+    },
+    {
+      "id": "ts:fn:index.$callback_17_14",
+      "qname": "index.$callback_17_14",
+      "label": "GET /",
+      "displayName": "GET /",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 19.28137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 1.6,
+      "y_umap": 19.28137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.009478586548024302,
+      "novelty_importance": 0.40586,
+      "purpose_similarity": 0.09311,
+      "semantic_density": 0.59414,
+      "is_orphan": true,
+      "description": "Project relevance 1%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_22_22",
+          "cosine": 0.818296
+        },
+        {
+          "id": "ts:fn:index.$callback_243_18",
+          "cosine": 0.569823
+        },
+        {
+          "id": "ts:fn:index.$callback_64_19",
+          "cosine": 0.405706
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_187_26",
+      "qname": "index.$callback_187_26",
+      "label": "POST /submit-user",
+      "displayName": "POST /submit-user",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 19.28137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 3.2,
+      "y_umap": 19.28137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.13638758031586706,
+      "novelty_importance": 0.374115,
+      "purpose_similarity": 0.300398,
+      "semantic_density": 0.625885,
+      "is_orphan": true,
+      "description": "Project relevance 14%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_165_19",
+          "cosine": 0.883281
+        },
+        {
+          "id": "ts:fn:index.$callback_203_33",
+          "cosine": 0.698491
+        },
+        {
+          "id": "ts:fn:index.$callback_176_23",
+          "cosine": 0.696055
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_203_33",
+      "qname": "index.$callback_203_33",
+      "label": "POST /submit-reservation",
+      "displayName": "POST /submit-reservation",
+      "file": "index.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": -5.057255601474174,
+      "y_fan": -10.747215212437796,
+      "height": 10.942333488565298,
+      "raw_height": -70.50464273721408,
+      "x_umap": -5.057255601474174,
+      "y_umap": -10.747215212437796,
+      "semantic_height": 10.942333488565298,
+      "importance": 0.957768525084728,
+      "novelty_importance": 0.227996,
+      "purpose_similarity": 0.651035,
+      "semantic_density": 0.772004,
+      "is_orphan": false,
+      "description": "Project relevance 96%. Descends 3.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_187_26",
+          "cosine": 0.698491
+        },
+        {
+          "id": "ts:fn:index.$callback_141_27",
+          "cosine": 0.693652
+        },
+        {
+          "id": "ts:fn:index.$callback_103_33",
+          "cosine": 0.677079
+        }
+      ],
+      "drop_from_parent": 3.069342270848329
+    },
+    {
+      "id": "ts:fn:index.$callback_222_21",
+      "qname": "index.$callback_222_21",
+      "label": "DELETE /user",
+      "displayName": "DELETE /user",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 20.881378305569893,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": -3.2,
+      "y_umap": 20.881378305569893,
+      "semantic_height": 2.1,
+      "importance": 0.9526553452898344,
+      "novelty_importance": 0.182618,
+      "purpose_similarity": 0.65011,
+      "semantic_density": 0.817382,
+      "is_orphan": true,
+      "description": "Project relevance 95%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_74_34",
+          "cosine": 0.893609
+        },
+        {
+          "id": "ts:fn:index.$callback_154_25",
+          "cosine": 0.781777
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.deleteReservation",
+          "cosine": 0.703903
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_22_22",
+      "qname": "index.$callback_22_22",
+      "label": "GET /add-user",
+      "displayName": "GET /add-user",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 20.881378305569893,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": -1.6,
+      "y_umap": 20.881378305569893,
+      "semantic_height": 2.1,
+      "importance": 0.0037860703936590575,
+      "novelty_importance": 0.317434,
+      "purpose_similarity": 0.233731,
+      "semantic_density": 0.682566,
+      "is_orphan": true,
+      "description": "Project relevance 0%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_17_14",
+          "cosine": 0.818296
+        },
+        {
+          "id": "ts:fn:index.$callback_165_19",
+          "cosine": 0.511151
+        },
+        {
+          "id": "ts:fn:index.$callback_243_18",
+          "cosine": 0.480464
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_243_18",
+      "qname": "index.$callback_243_18",
+      "label": "callback 243_18",
+      "displayName": "callback 243_18",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 20.881378305569893,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 0.0,
+      "y_umap": 20.881378305569893,
+      "semantic_height": 2.1,
+      "importance": 0.007765252907142039,
+      "novelty_importance": 0.379242,
+      "purpose_similarity": 0.069571,
+      "semantic_density": 0.6207579999999999,
+      "is_orphan": true,
+      "description": "Project relevance 1%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_17_14",
+          "cosine": 0.569823
+        },
+        {
+          "id": "ts:fn:index.$callback_22_22",
+          "cosine": 0.480464
+        },
+        {
+          "id": "ts:fn:index.$callback_64_19",
+          "cosine": 0.408145
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_52_22",
+      "qname": "index.$callback_52_22",
+      "label": "GET /database",
+      "displayName": "GET /database",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 20.881378305569893,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 1.6,
+      "y_umap": 20.881378305569893,
+      "semantic_height": 2.1,
+      "importance": 0.6626706762464583,
+      "novelty_importance": 0.020795,
+      "purpose_similarity": 0.532117,
+      "semantic_density": 0.979205,
+      "is_orphan": true,
+      "description": "Project relevance 66%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_131_26",
+          "cosine": 0.893123
+        },
+        {
+          "id": "ts:fn:index.$callback_121_23",
+          "cosine": 0.843237
+        },
+        {
+          "id": "ts:fn:index.$callback_141_27",
+          "cosine": 0.839271
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:index.$callback_64_19",
+      "qname": "index.$callback_64_19",
+      "label": "GET /users",
+      "displayName": "GET /users",
+      "file": "index.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": -5.6620958828008146,
+      "y_fan": 12.032566237739776,
+      "height": 2.0,
+      "raw_height": -140.11153619618474,
+      "x_umap": -5.6620958828008146,
+      "y_umap": 12.032566237739776,
+      "semantic_height": 2.0,
+      "importance": 0.12169925791303733,
+      "novelty_importance": 0.090542,
+      "purpose_similarity": 0.301903,
+      "semantic_density": 0.909458,
+      "is_orphan": false,
+      "description": "Project relevance 12%. Descends 44.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_131_26",
+          "cosine": 0.837291
+        },
+        {
+          "id": "ts:fn:index.$callback_52_22",
+          "cosine": 0.834796
+        },
+        {
+          "id": "ts:fn:index.$callback_121_23",
+          "cosine": 0.817182
+        }
+      ],
+      "drop_from_parent": 44.036736362261166
+    },
+    {
+      "id": "ts:fn:index.$callback_74_34",
+      "qname": "index.$callback_74_34",
+      "label": "DELETE /deleteReservation",
+      "displayName": "DELETE /deleteReservation",
+      "file": "index.js",
+      "class": null,
+      "depth": 4,
+      "x_fan": 6.506494429083418,
+      "y_fan": 13.827004489846981,
+      "height": 11.419866642320217,
+      "raw_height": -66.78753697292461,
+      "x_umap": 6.506494429083418,
+      "y_umap": 13.827004489846981,
+      "semantic_height": 11.419866642320217,
+      "importance": 0.9425094490833076,
+      "novelty_importance": 0.24142,
+      "purpose_similarity": 0.644231,
+      "semantic_density": 0.75858,
+      "is_orphan": false,
+      "description": "Project relevance 94%. Descends 3.8 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_222_21",
+          "cosine": 0.893609
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.deleteReservation",
+          "cosine": 0.775133
+        },
+        {
+          "id": "ts:fn:index.deleteOld",
+          "cosine": 0.670741
+        }
+      ],
+      "drop_from_parent": 3.8170369949179284
+    },
+    {
+      "id": "ts:fn:index.deleteOld",
+      "qname": "index.deleteOld",
+      "label": "deleteOld",
+      "displayName": "deleteOld",
+      "file": "index.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 20.881378305569893,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 3.2,
+      "y_umap": 20.881378305569893,
+      "semantic_height": 2.1,
+      "importance": 0.7722832611487382,
+      "novelty_importance": 0.457995,
+      "purpose_similarity": 0.566502,
+      "semantic_density": 0.5420050000000001,
+      "is_orphan": true,
+      "description": "Project relevance 77%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_74_34",
+          "cosine": 0.670741
+        },
+        {
+          "id": "ts:fn:index.$callback_222_21",
+          "cosine": 0.627771
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.deleteReservation",
+          "cosine": 0.57432
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:public.js.addLocation.$callback_2_47",
+      "qname": "public.js.addLocation.$callback_2_47",
+      "label": "callback 2_47",
+      "displayName": "callback 2_47",
+      "file": "public/js/addLocation.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": -4.032526866672147,
+      "y_fan": -1.5965903327448163,
+      "height": 14.602044656039144,
+      "raw_height": -42.01754530893111,
+      "x_umap": -4.032526866672147,
+      "y_umap": -1.5965903327448163,
+      "semantic_height": 14.602044656039144,
+      "importance": 0.1629072385932426,
+      "novelty_importance": 0.434794,
+      "purpose_similarity": 0.309942,
+      "semantic_density": 0.565206,
+      "is_orphan": false,
+      "description": "Project relevance 16%. Descends 42.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37",
+          "cosine": 0.981249
+        },
+        {
+          "id": "ts:fn:public.js.getreservation.buttonListener.$callback_6_43",
+          "cosine": 0.749313
+        },
+        {
+          "id": "ts:fn:public.js.getreservation.buttonListener",
+          "cosine": 0.730014
+        }
+      ],
+      "drop_from_parent": 42.01754530893111
+    },
+    {
+      "id": "ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37",
+      "qname": "public.js.addLocation.$callback_2_47.$callback_6_37",
+      "label": "callback 6_37",
+      "displayName": "callback 6_37",
+      "file": "public/js/addLocation/$callback_2_47.js",
+      "class": null,
+      "depth": 2,
+      "x_fan": -8.019050744423359,
+      "y_fan": -3.174966793687423,
+      "height": 9.51554924193654,
+      "raw_height": -81.61069454919584,
+      "x_umap": -8.019050744423359,
+      "y_umap": -3.174966793687423,
+      "semantic_height": 9.51554924193654,
+      "importance": 0.21238470938235235,
+      "novelty_importance": 0.404687,
+      "purpose_similarity": 0.331643,
+      "semantic_density": 0.595313,
+      "is_orphan": false,
+      "description": "Project relevance 21%. Descends 39.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.addLocation.$callback_2_47",
+          "cosine": 0.981249
+        },
+        {
+          "id": "ts:fn:public.js.getreservation.buttonListener.$callback_6_43",
+          "cosine": 0.767195
+        },
+        {
+          "id": "ts:fn:public.js.getreservation.buttonListener",
+          "cosine": 0.737447
+        }
+      ],
+      "drop_from_parent": 39.59314924026474
+    },
+    {
+      "id": "ts:fn:public.js.getlocation.getLocations",
+      "qname": "public.js.getlocation.getLocations",
+      "label": "getLocations",
+      "displayName": "getLocations",
+      "file": "public/js/getlocation.js",
+      "class": null,
+      "depth": 2,
+      "x_fan": -7.948510101561091,
+      "y_fan": 3.1470377774196594,
+      "height": 9.993139594072051,
+      "raw_height": -77.89314355418566,
+      "x_umap": -7.948510101561091,
+      "y_umap": 3.1470377774196594,
+      "semantic_height": 9.993139594072051,
+      "importance": 0.2091565184459624,
+      "novelty_importance": 0.3001,
+      "purpose_similarity": 0.333121,
+      "semantic_density": 0.6999,
+      "is_orphan": false,
+      "description": "Project relevance 21%. Descends 39.8 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_121_23",
+          "cosine": 0.762049
+        },
+        {
+          "id": "ts:fn:public.js.getusers.getUsers",
+          "cosine": 0.739703
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+          "cosine": 0.660726
+        }
+      ],
+      "drop_from_parent": 39.751330596147845
+    },
+    {
+      "id": "ts:fn:public.js.getlocation.gotLocations",
+      "qname": "public.js.getlocation.gotLocations",
+      "label": "gotLocations",
+      "displayName": "gotLocations",
+      "file": "public/js/getlocation.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": -3.958984727785269,
+      "y_fan": 1.5674729401326117,
+      "height": 15.099956421265937,
+      "raw_height": -38.14181295803781,
+      "x_umap": -3.958984727785269,
+      "y_umap": 1.5674729401326117,
+      "semantic_height": 15.099956421265937,
+      "importance": 0.24200381718290187,
+      "novelty_importance": 0.485757,
+      "purpose_similarity": 0.341941,
+      "semantic_density": 0.514243,
+      "is_orphan": false,
+      "description": "Project relevance 24%. Descends 38.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.getusers.gotUsers",
+          "cosine": 0.85206
+        },
+        {
+          "id": "ts:fn:public.js.getlocation.gotLocations.$callback_24_19",
+          "cosine": 0.746012
+        },
+        {
+          "id": "ts:fn:public.js.getusers.gotUsers.$callback_28_19",
+          "cosine": 0.746012
+        }
+      ],
+      "drop_from_parent": 38.14181295803781
+    },
+    {
+      "id": "ts:fn:public.js.getlocation.gotLocations.$callback_24_19",
+      "qname": "public.js.getlocation.gotLocations.$callback_24_19",
+      "label": "callback 24_19",
+      "displayName": "callback 24_19",
+      "file": "public/js/getlocation/gotLocations.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 22.48137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": -3.2,
+      "y_umap": 22.48137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.0481846924313996,
+      "novelty_importance": 0.510944,
+      "purpose_similarity": 0.259455,
+      "semantic_density": 0.48905600000000005,
+      "is_orphan": true,
+      "description": "Project relevance 5%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.getusers.gotUsers.$callback_28_19",
+          "cosine": 1.0
+        },
+        {
+          "id": "ts:fn:public.js.getusers.gotUsers",
+          "cosine": 0.791221
+        },
+        {
+          "id": "ts:fn:public.js.getlocation.gotLocations",
+          "cosine": 0.746012
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:public.js.getreservation.buttonListener",
+      "qname": "public.js.getreservation.buttonListener",
+      "label": "buttonListener",
+      "displayName": "buttonListener",
+      "file": "public/js/getreservation.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": -1.7840806949822041,
+      "y_fan": -3.791364466478659,
+      "height": 15.52702351273816,
+      "raw_height": -34.81753372220392,
+      "x_umap": -1.7840806949822041,
+      "y_umap": -3.791364466478659,
+      "semantic_height": 15.52702351273816,
+      "importance": 0.3098462505672669,
+      "novelty_importance": 0.194301,
+      "purpose_similarity": 0.378492,
+      "semantic_density": 0.8056989999999999,
+      "is_orphan": false,
+      "description": "Project relevance 31%. Descends 34.8 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.getreservation.buttonListener.$callback_6_43",
+          "cosine": 0.962465
+        },
+        {
+          "id": "ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37",
+          "cosine": 0.737447
+        },
+        {
+          "id": "ts:fn:public.js.addLocation.$callback_2_47",
+          "cosine": 0.730014
+        }
+      ],
+      "drop_from_parent": 34.81753372220392
+    },
+    {
+      "id": "ts:fn:public.js.getreservation.buttonListener.$callback_6_43",
+      "qname": "public.js.getreservation.buttonListener.$callback_6_43",
+      "label": "callback 6_43",
+      "displayName": "callback 6_43",
+      "file": "public/js/getreservation/buttonListener.js",
+      "class": null,
+      "depth": 2,
+      "x_fan": -3.549046793525245,
+      "y_fan": -7.542108347837851,
+      "height": 11.336649062965334,
+      "raw_height": -67.43530046636576,
+      "x_umap": -3.549046793525245,
+      "y_umap": -7.542108347837851,
+      "semantic_height": 11.336649062965334,
+      "importance": 0.3547394542007787,
+      "novelty_importance": 0.197232,
+      "purpose_similarity": 0.39736,
+      "semantic_density": 0.802768,
+      "is_orphan": false,
+      "description": "Project relevance 35%. Descends 32.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.getreservation.buttonListener",
+          "cosine": 0.962465
+        },
+        {
+          "id": "ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37",
+          "cosine": 0.767195
+        },
+        {
+          "id": "ts:fn:public.js.addLocation.$callback_2_47",
+          "cosine": 0.749313
+        }
+      ],
+      "drop_from_parent": 32.61776674416184
+    },
+    {
+      "id": "ts:fn:public.js.getusers.getUsers",
+      "qname": "public.js.getusers.getUsers",
+      "label": "getUsers",
+      "displayName": "getUsers",
+      "file": "public/js/getusers.js",
+      "class": null,
+      "depth": 2,
+      "x_fan": -3.7979060945761978,
+      "y_fan": 8.070961282467442,
+      "height": 7.657358958728519,
+      "raw_height": -96.07479983392358,
+      "x_umap": -3.7979060945761978,
+      "y_umap": 8.070961282467442,
+      "semantic_height": 7.657358958728519,
+      "importance": 0.009614837877011184,
+      "novelty_importance": 0.296469,
+      "purpose_similarity": 0.249003,
+      "semantic_density": 0.703531,
+      "is_orphan": false,
+      "description": "Project relevance 1%. Descends 49.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_64_19",
+          "cosine": 0.74174
+        },
+        {
+          "id": "ts:fn:public.js.getlocation.getLocations",
+          "cosine": 0.739703
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+          "cosine": 0.660306
+        }
+      ],
+      "drop_from_parent": 49.52887294402645
+    },
+    {
+      "id": "ts:fn:public.js.getusers.gotUsers",
+      "qname": "public.js.getusers.gotUsers",
+      "label": "gotUsers",
+      "displayName": "gotUsers",
+      "file": "public/js/getusers.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": -1.8859930813931602,
+      "y_fan": 4.007939311786548,
+      "height": 14.020287645372614,
+      "raw_height": -46.545926889897125,
+      "x_umap": -1.8859930813931602,
+      "y_umap": 4.007939311786548,
+      "semantic_height": 14.020287645372614,
+      "importance": 0.07049128796128316,
+      "novelty_importance": 0.543843,
+      "purpose_similarity": 0.267975,
+      "semantic_density": 0.45615700000000003,
+      "is_orphan": false,
+      "description": "Project relevance 7%. Descends 46.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.getlocation.gotLocations",
+          "cosine": 0.85206
+        },
+        {
+          "id": "ts:fn:public.js.getlocation.gotLocations.$callback_24_19",
+          "cosine": 0.791221
+        },
+        {
+          "id": "ts:fn:public.js.getusers.gotUsers.$callback_28_19",
+          "cosine": 0.791221
+        }
+      ],
+      "drop_from_parent": 46.545926889897125
+    },
+    {
+      "id": "ts:fn:public.js.getusers.gotUsers.$callback_28_19",
+      "qname": "public.js.getusers.gotUsers.$callback_28_19",
+      "label": "callback 28_19",
+      "displayName": "callback 28_19",
+      "file": "public/js/getusers/gotUsers.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 22.48137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": -1.6,
+      "y_umap": 22.48137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.0481846924313996,
+      "novelty_importance": 0.510944,
+      "purpose_similarity": 0.259455,
+      "semantic_density": 0.48905600000000005,
+      "is_orphan": true,
+      "description": "Project relevance 5%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.getlocation.gotLocations.$callback_24_19",
+          "cosine": 1.0
+        },
+        {
+          "id": "ts:fn:public.js.getusers.gotUsers",
+          "cosine": 0.791221
+        },
+        {
+          "id": "ts:fn:public.js.getlocation.gotLocations",
+          "cosine": 0.746012
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47",
+      "qname": "public.js.home.$callback_1_47",
+      "label": "callback 1_47",
+      "displayName": "callback 1_47",
+      "file": "public/js/home.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": 3.276905405365757,
+      "y_fan": -1.801493991395462,
+      "height": 18.364193988330747,
+      "raw_height": -12.733071845218488,
+      "x_umap": 3.276905405365757,
+      "y_umap": -1.801493991395462,
+      "semantic_height": 18.364193988330747,
+      "importance": 0.7605495541792145,
+      "novelty_importance": 0.00121,
+      "purpose_similarity": 0.573959,
+      "semantic_density": 0.99879,
+      "is_orphan": false,
+      "description": "Project relevance 76%. Descends 12.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 2,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+          "cosine": 0.929336
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+          "cosine": 0.845361
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_119_36",
+          "cosine": 0.781177
+        }
+      ],
+      "drop_from_parent": 12.733071845218488
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+      "qname": "public.js.home.$callback_1_47.$callback_9_37",
+      "label": "callback 9_37",
+      "displayName": "callback 9_37",
+      "file": "public/js/home/$callback_1_47.js",
+      "class": null,
+      "depth": 2,
+      "x_fan": 5.941757022365572,
+      "y_fan": -4.461197363658047,
+      "height": 17.03543108891865,
+      "raw_height": -23.076128016169918,
+      "x_umap": 5.941757022365572,
+      "y_umap": -4.461197363658047,
+      "semantic_height": 17.03543108891865,
+      "importance": 0.8093253842662973,
+      "novelty_importance": 0.185473,
+      "purpose_similarity": 0.589539,
+      "semantic_density": 0.814527,
+      "is_orphan": false,
+      "description": "Project relevance 81%. Descends 10.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 4,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.845361
+        },
+        {
+          "id": "ts:fn:public.js.getreservation.buttonListener",
+          "cosine": 0.713106
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+          "cosine": 0.709304
+        }
+      ],
+      "drop_from_parent": 10.343056170951431
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37.$callback_30_48",
+      "qname": "public.js.home.$callback_1_47.$callback_9_37.$callback_30_48",
+      "label": "callback 30_48",
+      "displayName": "callback 30_48",
+      "file": "public/js/home/$callback_1_47/$callback_9_37.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 22.48137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 0.0,
+      "y_umap": 22.48137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.9249501931657621,
+      "novelty_importance": 0.13006,
+      "purpose_similarity": 0.639845,
+      "semantic_density": 0.8699399999999999,
+      "is_orphan": true,
+      "description": "Project relevance 92%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_103_33",
+          "cosine": 0.642104
+        },
+        {
+          "id": "ts:fn:index.$callback_141_27",
+          "cosine": 0.619517
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37.$callback_35_48",
+          "cosine": 0.601401
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37.$callback_35_48",
+      "qname": "public.js.home.$callback_1_47.$callback_9_37.$callback_35_48",
+      "label": "callback 35_48",
+      "displayName": "callback 35_48",
+      "file": "public/js/home/$callback_1_47/$callback_9_37.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 22.48137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 1.6,
+      "y_umap": 22.48137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.34471478949169676,
+      "novelty_importance": 0.172483,
+      "purpose_similarity": 0.393801,
+      "semantic_density": 0.8275170000000001,
+      "is_orphan": true,
+      "description": "Project relevance 34%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_113_59",
+          "cosine": 0.732246
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37.$callback_30_48",
+          "cosine": 0.601401
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+          "cosine": 0.559038
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.deleteReservation",
+      "qname": "public.js.home.$callback_1_47.deleteReservation",
+      "label": "deleteReservation",
+      "displayName": "deleteReservation",
+      "file": "public/js/home/$callback_1_47.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": 4.991788622564669,
+      "y_fan": 10.608090800485314,
+      "height": 11.91023786922847,
+      "raw_height": -62.97049997800668,
+      "x_umap": 4.991788622564669,
+      "y_umap": 10.608090800485314,
+      "semantic_height": 11.91023786922847,
+      "importance": 0.6780649307317554,
+      "novelty_importance": 0.276964,
+      "purpose_similarity": 0.531655,
+      "semantic_density": 0.723036,
+      "is_orphan": false,
+      "description": "Project relevance 68%. Descends 16.8 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:index.$callback_74_34",
+          "cosine": 0.775133
+        },
+        {
+          "id": "ts:fn:index.$callback_222_21",
+          "cosine": 0.703903
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+          "cosine": 0.701169
+        }
+      ],
+      "drop_from_parent": 16.774818394143985
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+      "qname": "public.js.home.$callback_1_47.displayReservations",
+      "label": "displayReservations",
+      "displayName": "displayReservations",
+      "file": "public/js/home/$callback_1_47.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": 1.1447131441175902,
+      "y_fan": -11.172506455460995,
+      "height": 15.012984698560286,
+      "raw_height": -38.818798606588764,
+      "x_umap": 1.1447131441175902,
+      "y_umap": -11.172506455460995,
+      "semantic_height": 15.012984698560286,
+      "importance": 0.6991291716241052,
+      "novelty_importance": 0.220678,
+      "purpose_similarity": 0.542074,
+      "semantic_density": 0.779322,
+      "is_orphan": false,
+      "description": "Project relevance 70%. Descends 15.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.929336
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_119_36",
+          "cosine": 0.879911
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+          "cosine": 0.722037
+        }
+      ],
+      "drop_from_parent": 15.742670590418848
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_113_59",
+      "qname": "public.js.home.$callback_1_47.displayReservations.$callback_113_59",
+      "label": "callback 113_59",
+      "displayName": "callback 113_59",
+      "file": "public/js/home/$callback_1_47/displayReservations.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 22.48137830556989,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": 3.2,
+      "y_umap": 22.48137830556989,
+      "semantic_height": 2.1,
+      "importance": 0.37129345425012955,
+      "novelty_importance": 0.374931,
+      "purpose_similarity": 0.399519,
+      "semantic_density": 0.625069,
+      "is_orphan": true,
+      "description": "Project relevance 37%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37.$callback_35_48",
+          "cosine": 0.732246
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.536427
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+          "cosine": 0.534446
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_119_36",
+      "qname": "public.js.home.$callback_1_47.displayReservations.$callback_119_36",
+      "label": "callback 119_36",
+      "displayName": "callback 119_36",
+      "file": "public/js/home/$callback_1_47/displayReservations.js",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 24.081378305569892,
+      "height": 2.1,
+      "raw_height": -140.11153619618474,
+      "x_umap": -3.2,
+      "y_umap": 24.081378305569892,
+      "semantic_height": 2.1,
+      "importance": 0.7069469939416437,
+      "novelty_importance": 0.477829,
+      "purpose_similarity": 0.538387,
+      "semantic_density": 0.5221709999999999,
+      "is_orphan": true,
+      "description": "Project relevance 71%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+          "cosine": 0.879911
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.781177
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+          "cosine": 0.63554
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+      "qname": "public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+      "label": "callback 147_25",
+      "displayName": "callback 147_25",
+      "file": "public/js/home/$callback_1_47/displayReservations.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": 1.6828005131708785,
+      "y_fan": 3.5761331243325696,
+      "height": 17.02441247557784,
+      "raw_height": -23.1618966184995,
+      "x_umap": 1.6828005131708785,
+      "y_umap": 3.5761331243325696,
+      "semantic_height": 17.02441247557784,
+      "importance": 0.5477163955408265,
+      "novelty_importance": 0.179794,
+      "purpose_similarity": 0.479281,
+      "semantic_density": 0.820206,
+      "is_orphan": false,
+      "description": "Project relevance 55%. Descends 23.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+          "cosine": 0.962473
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+          "cosine": 0.722037
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.721635
+        }
+      ],
+      "drop_from_parent": 23.1618966184995
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+      "qname": "public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+      "label": "callback 148_46",
+      "displayName": "callback 148_46",
+      "file": "public/js/home/$callback_1_47/displayReservations/$callback_147_25.js",
+      "class": null,
+      "depth": 2,
+      "x_fan": 3.3644878163639285,
+      "y_fan": 7.149900557042815,
+      "height": 14.065283337231934,
+      "raw_height": -46.195681583862694,
+      "x_umap": 3.3644878163639285,
+      "y_umap": 7.149900557042815,
+      "semantic_height": 14.065283337231934,
+      "importance": 0.5503309190742205,
+      "novelty_importance": 0.135884,
+      "purpose_similarity": 0.481577,
+      "semantic_density": 0.864116,
+      "is_orphan": false,
+      "description": "Project relevance 55%. Descends 23.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+          "cosine": 0.962473
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.723199
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+          "cosine": 0.712561
+        }
+      ],
+      "drop_from_parent": 23.033784965363196
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "qname": "public.js.home.$callback_1_47.fetchAllReservations",
+      "label": "fetchAllReservations",
+      "displayName": "fetchAllReservations",
+      "file": "public/js/home/$callback_1_47.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": 6.3682262771720435,
+      "y_fan": -9.370560407889243,
+      "height": 14.391753224776933,
+      "raw_height": -43.65444839132239,
+      "x_umap": 6.3682262771720435,
+      "y_umap": -9.370560407889243,
+      "semantic_height": 14.391753224776933,
+      "importance": 0.6004424413234188,
+      "novelty_importance": 0.124442,
+      "purpose_similarity": 0.503038,
+      "semantic_density": 0.8755580000000001,
+      "is_orphan": false,
+      "description": "Project relevance 60%. Descends 20.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+          "cosine": 0.866061
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.initializeReservations",
+          "cosine": 0.760018
+        },
+        {
+          "id": "ts:fn:index.$callback_131_26",
+          "cosine": 0.742324
+        }
+      ],
+      "drop_from_parent": 20.578320375152476
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+      "qname": "public.js.home.$callback_1_47.fetchReservationsByUser",
+      "label": "fetchReservationsByUser",
+      "displayName": "fetchReservationsByUser",
+      "file": "public/js/home/$callback_1_47.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": 10.69963706614247,
+      "y_fan": -3.4765228253333635,
+      "height": 14.89169105312349,
+      "raw_height": -39.76294521731013,
+      "x_umap": 10.69963706614247,
+      "y_umap": -3.4765228253333635,
+      "semantic_height": 14.89169105312349,
+      "importance": 0.679860873446118,
+      "novelty_importance": 0.139435,
+      "purpose_similarity": 0.536149,
+      "semantic_density": 0.860565,
+      "is_orphan": false,
+      "description": "Project relevance 68%. Descends 16.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+          "cosine": 0.866061
+        },
+        {
+          "id": "ts:fn:index.$callback_103_33",
+          "cosine": 0.739848
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.693781
+        }
+      ],
+      "drop_from_parent": 16.686817201140215
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.formatDate",
+      "qname": "public.js.home.$callback_1_47.formatDate",
+      "label": "formatDate",
+      "displayName": "formatDate",
+      "file": "public/js/home/$callback_1_47.js",
+      "class": null,
+      "depth": 3,
+      "x_fan": 11.689058725610787,
+      "y_fan": 2.134801183163227,
+      "height": 10.912395029198853,
+      "raw_height": -70.73768293350184,
+      "x_umap": 11.689058725610787,
+      "y_umap": 2.134801183163227,
+      "semantic_height": 10.912395029198853,
+      "importance": 0.047723369034042444,
+      "novelty_importance": 1.0,
+      "purpose_similarity": 0.126335,
+      "semantic_density": 0.0,
+      "is_orphan": false,
+      "description": "Project relevance 5%. Descends 47.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+          "cosine": 0.390004
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.348379
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37.$callback_35_48",
+          "cosine": 0.336017
+        }
+      ],
+      "drop_from_parent": 47.66155491733192
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.initializeReservations",
+      "qname": "public.js.home.$callback_1_47.initializeReservations",
+      "label": "initializeReservations",
+      "displayName": "initializeReservations",
+      "file": "public/js/home/$callback_1_47.js",
+      "class": null,
+      "depth": 2,
+      "x_fan": 6.673490010274279,
+      "y_fan": 3.5334310756846747,
+      "height": 16.273273418067948,
+      "raw_height": -29.00874368764758,
+      "x_umap": 6.673490010274279,
+      "y_umap": 3.5334310756846747,
+      "semantic_height": 16.273273418067948,
+      "importance": 0.6882515950524675,
+      "novelty_importance": 0.184415,
+      "purpose_similarity": 0.538469,
+      "semantic_density": 0.815585,
+      "is_orphan": false,
+      "description": "Project relevance 69%. Descends 16.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+          "cosine": 0.760018
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47",
+          "cosine": 0.675629
+        },
+        {
+          "id": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+          "cosine": 0.674879
+        }
+      ],
+      "drop_from_parent": 16.275671842429094
+    }
+  ],
+  "edges": [
+    {
+      "id": "project:fieldhouse->ts:fn:public.js.addLocation.$callback_2_47",
+      "from": "project:fieldhouse",
+      "to": "ts:fn:public.js.addLocation.$callback_2_47",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:fieldhouse->ts:fn:public.js.getlocation.gotLocations",
+      "from": "project:fieldhouse",
+      "to": "ts:fn:public.js.getlocation.gotLocations",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:fieldhouse->ts:fn:public.js.getreservation.buttonListener",
+      "from": "project:fieldhouse",
+      "to": "ts:fn:public.js.getreservation.buttonListener",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:fieldhouse->ts:fn:public.js.getusers.gotUsers",
+      "from": "project:fieldhouse",
+      "to": "ts:fn:public.js.getusers.gotUsers",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:fieldhouse->ts:fn:public.js.home.$callback_1_47",
+      "from": "project:fieldhouse",
+      "to": "ts:fn:public.js.home.$callback_1_47",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:fieldhouse->ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+      "from": "project:fieldhouse",
+      "to": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.addLocation.$callback_2_47->ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37",
+      "from": "ts:fn:public.js.addLocation.$callback_2_47",
+      "to": "ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/addLocation.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37->ts:fn:index.$callback_176_23",
+      "from": "ts:fn:public.js.addLocation.$callback_2_47.$callback_6_37",
+      "to": "ts:fn:index.$callback_176_23",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/addLocation/$callback_2_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.getlocation.getLocations->ts:fn:index.$callback_121_23",
+      "from": "ts:fn:public.js.getlocation.getLocations",
+      "to": "ts:fn:index.$callback_121_23",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/getlocation.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.getlocation.gotLocations->ts:fn:public.js.getlocation.getLocations",
+      "from": "ts:fn:public.js.getlocation.gotLocations",
+      "to": "ts:fn:public.js.getlocation.getLocations",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/getlocation.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.getreservation.buttonListener->ts:fn:public.js.getreservation.buttonListener.$callback_6_43",
+      "from": "ts:fn:public.js.getreservation.buttonListener",
+      "to": "ts:fn:public.js.getreservation.buttonListener.$callback_6_43",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/getreservation.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.getreservation.buttonListener.$callback_6_43->ts:fn:index.$callback_203_33",
+      "from": "ts:fn:public.js.getreservation.buttonListener.$callback_6_43",
+      "to": "ts:fn:index.$callback_203_33",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/getreservation/buttonListener.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.getusers.getUsers->ts:fn:index.$callback_64_19",
+      "from": "ts:fn:public.js.getusers.getUsers",
+      "to": "ts:fn:index.$callback_64_19",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/getusers.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.getusers.gotUsers->ts:fn:public.js.getusers.getUsers",
+      "from": "ts:fn:public.js.getusers.gotUsers",
+      "to": "ts:fn:public.js.getusers.getUsers",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/getusers.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47->ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+      "from": "ts:fn:public.js.home.$callback_1_47",
+      "to": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47->ts:fn:public.js.home.$callback_1_47.initializeReservations",
+      "from": "ts:fn:public.js.home.$callback_1_47",
+      "to": "ts:fn:public.js.home.$callback_1_47.initializeReservations",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37->ts:fn:public.js.home.$callback_1_47.displayReservations",
+      "from": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+      "to": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37->ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "from": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+      "to": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37->ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+      "from": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+      "to": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.$callback_9_37->ts:fn:public.js.home.$callback_1_47.formatDate",
+      "from": "ts:fn:public.js.home.$callback_1_47.$callback_9_37",
+      "to": "ts:fn:public.js.home.$callback_1_47.formatDate",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.deleteReservation->ts:fn:index.$callback_74_34",
+      "from": "ts:fn:public.js.home.$callback_1_47.deleteReservation",
+      "to": "ts:fn:index.$callback_74_34",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25->ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+      "from": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25",
+      "to": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47/displayReservations.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46->ts:fn:public.js.home.$callback_1_47.deleteReservation",
+      "from": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+      "to": "ts:fn:public.js.home.$callback_1_47.deleteReservation",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47/displayReservations/$callback_147_25.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46->ts:fn:public.js.home.$callback_1_47.displayReservations",
+      "from": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+      "to": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47/displayReservations/$callback_147_25.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46->ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "from": "ts:fn:public.js.home.$callback_1_47.displayReservations.$callback_147_25.$callback_148_46",
+      "to": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47/displayReservations/$callback_147_25.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations->ts:fn:index.$callback_141_27",
+      "from": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "to": "ts:fn:index.$callback_141_27",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser->ts:fn:index.$callback_103_33",
+      "from": "ts:fn:public.js.home.$callback_1_47.fetchReservationsByUser",
+      "to": "ts:fn:index.$callback_103_33",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.initializeReservations->ts:fn:public.js.home.$callback_1_47.displayReservations",
+      "from": "ts:fn:public.js.home.$callback_1_47.initializeReservations",
+      "to": "ts:fn:public.js.home.$callback_1_47.displayReservations",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:public.js.home.$callback_1_47.initializeReservations->ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "from": "ts:fn:public.js.home.$callback_1_47.initializeReservations",
+      "to": "ts:fn:public.js.home.$callback_1_47.fetchAllReservations",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "public/js/home/$callback_1_47.js",
+        "line": 1
+      }
+    }
+  ],
+  "entries": [
+    "project:fieldhouse"
+  ],
+  "prototype": {
+    "height_rule": "child = parent - drop(relevance)",
+    "branch_summits": 6,
+    "detached_foothills": 16,
+    "seam_gap_degrees": 50.39999999999997
+  }
+}

@@ -1,0 +1,2024 @@
+{
+  "root": "ScribbleScan OCR path",
+  "n_nodes": 39,
+  "n_edges": 32,
+  "max_depth": 6,
+  "peaks": [
+    "project:scribblescan",
+    "py:fn:app.api.routes.route_combined.process_and_digitize",
+    "py:fn:app.api.routes.route_digitize.digitize_images",
+    "py:fn:app.api.services.image_utils.replace_coords_with_images",
+    "ts:fn:static.js.uploads.demo.DemoHandler.init",
+    "ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles"
+  ],
+  "embedding_model": "precomputed deterministic code vectors",
+  "embedding_dim": 768,
+  "constrained_spines": true,
+  "nodes": [
+    {
+      "id": "project:scribblescan",
+      "qname": "ScribbleScan",
+      "label": "ScribbleScan",
+      "displayName": "ScribbleScan",
+      "file": "Project",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0,
+      "y_fan": 0,
+      "height": 20.0,
+      "raw_height": 0.0,
+      "x_umap": 0,
+      "y_umap": 0,
+      "semantic_height": 20.0,
+      "importance": 1,
+      "novelty_importance": 0,
+      "purpose_similarity": 1,
+      "semantic_density": 0,
+      "is_orphan": false,
+      "description": "ScribbleScan, represented as the one true summit. Its connected execution branches begin immediately below it.",
+      "source_lines": 0,
+      "n_callees": 5,
+      "language": "project",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.routes.route_combined.process_and_digitize",
+      "qname": "app.api.routes.route_combined.process_and_digitize",
+      "label": "process_and_digitize",
+      "displayName": "process_and_digitize",
+      "file": "app/api/routes/route_combined.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": -1.2819658609869107,
+      "y_fan": -3.607106226824011,
+      "height": 17.822341009413023,
+      "raw_height": -17.078834020762184,
+      "x_umap": -1.2819658609869107,
+      "y_umap": -3.607106226824011,
+      "semantic_height": 17.822341009413023,
+      "importance": 0.6718605301885269,
+      "novelty_importance": 0.418843,
+      "purpose_similarity": 0.448688,
+      "semantic_density": 0.5811569999999999,
+      "is_orphan": false,
+      "description": "Project relevance 67%. Descends 17.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 2,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+          "cosine": 0.847882
+        },
+        {
+          "id": "py:fn:app.api.routes.route_digitize.digitize_images",
+          "cosine": 0.772892
+        }
+      ],
+      "drop_from_parent": 17.078834020762184
+    },
+    {
+      "id": "py:fn:app.api.routes.route_demo.demo_digitize",
+      "qname": "app.api.routes.route_demo.demo_digitize",
+      "label": "demo_digitize",
+      "displayName": "demo_digitize",
+      "file": "app/api/routes/route_demo.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": -3.796452625824521,
+      "y_fan": 7.326820976133967,
+      "height": 11.922785909876433,
+      "raw_height": -63.347566993580756,
+      "x_umap": -3.796452625824521,
+      "y_umap": 7.326820976133967,
+      "semantic_height": 11.922785909876433,
+      "importance": 0.3777420567137583,
+      "novelty_importance": 0.483602,
+      "purpose_similarity": 0.343168,
+      "semantic_density": 0.516398,
+      "is_orphan": false,
+      "description": "Project relevance 38%. Descends 31.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles",
+          "cosine": 0.778446
+        },
+        {
+          "id": "py:fn:app.api.routes.route_combined.process_and_digitize",
+          "cosine": 0.702488
+        },
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+          "cosine": 0.63472
+        }
+      ],
+      "drop_from_parent": 31.49063922102584
+    },
+    {
+      "id": "py:fn:app.api.routes.route_demo.get_demo_files",
+      "qname": "app.api.routes.route_demo.get_demo_files",
+      "label": "get_demo_files",
+      "displayName": "get_demo_files",
+      "file": "app/api/routes/route_demo.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 4.116543324634304,
+      "y_fan": 7.944567982998193,
+      "height": 7.575866799557938,
+      "raw_height": -97.43936479466697,
+      "x_umap": 4.116543324634304,
+      "y_umap": 7.944567982998193,
+      "semantic_height": 7.575866799557938,
+      "importance": 0.0,
+      "novelty_importance": 0.246085,
+      "purpose_similarity": 0.151109,
+      "semantic_density": 0.753915,
+      "is_orphan": false,
+      "description": "Project relevance 0%. Descends 50.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.get_available_demo_files",
+          "cosine": 0.713157
+        },
+        {
+          "id": "py:fn:app.api.routes.route_demo.demo_digitize",
+          "cosine": 0.623268
+        }
+      ],
+      "drop_from_parent": 50.0
+    },
+    {
+      "id": "py:fn:app.api.routes.route_digitize.digitize_images",
+      "qname": "app.api.routes.route_digitize.digitize_images",
+      "label": "digitize_images",
+      "displayName": "digitize_images",
+      "file": "app/api/routes/route_digitize.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": -3.9603397599902084,
+      "y_fan": 1.1096351617833313,
+      "height": 16.043489032738325,
+      "raw_height": -31.02992452136571,
+      "x_umap": -3.9603397599902084,
+      "y_umap": 1.1096351617833313,
+      "semantic_height": 16.043489032738325,
+      "importance": 0.3871443975231488,
+      "novelty_importance": 0.527755,
+      "purpose_similarity": 0.343443,
+      "semantic_density": 0.472245,
+      "is_orphan": false,
+      "description": "Project relevance 39%. Descends 31.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.routes.route_combined.process_and_digitize",
+          "cosine": 0.772892
+        }
+      ],
+      "drop_from_parent": 31.02992452136571
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.BaseAIHandler.__init__",
+      "qname": "app.api.services.ai_handler.BaseAIHandler.__init__",
+      "label": "__init__",
+      "displayName": "__init__",
+      "file": "app/api/services/ai_handler/BaseAIHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 27.74408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": -3.2,
+      "y_umap": 27.74408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.11709432429236585,
+      "novelty_importance": 0.151777,
+      "purpose_similarity": 0.245071,
+      "semantic_density": 0.848223,
+      "is_orphan": true,
+      "description": "Project relevance 12%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.BaseAIHandler._call_ai",
+      "qname": "app.api.services.ai_handler.BaseAIHandler._call_ai",
+      "label": "_call_ai",
+      "displayName": "_call_ai",
+      "file": "app/api/services/ai_handler/BaseAIHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 27.74408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": -1.6,
+      "y_umap": 27.74408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.2167865325604783,
+      "novelty_importance": 0.484345,
+      "purpose_similarity": 0.273352,
+      "semantic_density": 0.515655,
+      "is_orphan": true,
+      "description": "Project relevance 22%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.BaseAIHandler._create_message",
+      "qname": "app.api.services.ai_handler.BaseAIHandler._create_message",
+      "label": "_create_message",
+      "displayName": "_create_message",
+      "file": "app/api/services/ai_handler/BaseAIHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 27.74408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 0.0,
+      "y_umap": 27.74408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.20385787491409574,
+      "novelty_importance": 0.035192,
+      "purpose_similarity": 0.302474,
+      "semantic_density": 0.964808,
+      "is_orphan": true,
+      "description": "Project relevance 20%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.ClaudeHandler._create_message",
+          "cosine": 0.89428
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.BaseAIHandler._encode_image",
+      "qname": "app.api.services.ai_handler.BaseAIHandler._encode_image",
+      "label": "_encode_image",
+      "displayName": "_encode_image",
+      "file": "app/api/services/ai_handler/BaseAIHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 27.74408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 1.6,
+      "y_umap": 27.74408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.050459580237171744,
+      "novelty_importance": 0.176752,
+      "purpose_similarity": 0.198863,
+      "semantic_density": 0.823248,
+      "is_orphan": true,
+      "description": "Project relevance 5%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.BaseAIHandler._read_prompt_file",
+      "qname": "app.api.services.ai_handler.BaseAIHandler._read_prompt_file",
+      "label": "_read_prompt_file",
+      "displayName": "_read_prompt_file",
+      "file": "app/api/services/ai_handler/BaseAIHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 27.74408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 3.2,
+      "y_umap": 27.74408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.18257821527625742,
+      "novelty_importance": 0.199819,
+      "purpose_similarity": 0.277899,
+      "semantic_density": 0.800181,
+      "is_orphan": true,
+      "description": "Project relevance 18%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.BaseAIHandler.format",
+      "qname": "app.api.services.ai_handler.BaseAIHandler.format",
+      "label": "format",
+      "displayName": "format",
+      "file": "app/api/services/ai_handler/BaseAIHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 29.34408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": -3.2,
+      "y_umap": 29.34408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.2712618056100282,
+      "novelty_importance": 0.115708,
+      "purpose_similarity": 0.327987,
+      "semantic_density": 0.884292,
+      "is_orphan": true,
+      "description": "Project relevance 27%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.BaseAIHandler.translate",
+      "qname": "app.api.services.ai_handler.BaseAIHandler.translate",
+      "label": "translate",
+      "displayName": "translate",
+      "file": "app/api/services/ai_handler/BaseAIHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 29.34408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": -1.6,
+      "y_umap": 29.34408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.2879848831995354,
+      "novelty_importance": 0.121398,
+      "purpose_similarity": 0.335034,
+      "semantic_density": 0.878602,
+      "is_orphan": true,
+      "description": "Project relevance 29%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.ClaudeHandler._create_message",
+      "qname": "app.api.services.ai_handler.ClaudeHandler._create_message",
+      "label": "_create_message",
+      "displayName": "_create_message",
+      "file": "app/api/services/ai_handler/ClaudeHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 29.34408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 0.0,
+      "y_umap": 29.34408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.1317744327980247,
+      "novelty_importance": 0.0,
+      "purpose_similarity": 0.266388,
+      "semantic_density": 1.0,
+      "is_orphan": true,
+      "description": "Project relevance 13%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.MistralHandler._create_message",
+          "cosine": 0.969036
+        },
+        {
+          "id": "py:fn:app.api.services.ai_handler.GPTHandler._create_message",
+          "cosine": 0.944504
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.GPTHandler._create_message",
+      "qname": "app.api.services.ai_handler.GPTHandler._create_message",
+      "label": "_create_message",
+      "displayName": "_create_message",
+      "file": "app/api/services/ai_handler/GPTHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 29.34408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 1.6,
+      "y_umap": 29.34408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.09781548652518471,
+      "novelty_importance": 0.03573,
+      "purpose_similarity": 0.242783,
+      "semantic_density": 0.96427,
+      "is_orphan": true,
+      "description": "Project relevance 10%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.MistralHandler._create_message",
+          "cosine": 0.955029
+        },
+        {
+          "id": "py:fn:app.api.services.ai_handler.ClaudeHandler._create_message",
+          "cosine": 0.944504
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.MessageFormat.claude_image_message",
+      "qname": "app.api.services.ai_handler.MessageFormat.claude_image_message",
+      "label": "claude_image_message",
+      "displayName": "claude_image_message",
+      "file": "app/api/services/ai_handler/MessageFormat.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 29.34408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 3.2,
+      "y_umap": 29.34408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.1773812297386053,
+      "novelty_importance": 0.027783,
+      "purpose_similarity": 0.289368,
+      "semantic_density": 0.972217,
+      "is_orphan": true,
+      "description": "Project relevance 18%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.MessageFormat.mistral_image_message",
+          "cosine": 0.966528
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.MessageFormat.gpt_image_message",
+      "qname": "app.api.services.ai_handler.MessageFormat.gpt_image_message",
+      "label": "gpt_image_message",
+      "displayName": "gpt_image_message",
+      "file": "app/api/services/ai_handler/MessageFormat.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 30.94408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": -3.2,
+      "y_umap": 30.94408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.18164512280644243,
+      "novelty_importance": 0.022755,
+      "purpose_similarity": 0.292053,
+      "semantic_density": 0.977245,
+      "is_orphan": true,
+      "description": "Project relevance 18%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.MessageFormat.mistral_image_message",
+          "cosine": 0.951196
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.MessageFormat.mistral_image_message",
+      "qname": "app.api.services.ai_handler.MessageFormat.mistral_image_message",
+      "label": "mistral_image_message",
+      "displayName": "mistral_image_message",
+      "file": "app/api/services/ai_handler/MessageFormat.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 30.94408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": -1.6,
+      "y_umap": 30.94408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.1726946937829348,
+      "novelty_importance": 0.002308,
+      "purpose_similarity": 0.289043,
+      "semantic_density": 0.997692,
+      "is_orphan": true,
+      "description": "Project relevance 17%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.MessageFormat.claude_image_message",
+          "cosine": 0.966528
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.ai_handler.MistralHandler._create_message",
+      "qname": "app.api.services.ai_handler.MistralHandler._create_message",
+      "label": "_create_message",
+      "displayName": "_create_message",
+      "file": "app/api/services/ai_handler/MistralHandler.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 30.94408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 0.0,
+      "y_umap": 30.94408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.1180976621174994,
+      "novelty_importance": 0.006193,
+      "purpose_similarity": 0.257772,
+      "semantic_density": 0.993807,
+      "is_orphan": true,
+      "description": "Project relevance 12%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.ClaudeHandler._create_message",
+          "cosine": 0.969036
+        },
+        {
+          "id": "py:fn:app.api.services.ai_handler.GPTHandler._create_message",
+          "cosine": 0.955029
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.demo_service.DemoService.__init__",
+      "qname": "app.api.services.demo_service.DemoService.__init__",
+      "label": "__init__",
+      "displayName": "__init__",
+      "file": "app/api/services/demo_service/DemoService.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 1.6,
+      "y_fan": 30.94408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 1.6,
+      "y_umap": 30.94408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.22687961936383463,
+      "novelty_importance": 0.595983,
+      "purpose_similarity": 0.270156,
+      "semantic_density": 0.40401699999999996,
+      "is_orphan": true,
+      "description": "Project relevance 23%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "ts:fn:static.js.uploads.demo.DemoHandler.init",
+          "cosine": 0.595227
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.demo_service.DemoService.get_available_demo_files",
+      "qname": "app.api.services.demo_service.DemoService.get_available_demo_files",
+      "label": "get_available_demo_files",
+      "displayName": "get_available_demo_files",
+      "file": "app/api/services/demo_service/DemoService.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": 6.127967637458916,
+      "y_fan": 11.826440694081619,
+      "height": 2.0,
+      "raw_height": -141.16949150558042,
+      "x_umap": 6.127967637458916,
+      "y_umap": 11.826440694081619,
+      "semantic_height": 2.0,
+      "importance": 0.12795659773646048,
+      "novelty_importance": 0.271066,
+      "purpose_similarity": 0.242025,
+      "semantic_density": 0.728934,
+      "is_orphan": false,
+      "description": "Project relevance 13%. Descends 43.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.routes.route_demo.get_demo_files",
+          "cosine": 0.713157
+        },
+        {
+          "id": "ts:fn:static.js.uploads.demo.DemoHandler.init",
+          "cosine": 0.642609
+        }
+      ],
+      "drop_from_parent": 43.73012671091344
+    },
+    {
+      "id": "py:fn:app.api.services.demo_service.DemoService.get_demo_results",
+      "qname": "app.api.services.demo_service.DemoService.get_demo_results",
+      "label": "get_demo_results",
+      "displayName": "get_demo_results",
+      "file": "app/api/services/demo_service/DemoService.py",
+      "class": null,
+      "depth": 0,
+      "x_fan": 3.2,
+      "y_fan": 30.94408914603892,
+      "height": 2.1,
+      "raw_height": -141.16949150558042,
+      "x_umap": 3.2,
+      "y_umap": 30.94408914603892,
+      "semantic_height": 2.1,
+      "importance": 0.04637598358131896,
+      "novelty_importance": 0.330014,
+      "purpose_similarity": 0.183236,
+      "semantic_density": 0.669986,
+      "is_orphan": true,
+      "description": "Project relevance 5%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.get_available_demo_files",
+          "cosine": 0.581733
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+      "qname": "app.api.services.demo_service.DemoService.process_demo_files",
+      "label": "process_demo_files",
+      "displayName": "process_demo_files",
+      "file": "app/api/services/demo_service/DemoService.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -5.616140846068905,
+      "y_fan": 10.838659825753448,
+      "height": 8.950747612908234,
+      "raw_height": -86.65651894458696,
+      "x_umap": -5.616140846068905,
+      "y_umap": 10.838659825753448,
+      "semantic_height": 8.950747612908234,
+      "importance": 0.5447152663059958,
+      "novelty_importance": 0.533414,
+      "purpose_similarity": 0.398966,
+      "semantic_density": 0.46658599999999995,
+      "is_orphan": false,
+      "description": "Project relevance 54%. Descends 23.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files.process_individual_file",
+          "cosine": 0.901635
+        },
+        {
+          "id": "ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles",
+          "cosine": 0.689978
+        },
+        {
+          "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file",
+          "cosine": 0.686181
+        }
+      ],
+      "drop_from_parent": 23.308951951006208
+    },
+    {
+      "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files.process_individual_file",
+      "qname": "app.api.services.demo_service.DemoService.process_demo_files.process_individual_file",
+      "label": "process_individual_file",
+      "displayName": "process_individual_file",
+      "file": "app/api/services/demo_service/DemoService/process_demo_files.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": -7.450349827155009,
+      "y_fan": 14.378522471692902,
+      "height": 5.781513417921314,
+      "raw_height": -111.51202893172035,
+      "x_umap": -7.450349827155009,
+      "y_umap": 14.378522471692902,
+      "semantic_height": 5.781513417921314,
+      "importance": 0.5131528574054409,
+      "novelty_importance": 0.392328,
+      "purpose_similarity": 0.399815,
+      "semantic_density": 0.607672,
+      "is_orphan": false,
+      "description": "Project relevance 51%. Descends 24.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+          "cosine": 0.901635
+        },
+        {
+          "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file",
+          "cosine": 0.784926
+        },
+        {
+          "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+          "cosine": 0.677775
+        }
+      ],
+      "drop_from_parent": 24.855509987133395
+    },
+    {
+      "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+      "qname": "app.api.services.digitize_helper.process_and_digitize_files",
+      "label": "process_and_digitize_files",
+      "displayName": "process_and_digitize_files",
+      "file": "app/api/services/digitize_helper.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": -3.711029396579992,
+      "y_fan": -6.872127789764992,
+      "height": 14.683550426116222,
+      "raw_height": -41.695582386679604,
+      "x_umap": -3.711029396579992,
+      "y_umap": -6.872127789764992,
+      "semantic_height": 14.683550426116222,
+      "importance": 0.5180255435527057,
+      "novelty_importance": 0.361654,
+      "purpose_similarity": 0.404051,
+      "semantic_density": 0.6383460000000001,
+      "is_orphan": false,
+      "description": "Project relevance 52%. Descends 24.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.routes.route_combined.process_and_digitize",
+          "cosine": 0.847882
+        },
+        {
+          "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file",
+          "cosine": 0.740343
+        }
+      ],
+      "drop_from_parent": 24.61674836591742
+    },
+    {
+      "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file",
+      "qname": "app.api.services.digitize_helper.process_and_digitize_files.process_file",
+      "label": "process_file",
+      "displayName": "process_file",
+      "file": "app/api/services/digitize_helper/process_and_digitize_files.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": -5.602986831989943,
+      "y_fan": -10.375676772943459,
+      "height": 11.546142313412746,
+      "raw_height": -66.30148838200361,
+      "x_umap": -5.602986831989943,
+      "y_umap": -10.375676772943459,
+      "semantic_height": 11.546142313412746,
+      "importance": 0.5182468164219591,
+      "novelty_importance": 0.286051,
+      "purpose_similarity": 0.410585,
+      "semantic_density": 0.713949,
+      "is_orphan": false,
+      "description": "Project relevance 52%. Descends 24.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files.process_individual_file",
+          "cosine": 0.784926
+        },
+        {
+          "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+          "cosine": 0.740343
+        },
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+          "cosine": 0.686181
+        }
+      ],
+      "drop_from_parent": 24.605905995324
+    },
+    {
+      "id": "py:fn:app.api.services.digitize_helper.save_anonymous_documents_and_stats",
+      "qname": "app.api.services.digitize_helper.save_anonymous_documents_and_stats",
+      "label": "save_anonymous_documents_and_stats",
+      "displayName": "save_anonymous_documents_and_stats",
+      "file": "app/api/services/digitize_helper.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": -8.236198624335294,
+      "y_fan": 2.3076746306777833,
+      "height": 10.039758556534105,
+      "raw_height": -78.1156788803827,
+      "x_umap": -8.236198624335294,
+      "y_umap": 2.3076746306777833,
+      "semantic_height": 10.039758556534105,
+      "importance": 0.059474400836388025,
+      "novelty_importance": 0.39121,
+      "purpose_similarity": 0.188108,
+      "semantic_density": 0.6087899999999999,
+      "is_orphan": false,
+      "description": "Project relevance 6%. Descends 47.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.digitize_helper.save_digitized_documents_and_update_stats",
+          "cosine": 0.840708
+        }
+      ],
+      "drop_from_parent": 47.08575435901699
+    },
+    {
+      "id": "py:fn:app.api.services.digitize_helper.save_digitized_documents_and_update_stats",
+      "qname": "app.api.services.digitize_helper.save_digitized_documents_and_update_stats",
+      "label": "save_digitized_documents_and_update_stats",
+      "displayName": "save_digitized_documents_and_update_stats",
+      "file": "app/api/services/digitize_helper.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 5.488535206748771,
+      "y_fan": -6.081700247069359,
+      "height": 12.296747862701359,
+      "raw_height": -60.41467706454026,
+      "x_umap": 5.488535206748771,
+      "y_umap": -6.081700247069359,
+      "semantic_height": 12.296747862701359,
+      "importance": 0.13600320318820253,
+      "novelty_importance": 0.373433,
+      "purpose_similarity": 0.23882,
+      "semantic_density": 0.626567,
+      "is_orphan": false,
+      "description": "Project relevance 14%. Descends 43.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.digitize_helper.save_anonymous_documents_and_stats",
+          "cosine": 0.840708
+        },
+        {
+          "id": "py:fn:app.api.routes.route_digitize.digitize_images",
+          "cosine": 0.632458
+        }
+      ],
+      "drop_from_parent": 43.33584304377808
+    },
+    {
+      "id": "py:fn:app.api.services.image_processor.clean_formatted_text",
+      "qname": "app.api.services.image_processor.clean_formatted_text",
+      "label": "clean_formatted_text",
+      "displayName": "clean_formatted_text",
+      "file": "app/api/services/image_processor.py",
+      "class": null,
+      "depth": 5,
+      "x_fan": -18.988689058184857,
+      "y_fan": -5.233069427696408,
+      "height": 5.638646330255371,
+      "raw_height": -112.6324997160917,
+      "x_umap": -18.988689058184857,
+      "y_umap": -5.233069427696408,
+      "semantic_height": 5.638646330255371,
+      "importance": 0.09528548297779427,
+      "novelty_importance": 0.537761,
+      "purpose_similarity": 0.201578,
+      "semantic_density": 0.46223899999999996,
+      "is_orphan": false,
+      "description": "Project relevance 10%. Descends 45.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.ai_handler.BaseAIHandler.format",
+          "cosine": 0.444097
+        }
+      ],
+      "drop_from_parent": 45.33101133408808
+    },
+    {
+      "id": "py:fn:app.api.services.image_processor.process_single_image",
+      "qname": "app.api.services.image_processor.process_single_image",
+      "label": "process_single_image",
+      "displayName": "process_single_image",
+      "file": "app/api/services/image_processor.py",
+      "class": null,
+      "depth": 4,
+      "x_fan": -7.266035925852755,
+      "y_fan": -13.455330602743503,
+      "height": 11.418636010117119,
+      "raw_height": -67.30148838200361,
+      "x_umap": -7.266035925852755,
+      "y_umap": -13.455330602743503,
+      "semantic_height": 11.418636010117119,
+      "importance": 1.0,
+      "novelty_importance": 0.701963,
+      "purpose_similarity": 0.513265,
+      "semantic_density": 0.298037,
+      "is_orphan": false,
+      "description": "Project relevance 100%. Descends 1.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 3,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes",
+          "cosine": 0.669178
+        }
+      ],
+      "drop_from_parent": 1.0
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils._parse_gemini_json_output_for_bboxes",
+      "qname": "app.api.services.image_utils._parse_gemini_json_output_for_bboxes",
+      "label": "_parse_gemini_json_output_for_bboxes",
+      "displayName": "_parse_gemini_json_output_for_bboxes",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 6,
+      "x_fan": -11.28216741111938,
+      "y_fan": -20.892450021060696,
+      "height": 2.090417696897443,
+      "raw_height": -140.46036815590722,
+      "x_umap": -11.28216741111938,
+      "y_umap": -20.892450021060696,
+      "semantic_height": 2.090417696897443,
+      "importance": 0.21054054971673555,
+      "novelty_importance": 0.704461,
+      "purpose_similarity": 0.25461,
+      "semantic_density": 0.295539,
+      "is_orphan": false,
+      "description": "Project relevance 21%. Descends 39.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes",
+          "cosine": 0.637121
+        }
+      ],
+      "drop_from_parent": 39.68351306387996
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+      "qname": "app.api.services.image_utils.convert_coords_to_actual_dimensions",
+      "label": "convert_coords_to_actual_dimensions",
+      "displayName": "convert_coords_to_actual_dimensions",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 7.931468948296879,
+      "y_fan": -2.8188447414111697,
+      "height": 10.888800311295975,
+      "raw_height": -71.45685705889721,
+      "x_umap": 7.931468948296879,
+      "y_umap": -2.8188447414111697,
+      "semantic_height": 10.888800311295975,
+      "importance": 0.0663174692003386,
+      "novelty_importance": 0.562111,
+      "purpose_similarity": 0.179828,
+      "semantic_density": 0.437889,
+      "is_orphan": false,
+      "description": "Project relevance 7%. Descends 46.8 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+          "cosine": 0.642039
+        },
+        {
+          "id": "py:fn:app.api.services.image_utils.crop_and_encode_image",
+          "cosine": 0.577675
+        }
+      ],
+      "drop_from_parent": 46.75044400918341
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.crop_and_encode_image",
+      "qname": "app.api.services.image_utils.crop_and_encode_image",
+      "label": "crop_and_encode_image",
+      "displayName": "crop_and_encode_image",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 8.244754054329363,
+      "y_fan": 1.4215392014101795,
+      "height": 11.207946207896548,
+      "raw_height": -68.95387572894191,
+      "x_umap": 8.244754054329363,
+      "y_umap": 1.4215392014101795,
+      "semantic_height": 11.207946207896548,
+      "importance": 0.11739872083207963,
+      "novelty_importance": 0.471358,
+      "purpose_similarity": 0.220436,
+      "semantic_density": 0.5286420000000001,
+      "is_orphan": false,
+      "description": "Project relevance 12%. Descends 44.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+          "cosine": 0.626267
+        },
+        {
+          "id": "py:fn:app.api.services.ai_handler.BaseAIHandler._encode_image",
+          "cosine": 0.608464
+        }
+      ],
+      "drop_from_parent": 44.2474626792281
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.ensure_pil_image",
+      "qname": "app.api.services.image_utils.ensure_pil_image",
+      "label": "ensure_pil_image",
+      "displayName": "ensure_pil_image",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 3,
+      "x_fan": 12.093803197620218,
+      "y_fan": -4.298138688999544,
+      "height": 5.029614816016418,
+      "raw_height": -117.40898133697985,
+      "x_umap": 12.093803197620218,
+      "y_umap": -4.298138688999544,
+      "semantic_height": 5.029614816016418,
+      "importance": 0.08260970861055858,
+      "novelty_importance": 0.696864,
+      "purpose_similarity": 0.181324,
+      "semantic_density": 0.30313599999999996,
+      "is_orphan": false,
+      "description": "Project relevance 8%. Descends 46.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 45.95212427808263
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.extract_coordinates",
+      "qname": "app.api.services.image_utils.extract_coordinates",
+      "label": "extract_coordinates",
+      "displayName": "extract_coordinates",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 2,
+      "x_fan": 7.1474609421169895,
+      "y_fan": 4.018816678104876,
+      "height": 12.248727124896066,
+      "raw_height": -60.79129168330116,
+      "x_umap": 7.1474609421169895,
+      "y_umap": 4.018816678104876,
+      "semantic_height": 12.248727124896066,
+      "importance": 0.283982068702299,
+      "novelty_importance": 0.666732,
+      "purpose_similarity": 0.291225,
+      "semantic_density": 0.333268,
+      "is_orphan": false,
+      "description": "Project relevance 28%. Descends 36.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+          "cosine": 0.5637
+        },
+        {
+          "id": "py:fn:app.api.services.image_utils._parse_gemini_json_output_for_bboxes",
+          "cosine": 0.514672
+        },
+        {
+          "id": "py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+          "cosine": 0.505801
+        }
+      ],
+      "drop_from_parent": 36.08487863358735
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes",
+      "qname": "app.api.services.image_utils.gemini_detect_bounding_boxes",
+      "label": "gemini_detect_bounding_boxes",
+      "displayName": "gemini_detect_bounding_boxes",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 5,
+      "x_fan": -9.244001224846564,
+      "y_fan": -17.118149957107313,
+      "height": 7.150315749456504,
+      "raw_height": -100.77685509202726,
+      "x_umap": -9.244001224846564,
+      "y_umap": -17.118149957107313,
+      "semantic_height": 7.150315749456504,
+      "importance": 0.33723741408114977,
+      "novelty_importance": 0.575562,
+      "purpose_similarity": 0.320168,
+      "semantic_density": 0.424438,
+      "is_orphan": false,
+      "description": "Project relevance 34%. Descends 33.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_processor.process_single_image",
+          "cosine": 0.669178
+        }
+      ],
+      "drop_from_parent": 33.47536671002366
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+      "qname": "app.api.services.image_utils.replace_coords_with_images",
+      "label": "replace_coords_with_images",
+      "displayName": "replace_coords_with_images",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 1,
+      "x_fan": 3.983804347953343,
+      "y_fan": 9.75750648630074e-16,
+      "height": 16.84977660433615,
+      "raw_height": -24.70641304971381,
+      "x_umap": 3.983804347953343,
+      "y_umap": 9.75750648630074e-16,
+      "semantic_height": 16.84977660433615,
+      "importance": 0.516195652046657,
+      "novelty_importance": 0.486337,
+      "purpose_similarity": 0.39318,
+      "semantic_density": 0.513663,
+      "is_orphan": false,
+      "description": "Project relevance 52%. Descends 24.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 3,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_utils.replace_placeholders_with_images",
+          "cosine": 0.864079
+        },
+        {
+          "id": "py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+          "cosine": 0.642039
+        },
+        {
+          "id": "py:fn:app.api.services.image_utils.crop_and_encode_image",
+          "cosine": 0.626267
+        }
+      ],
+      "drop_from_parent": 24.70641304971381
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_placeholders_with_images",
+      "qname": "app.api.services.image_utils.replace_placeholders_with_images",
+      "label": "replace_placeholders_with_images",
+      "displayName": "replace_placeholders_with_images",
+      "file": "app/api/services/image_utils.py",
+      "class": null,
+      "depth": 5,
+      "x_fan": 5.8966413003273725,
+      "y_fan": -18.307400511442232,
+      "height": 8.5312795229847,
+      "raw_height": -89.94630210888265,
+      "x_umap": 5.8966413003273725,
+      "y_umap": -18.307400511442232,
+      "semantic_height": 8.5312795229847,
+      "importance": 0.5582691076147136,
+      "novelty_importance": 0.673413,
+      "purpose_similarity": 0.392492,
+      "semantic_density": 0.32658699999999996,
+      "is_orphan": false,
+      "description": "Project relevance 56%. Descends 22.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "python",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+          "cosine": 0.864079
+        },
+        {
+          "id": "py:fn:app.api.services.image_processor.process_single_image",
+          "cosine": 0.545223
+        },
+        {
+          "id": "py:fn:app.api.services.image_utils.crop_and_encode_image",
+          "cosine": 0.537248
+        }
+      ],
+      "drop_from_parent": 22.644813726879033
+    },
+    {
+      "id": "ts:fn:static.js.uploads.demo.DemoHandler.init",
+      "qname": "static.js.uploads.demo.DemoHandler.init",
+      "label": "init",
+      "displayName": "init",
+      "file": "static/js/uploads/demo/DemoHandler.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": 2.046250654844119,
+      "y_fan": 3.9490845001875057,
+      "height": 13.951181964339296,
+      "raw_height": -47.43936479466697,
+      "x_umap": 2.046250654844119,
+      "y_umap": 3.9490845001875057,
+      "semantic_height": 13.951181964339296,
+      "importance": 0.052257861333327084,
+      "novelty_importance": 0.536241,
+      "purpose_similarity": 0.171324,
+      "semantic_density": 0.46375900000000003,
+      "is_orphan": false,
+      "description": "Project relevance 5%. Descends 47.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.get_available_demo_files",
+          "cosine": 0.642609
+        }
+      ],
+      "drop_from_parent": 47.43936479466697
+    },
+    {
+      "id": "ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles",
+      "qname": "static.js.uploads.demo.DemoHandler.processDemoFiles",
+      "label": "processDemoFiles",
+      "displayName": "processDemoFiles",
+      "file": "static/js/uploads/demo/DemoHandler.js",
+      "class": null,
+      "depth": 1,
+      "x_fan": -1.8999458696089924,
+      "y_fan": 3.6667290818483376,
+      "height": 15.938040905365725,
+      "raw_height": -31.85692777255491,
+      "x_umap": -1.8999458696089924,
+      "y_umap": 3.6667290818483376,
+      "semantic_height": 15.938040905365725,
+      "importance": 0.37026678015194064,
+      "novelty_importance": 0.420021,
+      "purpose_similarity": 0.345158,
+      "semantic_density": 0.579979,
+      "is_orphan": false,
+      "description": "Project relevance 37%. Descends 31.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "javascript",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "py:fn:app.api.routes.route_demo.demo_digitize",
+          "cosine": 0.778446
+        },
+        {
+          "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+          "cosine": 0.689978
+        },
+        {
+          "id": "py:fn:app.api.routes.route_combined.process_and_digitize",
+          "cosine": 0.646242
+        }
+      ],
+      "drop_from_parent": 31.85692777255491
+    }
+  ],
+  "edges": [
+    {
+      "id": "project:scribblescan->py:fn:app.api.routes.route_combined.process_and_digitize",
+      "from": "project:scribblescan",
+      "to": "py:fn:app.api.routes.route_combined.process_and_digitize",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:scribblescan->py:fn:app.api.routes.route_digitize.digitize_images",
+      "from": "project:scribblescan",
+      "to": "py:fn:app.api.routes.route_digitize.digitize_images",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:scribblescan->py:fn:app.api.services.image_utils.replace_coords_with_images",
+      "from": "project:scribblescan",
+      "to": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:scribblescan->ts:fn:static.js.uploads.demo.DemoHandler.init",
+      "from": "project:scribblescan",
+      "to": "ts:fn:static.js.uploads.demo.DemoHandler.init",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:scribblescan->ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles",
+      "from": "project:scribblescan",
+      "to": "ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.routes.route_combined.process_and_digitize->py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+      "from": "py:fn:app.api.routes.route_combined.process_and_digitize",
+      "to": "py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/routes/route_combined.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.routes.route_combined.process_and_digitize->py:fn:app.api.services.digitize_helper.save_digitized_documents_and_update_stats",
+      "from": "py:fn:app.api.routes.route_combined.process_and_digitize",
+      "to": "py:fn:app.api.services.digitize_helper.save_digitized_documents_and_update_stats",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/routes/route_combined.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.routes.route_demo.demo_digitize->py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+      "from": "py:fn:app.api.routes.route_demo.demo_digitize",
+      "to": "py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/routes/route_demo.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.routes.route_demo.get_demo_files->py:fn:app.api.services.demo_service.DemoService.get_available_demo_files",
+      "from": "py:fn:app.api.routes.route_demo.get_demo_files",
+      "to": "py:fn:app.api.services.demo_service.DemoService.get_available_demo_files",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/routes/route_demo.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.routes.route_digitize.digitize_images->py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+      "from": "py:fn:app.api.routes.route_digitize.digitize_images",
+      "to": "py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/routes/route_digitize.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.routes.route_digitize.digitize_images->py:fn:app.api.services.digitize_helper.save_anonymous_documents_and_stats",
+      "from": "py:fn:app.api.routes.route_digitize.digitize_images",
+      "to": "py:fn:app.api.services.digitize_helper.save_anonymous_documents_and_stats",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/routes/route_digitize.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.routes.route_digitize.digitize_images->py:fn:app.api.services.digitize_helper.save_digitized_documents_and_update_stats",
+      "from": "py:fn:app.api.routes.route_digitize.digitize_images",
+      "to": "py:fn:app.api.services.digitize_helper.save_digitized_documents_and_update_stats",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/routes/route_digitize.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.demo_service.DemoService.process_demo_files->py:fn:app.api.services.demo_service.DemoService.process_demo_files.process_individual_file",
+      "from": "py:fn:app.api.services.demo_service.DemoService.process_demo_files",
+      "to": "py:fn:app.api.services.demo_service.DemoService.process_demo_files.process_individual_file",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/demo_service/DemoService.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files->py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file",
+      "from": "py:fn:app.api.services.digitize_helper.process_and_digitize_files",
+      "to": "py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/digitize_helper.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file->py:fn:app.api.services.image_processor.process_single_image",
+      "from": "py:fn:app.api.services.digitize_helper.process_and_digitize_files.process_file",
+      "to": "py:fn:app.api.services.image_processor.process_single_image",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/digitize_helper/process_and_digitize_files.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_processor.process_single_image->py:fn:app.api.services.image_processor.clean_formatted_text",
+      "from": "py:fn:app.api.services.image_processor.process_single_image",
+      "to": "py:fn:app.api.services.image_processor.clean_formatted_text",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "3 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_processor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_processor.process_single_image->py:fn:app.api.services.image_utils.ensure_pil_image",
+      "from": "py:fn:app.api.services.image_processor.process_single_image",
+      "to": "py:fn:app.api.services.image_utils.ensure_pil_image",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_processor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_processor.process_single_image->py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes",
+      "from": "py:fn:app.api.services.image_processor.process_single_image",
+      "to": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_processor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_processor.process_single_image->py:fn:app.api.services.image_utils.replace_placeholders_with_images",
+      "from": "py:fn:app.api.services.image_processor.process_single_image",
+      "to": "py:fn:app.api.services.image_utils.replace_placeholders_with_images",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_processor.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions->py:fn:app.api.services.image_utils.ensure_pil_image",
+      "from": "py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+      "to": "py:fn:app.api.services.image_utils.ensure_pil_image",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.crop_and_encode_image->py:fn:app.api.services.image_utils.ensure_pil_image",
+      "from": "py:fn:app.api.services.image_utils.crop_and_encode_image",
+      "to": "py:fn:app.api.services.image_utils.ensure_pil_image",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes->py:fn:app.api.services.image_utils._parse_gemini_json_output_for_bboxes",
+      "from": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes",
+      "to": "py:fn:app.api.services.image_utils._parse_gemini_json_output_for_bboxes",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes->py:fn:app.api.services.image_utils.ensure_pil_image",
+      "from": "py:fn:app.api.services.image_utils.gemini_detect_bounding_boxes",
+      "to": "py:fn:app.api.services.image_utils.ensure_pil_image",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_coords_with_images->py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+      "from": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+      "to": "py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_coords_with_images->py:fn:app.api.services.image_utils.crop_and_encode_image",
+      "from": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+      "to": "py:fn:app.api.services.image_utils.crop_and_encode_image",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_coords_with_images->py:fn:app.api.services.image_utils.ensure_pil_image",
+      "from": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+      "to": "py:fn:app.api.services.image_utils.ensure_pil_image",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_coords_with_images->py:fn:app.api.services.image_utils.extract_coordinates",
+      "from": "py:fn:app.api.services.image_utils.replace_coords_with_images",
+      "to": "py:fn:app.api.services.image_utils.extract_coordinates",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_placeholders_with_images->py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+      "from": "py:fn:app.api.services.image_utils.replace_placeholders_with_images",
+      "to": "py:fn:app.api.services.image_utils.convert_coords_to_actual_dimensions",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_placeholders_with_images->py:fn:app.api.services.image_utils.crop_and_encode_image",
+      "from": "py:fn:app.api.services.image_utils.replace_placeholders_with_images",
+      "to": "py:fn:app.api.services.image_utils.crop_and_encode_image",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "py:fn:app.api.services.image_utils.replace_placeholders_with_images->py:fn:app.api.services.image_utils.ensure_pil_image",
+      "from": "py:fn:app.api.services.image_utils.replace_placeholders_with_images",
+      "to": "py:fn:app.api.services.image_utils.ensure_pil_image",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "app/api/services/image_utils.py",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:static.js.uploads.demo.DemoHandler.init->py:fn:app.api.routes.route_demo.get_demo_files",
+      "from": "ts:fn:static.js.uploads.demo.DemoHandler.init",
+      "to": "py:fn:app.api.routes.route_demo.get_demo_files",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "static/js/uploads/demo/DemoHandler.js",
+        "line": 1
+      }
+    },
+    {
+      "id": "ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles->py:fn:app.api.routes.route_demo.demo_digitize",
+      "from": "ts:fn:static.js.uploads.demo.DemoHandler.processDemoFiles",
+      "to": "py:fn:app.api.routes.route_demo.demo_digitize",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "static/js/uploads/demo/DemoHandler.js",
+        "line": 1
+      }
+    }
+  ],
+  "entries": [
+    "project:scribblescan"
+  ],
+  "prototype": {
+    "height_rule": "child = parent - drop(relevance)",
+    "branch_summits": 5,
+    "detached_foothills": 15,
+    "seam_gap_degrees": 54.78260869565222
+  }
+}

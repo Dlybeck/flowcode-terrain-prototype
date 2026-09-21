@@ -1,0 +1,3102 @@
+{
+  "root": "Red-black word index",
+  "n_nodes": 47,
+  "n_edges": 66,
+  "max_depth": 6,
+  "peaks": [
+    "project:redblack",
+    "java:fn:Assignment4.src.RedBlackTree.containsValue",
+    "java:fn:Assignment4.src.RedBlackTree.main",
+    "java:fn:Assignment4.src.RedBlackTree.reverseLookup",
+    "java:fn:Assignment4.src.WordFreqs2.main"
+  ],
+  "embedding_model": "precomputed deterministic code vectors",
+  "embedding_dim": 768,
+  "constrained_spines": true,
+  "nodes": [
+    {
+      "id": "project:redblack",
+      "qname": "Red-black word index",
+      "label": "Red-black word index",
+      "displayName": "Red-black word index",
+      "file": "Project",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0,
+      "y_fan": 0,
+      "height": 20.0,
+      "raw_height": 0.0,
+      "x_umap": 0,
+      "y_umap": 0,
+      "semantic_height": 20.0,
+      "importance": 1,
+      "novelty_importance": 0,
+      "purpose_similarity": 1,
+      "semantic_density": 0,
+      "is_orphan": false,
+      "description": "Red-black word index, represented as the one true summit. Its connected execution branches begin immediately below it.",
+      "source_lines": 0,
+      "n_callees": 4,
+      "language": "project",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.Node.Node",
+      "qname": "Assignment4.src.RedBlackTree.Node.Node",
+      "label": "Node",
+      "displayName": "Node",
+      "file": "Assignment4/src/RedBlackTree/Node.java",
+      "class": null,
+      "depth": 0,
+      "x_fan": -3.2,
+      "y_fan": 27.877327266746367,
+      "height": 2.1,
+      "raw_height": -159.13289785629047,
+      "x_umap": -3.2,
+      "y_umap": 27.877327266746367,
+      "semantic_height": 2.1,
+      "importance": 0.7397389479780232,
+      "novelty_importance": 0.169978,
+      "purpose_similarity": 0.606259,
+      "semantic_density": 0.830022,
+      "is_orphan": true,
+      "description": "Project relevance 74%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.put",
+          "cosine": 0.742009
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.RedBlackTree",
+          "cosine": 0.664687
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.629857
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.RedBlackTree",
+      "qname": "Assignment4.src.RedBlackTree.RedBlackTree",
+      "label": "RedBlackTree",
+      "displayName": "RedBlackTree",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 0,
+      "x_fan": -1.6,
+      "y_fan": 27.877327266746367,
+      "height": 2.1,
+      "raw_height": -159.13289785629047,
+      "x_umap": -1.6,
+      "y_umap": 27.877327266746367,
+      "semantic_height": 2.1,
+      "importance": 1.0,
+      "novelty_importance": 0.077124,
+      "purpose_similarity": 0.705963,
+      "semantic_density": 0.922876,
+      "is_orphan": true,
+      "description": "Project relevance 100%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.Node.Node",
+          "cosine": 0.664687
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.596946
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.fix",
+          "cosine": 0.587507
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth",
+      "qname": "Assignment4.src.RedBlackTree.calcAverageDepth",
+      "label": "calcAverageDepth",
+      "displayName": "calcAverageDepth",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 9.217021371377026,
+      "y_fan": -8.6058020996363,
+      "height": 7.965641059107032,
+      "raw_height": -106.39235622816982,
+      "x_umap": 9.217021371377026,
+      "y_umap": -8.6058020996363,
+      "semantic_height": 7.965641059107032,
+      "importance": 0.30470440824695294,
+      "novelty_importance": 0.134818,
+      "purpose_similarity": 0.444153,
+      "semantic_density": 0.865182,
+      "is_orphan": false,
+      "description": "Project relevance 30%. Descends 35.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth$overload_2",
+          "cosine": 0.741345
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight",
+          "cosine": 0.623514
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.618726
+        }
+      ],
+      "drop_from_parent": 35.069483995899304
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.calcAverageDepth$overload_2",
+      "label": "calcAverageDepth$overload_2",
+      "displayName": "calcAverageDepth$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 4,
+      "x_fan": 12.271579256359718,
+      "y_fan": -11.457799464172888,
+      "height": 4.089031369101953,
+      "raw_height": -140.66436366307448,
+      "x_umap": 12.271579256359718,
+      "y_umap": -11.457799464172888,
+      "semantic_height": 4.089031369101953,
+      "importance": 0.32097944010398644,
+      "novelty_importance": 0.334783,
+      "purpose_similarity": 0.445465,
+      "semantic_density": 0.665217,
+      "is_orphan": false,
+      "description": "Project relevance 32%. Descends 34.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth",
+          "cosine": 0.741345
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight$overload_2",
+          "cosine": 0.473017
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.456436
+        }
+      ],
+      "drop_from_parent": 34.272007434904666
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight",
+      "qname": "Assignment4.src.RedBlackTree.calcBlackHeight",
+      "label": "calcBlackHeight",
+      "displayName": "calcBlackHeight",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 12.492282944714237,
+      "y_fan": -1.6231094188405069,
+      "height": 8.03637478273717,
+      "raw_height": -105.76701942720149,
+      "x_umap": 12.492282944714237,
+      "y_umap": -1.6231094188405069,
+      "semantic_height": 8.03637478273717,
+      "importance": 0.3174663837769188,
+      "novelty_importance": 0.096301,
+      "purpose_similarity": 0.449855,
+      "semantic_density": 0.903699,
+      "is_orphan": false,
+      "description": "Project relevance 32%. Descends 34.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight",
+          "cosine": 0.853906
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight$overload_2",
+          "cosine": 0.773638
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight$overload_2",
+          "cosine": 0.611174
+        }
+      ],
+      "drop_from_parent": 34.44414719493098
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.calcBlackHeight$overload_2",
+      "label": "calcBlackHeight$overload_2",
+      "displayName": "calcBlackHeight$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 4,
+      "x_fan": 16.490819537516714,
+      "y_fan": -2.1426351479709234,
+      "height": 4.973822454100066,
+      "raw_height": -132.84217647678776,
+      "x_umap": 16.490819537516714,
+      "y_umap": -2.1426351479709234,
+      "semantic_height": 4.973822454100066,
+      "importance": 0.4678539377635457,
+      "novelty_importance": 0.271067,
+      "purpose_similarity": 0.502003,
+      "semantic_density": 0.728933,
+      "is_orphan": false,
+      "description": "Project relevance 47%. Descends 27.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight",
+          "cosine": 0.773638
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight$overload_2",
+          "cosine": 0.742417
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+          "cosine": 0.568166
+        }
+      ],
+      "drop_from_parent": 27.075157049586256
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight",
+      "qname": "Assignment4.src.RedBlackTree.calcHeight",
+      "label": "calcHeight",
+      "displayName": "calcHeight",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 11.544682185428893,
+      "y_fan": -5.437286335927225,
+      "height": 7.128843643445551,
+      "raw_height": -113.79024498777349,
+      "x_umap": 11.544682185428893,
+      "y_umap": -5.437286335927225,
+      "semantic_height": 7.128843643445551,
+      "importance": 0.15372708662238796,
+      "novelty_importance": 0.102951,
+      "purpose_similarity": 0.388365,
+      "semantic_density": 0.897049,
+      "is_orphan": false,
+      "description": "Project relevance 15%. Descends 42.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight",
+          "cosine": 0.853906
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.size",
+          "cosine": 0.666268
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth",
+          "cosine": 0.623514
+        }
+      ],
+      "drop_from_parent": 42.467372755502986
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.calcHeight$overload_2",
+      "label": "calcHeight$overload_2",
+      "displayName": "calcHeight$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 4,
+      "x_fan": 15.170969943656019,
+      "y_fan": -7.145186524191785,
+      "height": 4.198170648880623,
+      "raw_height": -139.69949422634514,
+      "x_umap": 15.170969943656019,
+      "y_umap": -7.145186524191785,
+      "semantic_height": 4.198170648880623,
+      "importance": 0.49164797472302746,
+      "novelty_importance": 0.316866,
+      "purpose_similarity": 0.509819,
+      "semantic_density": 0.683134,
+      "is_orphan": false,
+      "description": "Project relevance 49%. Descends 25.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight$overload_2",
+          "cosine": 0.742417
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight",
+          "cosine": 0.621897
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight",
+          "cosine": 0.611174
+        }
+      ],
+      "drop_from_parent": 25.909249238571654
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+      "qname": "Assignment4.src.RedBlackTree.containsKey",
+      "label": "containsKey",
+      "displayName": "containsKey",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 7.819726242419075,
+      "y_fan": 9.805626559373733,
+      "height": 8.343536626642553,
+      "raw_height": -103.05148863100453,
+      "x_umap": 7.819726242419075,
+      "y_umap": 9.805626559373733,
+      "semantic_height": 8.343536626642553,
+      "importance": 0.3793515323845243,
+      "novelty_importance": 0.105097,
+      "purpose_similarity": 0.472824,
+      "semantic_density": 0.894903,
+      "is_orphan": false,
+      "description": "Project relevance 38%. Descends 31.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.get",
+          "cosine": 0.738944
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findRank",
+          "cosine": 0.702958
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+          "cosine": 0.696196
+        }
+      ],
+      "drop_from_parent": 31.41177491315831
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.containsValue",
+      "qname": "Assignment4.src.RedBlackTree.containsValue",
+      "label": "containsValue",
+      "displayName": "containsValue",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 1,
+      "x_fan": -2.4227874032911947,
+      "y_fan": 3.7896656957328907,
+      "height": 14.355767065277742,
+      "raw_height": -49.899063504348206,
+      "x_umap": -2.4227874032911947,
+      "y_umap": 3.7896656957328907,
+      "semantic_height": 14.355767065277742,
+      "importance": 0.002059928482689681,
+      "novelty_importance": 0.120156,
+      "purpose_similarity": 0.230985,
+      "semantic_density": 0.879844,
+      "is_orphan": false,
+      "description": "Project relevance 0%. Descends 49.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsValue$overload_2",
+          "cosine": 0.846251
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+          "cosine": 0.54934
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.isEmpty",
+          "cosine": 0.510265
+        }
+      ],
+      "drop_from_parent": 49.899063504348206
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.containsValue$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.containsValue$overload_2",
+      "label": "containsValue$overload_2",
+      "displayName": "containsValue$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 2,
+      "x_fan": -4.710006856711194,
+      "y_fan": 7.367279269859982,
+      "height": 10.106501342820856,
+      "raw_height": -87.46561729190198,
+      "x_umap": -4.710006856711194,
+      "y_umap": 7.367279269859982,
+      "semantic_height": 10.106501342820856,
+      "importance": 0.2537438002540046,
+      "novelty_importance": 0.213289,
+      "purpose_similarity": 0.423188,
+      "semantic_density": 0.7867109999999999,
+      "is_orphan": false,
+      "description": "Project relevance 25%. Descends 37.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsValue",
+          "cosine": 0.846251
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.reverseLookup$overload_2",
+          "cosine": 0.613218
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+          "cosine": 0.588875
+        }
+      ],
+      "drop_from_parent": 37.56655378755377
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+      "qname": "Assignment4.src.RedBlackTree.countRedNodes",
+      "label": "countRedNodes",
+      "displayName": "countRedNodes",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 12.054593908929416,
+      "y_fan": 2.2153820071291555,
+      "height": 9.925339287585631,
+      "raw_height": -89.06721967141213,
+      "x_umap": 12.054593908929416,
+      "y_umap": 2.2153820071291555,
+      "semantic_height": 9.925339287585631,
+      "importance": 0.6582786236909873,
+      "novelty_importance": 0.061486,
+      "purpose_similarity": 0.578342,
+      "semantic_density": 0.938514,
+      "is_orphan": false,
+      "description": "Project relevance 66%. Descends 17.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+          "cosine": 0.802598
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.size",
+          "cosine": 0.722465
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.isRed",
+          "cosine": 0.65527
+        }
+      ],
+      "drop_from_parent": 17.74434743914162
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+      "label": "countRedNodes$overload_2",
+      "displayName": "countRedNodes$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 4,
+      "x_fan": 15.880270688321065,
+      "y_fan": 2.918461311681919,
+      "height": 7.652045034329059,
+      "raw_height": -109.16476979367714,
+      "x_umap": 15.880270688321065,
+      "y_umap": 2.918461311681919,
+      "semantic_height": 7.652045034329059,
+      "importance": 0.6102540791374489,
+      "novelty_importance": 0.204244,
+      "purpose_similarity": 0.556939,
+      "semantic_density": 0.795756,
+      "is_orphan": false,
+      "description": "Project relevance 61%. Descends 20.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.802598
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+          "cosine": 0.658327
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.isRed",
+          "cosine": 0.656678
+        }
+      ],
+      "drop_from_parent": 20.097550122265005
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.delete",
+      "qname": "Assignment4.src.RedBlackTree.delete",
+      "label": "delete",
+      "displayName": "delete",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": -10.369199388184894,
+      "y_fan": -7.1317286672847535,
+      "height": 8.104553642976262,
+      "raw_height": -105.16426944929117,
+      "x_umap": -10.369199388184894,
+      "y_umap": -7.1317286672847535,
+      "semantic_height": 8.104553642976262,
+      "importance": 0.32976740373427244,
+      "novelty_importance": 0.267408,
+      "purpose_similarity": 0.450369,
+      "semantic_density": 0.732592,
+      "is_orphan": false,
+      "description": "Project relevance 33%. Descends 33.8 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.684889
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.get",
+          "cosine": 0.655083
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.put",
+          "cosine": 0.571515
+        }
+      ],
+      "drop_from_parent": 33.841397217020656
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndAdd",
+      "qname": "Assignment4.src.RedBlackTree.findAndAdd",
+      "label": "findAndAdd",
+      "displayName": "findAndAdd",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 4,
+      "x_fan": 3.3037550230115853,
+      "y_fan": 16.00791206398744,
+      "height": 6.5487688765664815,
+      "raw_height": -118.91852157815008,
+      "x_umap": 3.3037550230115853,
+      "y_umap": 16.00791206398744,
+      "semantic_height": 6.5487688765664815,
+      "importance": 0.549842285062165,
+      "novelty_importance": 0.446792,
+      "purpose_similarity": 0.528508,
+      "semantic_density": 0.5532079999999999,
+      "is_orphan": false,
+      "description": "Project relevance 55%. Descends 23.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.596124
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.put",
+          "cosine": 0.557591
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+          "cosine": 0.53213
+        }
+      ],
+      "drop_from_parent": 23.057728031953914
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "qname": "Assignment4.src.RedBlackTree.findAndDelete",
+      "label": "findAndDelete",
+      "displayName": "findAndDelete",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 4,
+      "x_fan": -13.319551919575112,
+      "y_fan": -9.160922333932431,
+      "height": 7.543542995303815,
+      "raw_height": -110.12400556553288,
+      "x_umap": -13.319551919575112,
+      "y_umap": -9.160922333932431,
+      "semantic_height": 7.543542995303815,
+      "importance": 0.9191890588522099,
+      "novelty_importance": 0.384722,
+      "purpose_similarity": 0.668335,
+      "semantic_density": 0.615278,
+      "is_orphan": false,
+      "description": "Project relevance 92%. Descends 5.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 8,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.delete",
+          "cosine": 0.684889
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.main",
+          "cosine": 0.661019
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.fix",
+          "cosine": 0.640476
+        }
+      ],
+      "drop_from_parent": 4.959736116241714
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findFirstKey",
+      "qname": "Assignment4.src.RedBlackTree.findFirstKey",
+      "label": "findFirstKey",
+      "displayName": "findFirstKey",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 3.4497005809717716,
+      "y_fan": -12.20292172932413,
+      "height": 7.571519453868567,
+      "raw_height": -109.87667362535703,
+      "x_umap": 3.4497005809717716,
+      "y_umap": -12.20292172932413,
+      "semantic_height": 7.571519453868567,
+      "importance": 0.23359588993700986,
+      "novelty_importance": 0.00077,
+      "purpose_similarity": 0.420726,
+      "semantic_density": 0.99923,
+      "is_orphan": false,
+      "description": "Project relevance 23%. Descends 38.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findLastKey",
+          "cosine": 0.83603
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.getRootKey",
+          "cosine": 0.81895
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+          "cosine": 0.76577
+        }
+      ],
+      "drop_from_parent": 38.553801393086516
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findLastKey",
+      "qname": "Assignment4.src.RedBlackTree.findLastKey",
+      "label": "findLastKey",
+      "displayName": "findLastKey",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 5.259030530290229,
+      "y_fan": -11.437343654746709,
+      "height": 8.085094198487425,
+      "raw_height": -105.33630488219018,
+      "x_umap": 5.259030530290229,
+      "y_umap": -11.437343654746709,
+      "semantic_height": 8.085094198487425,
+      "importance": 0.3262564765322515,
+      "novelty_importance": 0.04904,
+      "purpose_similarity": 0.454278,
+      "semantic_density": 0.95096,
+      "is_orphan": false,
+      "description": "Project relevance 33%. Descends 34.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findFirstKey",
+          "cosine": 0.83603
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.getRootKey",
+          "cosine": 0.785716
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+          "cosine": 0.672682
+        }
+      ],
+      "drop_from_parent": 34.01343264991967
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessor",
+      "qname": "Assignment4.src.RedBlackTree.findPredecessor",
+      "label": "findPredecessor",
+      "displayName": "findPredecessor",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": -0.4561817083793498,
+      "y_fan": -12.862763168380695,
+      "height": 6.5201371148686755,
+      "raw_height": -119.171646867578,
+      "x_umap": -0.4561817083793498,
+      "y_umap": -12.862763168380695,
+      "semantic_height": 6.5201371148686755,
+      "importance": 0.043902558463112376,
+      "novelty_importance": 0.068352,
+      "purpose_similarity": 0.348057,
+      "semantic_density": 0.931648,
+      "is_orphan": false,
+      "description": "Project relevance 4%. Descends 47.8 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessorNode",
+          "cosine": 0.905246
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+          "cosine": 0.760784
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+          "cosine": 0.705172
+        }
+      ],
+      "drop_from_parent": 47.84877463530749
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessorNode",
+      "qname": "Assignment4.src.RedBlackTree.findPredecessorNode",
+      "label": "findPredecessorNode",
+      "displayName": "findPredecessorNode",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -14.258549210699975,
+      "y_fan": -14.46270570759992,
+      "height": 3.8626370211282697,
+      "raw_height": -142.66585192148213,
+      "x_umap": -14.258549210699975,
+      "y_umap": -14.46270570759992,
+      "semantic_height": 3.8626370211282697,
+      "importance": 0.35628884987858667,
+      "novelty_importance": 0.08142,
+      "purpose_similarity": 0.464752,
+      "semantic_density": 0.91858,
+      "is_orphan": false,
+      "description": "Project relevance 36%. Descends 32.5 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessor",
+          "cosine": 0.905246
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+          "cosine": 0.852282
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+          "cosine": 0.74508
+        }
+      ],
+      "drop_from_parent": 32.541846355949254
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findRank",
+      "qname": "Assignment4.src.RedBlackTree.findRank",
+      "label": "findRank",
+      "displayName": "findRank",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": -11.876554079099675,
+      "y_fan": 4.073202863737517,
+      "height": 8.26732735283484,
+      "raw_height": -103.7252332190348,
+      "x_umap": -11.876554079099675,
+      "y_umap": 4.073202863737517,
+      "semantic_height": 8.26732735283484,
+      "importance": 0.35913549006603485,
+      "novelty_importance": 0.147443,
+      "purpose_similarity": 0.464239,
+      "semantic_density": 0.852557,
+      "is_orphan": false,
+      "description": "Project relevance 36%. Descends 32.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+          "cosine": 0.702958
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.get",
+          "cosine": 0.695174
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.select",
+          "cosine": 0.666508
+        }
+      ],
+      "drop_from_parent": 32.40236098676429
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+      "qname": "Assignment4.src.RedBlackTree.findSuccessor",
+      "label": "findSuccessor",
+      "displayName": "findSuccessor",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 1.514808363771542,
+      "y_fan": -12.55983297813273,
+      "height": 7.739485495792087,
+      "raw_height": -108.39173345909364,
+      "x_umap": 1.514808363771542,
+      "y_umap": -12.55983297813273,
+      "semantic_height": 7.739485495792087,
+      "importance": 0.26390079128932364,
+      "novelty_importance": 0.026198,
+      "purpose_similarity": 0.431468,
+      "semantic_density": 0.9738020000000001,
+      "is_orphan": false,
+      "description": "Project relevance 26%. Descends 37.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+          "cosine": 0.886992
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findFirstKey",
+          "cosine": 0.76577
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessor",
+          "cosine": 0.760784
+        }
+      ],
+      "drop_from_parent": 37.06886122682314
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+      "qname": "Assignment4.src.RedBlackTree.findSuccessorNode",
+      "label": "findSuccessorNode",
+      "displayName": "findSuccessorNode",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -11.138184496674942,
+      "y_fan": -16.69791453645433,
+      "height": 5.179813658457058,
+      "raw_height": -131.02106662777467,
+      "x_umap": -11.138184496674942,
+      "y_umap": -16.69791453645433,
+      "semantic_height": 5.179813658457058,
+      "importance": 0.5939375293420045,
+      "novelty_importance": 0.0,
+      "purpose_similarity": 0.555713,
+      "semantic_density": 1.0,
+      "is_orphan": false,
+      "description": "Project relevance 59%. Descends 20.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+          "cosine": 0.886992
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessorNode",
+          "cosine": 0.852282
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessor",
+          "cosine": 0.705172
+        }
+      ],
+      "drop_from_parent": 20.89706106224178
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "qname": "Assignment4.src.RedBlackTree.fix",
+      "label": "fix",
+      "displayName": "fix",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -19.700227440259628,
+      "y_fan": -2.523589276929174,
+      "height": 6.3473685270326765,
+      "raw_height": -120.69904498096031,
+      "x_umap": -19.700227440259628,
+      "y_umap": -2.523589276929174,
+      "semantic_height": 6.3473685270326765,
+      "importance": 0.8045910323382157,
+      "novelty_importance": 0.321358,
+      "purpose_similarity": 0.626927,
+      "semantic_density": 0.678642,
+      "is_orphan": false,
+      "description": "Project relevance 80%. Descends 10.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.flipColors",
+          "cosine": 0.787785
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.isRed",
+          "cosine": 0.645403
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.640476
+        }
+      ],
+      "drop_from_parent": 10.57503941542743
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.flipColors",
+      "qname": "Assignment4.src.RedBlackTree.flipColors",
+      "label": "flipColors",
+      "displayName": "flipColors",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -16.647453420544323,
+      "y_fan": -11.449786656804383,
+      "height": 4.442791623725309,
+      "raw_height": -137.5368695261526,
+      "x_umap": -16.647453420544323,
+      "y_umap": -11.449786656804383,
+      "semantic_height": 4.442791623725309,
+      "importance": 0.460961959987353,
+      "novelty_importance": 0.219069,
+      "purpose_similarity": 0.500665,
+      "semantic_density": 0.780931,
+      "is_orphan": false,
+      "description": "Project relevance 46%. Descends 27.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.fix",
+          "cosine": 0.787785
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.isRed",
+          "cosine": 0.671103
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.503804
+        }
+      ],
+      "drop_from_parent": 27.412863960619703
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.get",
+      "qname": "Assignment4.src.RedBlackTree.get",
+      "label": "get",
+      "displayName": "get",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 5.85292631549884,
+      "y_fan": 11.097630852187926,
+      "height": 8.31797029160006,
+      "raw_height": -103.27751335227546,
+      "x_umap": 5.85292631549884,
+      "y_umap": 11.097630852187926,
+      "semantic_height": 8.31797029160006,
+      "importance": 0.374738782970832,
+      "novelty_importance": 0.064816,
+      "purpose_similarity": 0.47206,
+      "semantic_density": 0.935184,
+      "is_orphan": false,
+      "description": "Project relevance 37%. Descends 31.6 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+          "cosine": 0.738944
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+          "cosine": 0.695427
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findRank",
+          "cosine": 0.695174
+        }
+      ],
+      "drop_from_parent": 31.637799634429236
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.getRootKey",
+      "qname": "Assignment4.src.RedBlackTree.getRootKey",
+      "label": "getRootKey",
+      "displayName": "getRootKey",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 7.147250414587182,
+      "y_fan": -10.756748742362193,
+      "height": 6.276805553097995,
+      "raw_height": -121.32287223227051,
+      "x_umap": 7.147250414587182,
+      "y_umap": -10.756748742362193,
+      "semantic_height": 6.276805553097995,
+      "importance": 0.0,
+      "novelty_importance": 0.087908,
+      "purpose_similarity": 0.330146,
+      "semantic_density": 0.912092,
+      "is_orphan": false,
+      "description": "Project relevance 0%. Descends 50.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findFirstKey",
+          "cosine": 0.81895
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findLastKey",
+          "cosine": 0.785716
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.get",
+          "cosine": 0.590903
+        }
+      ],
+      "drop_from_parent": 50.0
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.isEmpty",
+      "qname": "Assignment4.src.RedBlackTree.isEmpty",
+      "label": "isEmpty",
+      "displayName": "isEmpty",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 0,
+      "x_fan": 0.0,
+      "y_fan": 27.877327266746367,
+      "height": 2.1,
+      "raw_height": -159.13289785629047,
+      "x_umap": 0.0,
+      "y_umap": 27.877327266746367,
+      "semantic_height": 2.1,
+      "importance": 0.1467041676558227,
+      "novelty_importance": 0.103043,
+      "purpose_similarity": 0.385733,
+      "semantic_density": 0.896957,
+      "is_orphan": true,
+      "description": "Project relevance 15%. Descends 0.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.size",
+          "cosine": 0.682049
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.RedBlackTree",
+          "cosine": 0.569385
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.556607
+        }
+      ],
+      "drop_from_parent": 0
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.isRed",
+      "qname": "Assignment4.src.RedBlackTree.isRed",
+      "label": "isRed",
+      "displayName": "isRed",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -18.478971355569026,
+      "y_fan": -8.085393485132293,
+      "height": 4.633515421074378,
+      "raw_height": -135.85073449491298,
+      "x_umap": -18.478971355569026,
+      "y_umap": -8.085393485132293,
+      "semantic_height": 4.633515421074378,
+      "importance": 0.4953728789922426,
+      "novelty_importance": 0.106953,
+      "purpose_similarity": 0.516237,
+      "semantic_density": 0.893047,
+      "is_orphan": false,
+      "description": "Project relevance 50%. Descends 25.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.flipColors",
+          "cosine": 0.671103
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+          "cosine": 0.656678
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.65527
+        }
+      ],
+      "drop_from_parent": 25.726728929380112
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.main",
+      "qname": "Assignment4.src.RedBlackTree.main",
+      "label": "main",
+      "displayName": "main",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 1,
+      "x_fan": -0.7537323538203696,
+      "y_fan": 3.652111356834224,
+      "height": 18.617208397012977,
+      "raw_height": -12.224868606370553,
+      "x_umap": -0.7537323538203696,
+      "y_umap": 3.652111356834224,
+      "semantic_height": 18.617208397012977,
+      "importance": 0.7709210488495806,
+      "novelty_importance": 0.634872,
+      "purpose_similarity": 0.606816,
+      "semantic_density": 0.365128,
+      "is_orphan": false,
+      "description": "Project relevance 77%. Descends 12.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.661019
+        },
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+          "cosine": 0.586411
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.RedBlackTree",
+          "cosine": 0.580579
+        }
+      ],
+      "drop_from_parent": 12.224868606370553
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.put",
+      "qname": "Assignment4.src.RedBlackTree.put",
+      "label": "put",
+      "displayName": "put",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 2.505337582285835,
+      "y_fan": 12.13928497376178,
+      "height": 9.156897743483638,
+      "raw_height": -95.86079354619616,
+      "x_umap": 2.505337582285835,
+      "y_umap": 12.13928497376178,
+      "semantic_height": 9.156897743483638,
+      "importance": 0.5261004116663278,
+      "novelty_importance": 0.138976,
+      "purpose_similarity": 0.52698,
+      "semantic_density": 0.861024,
+      "is_orphan": false,
+      "description": "Project relevance 53%. Descends 24.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.Node.Node",
+          "cosine": 0.742009
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.delete",
+          "cosine": 0.571515
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+          "cosine": 0.561302
+        }
+      ],
+      "drop_from_parent": 24.221079828349936
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.reverseLookup",
+      "qname": "Assignment4.src.RedBlackTree.reverseLookup",
+      "label": "reverseLookup",
+      "displayName": "reverseLookup",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 1,
+      "x_fan": -3.37224702340204,
+      "y_fan": 2.8969518065209523,
+      "height": 14.645227777143552,
+      "raw_height": -47.34002339908427,
+      "x_umap": -3.37224702340204,
+      "y_umap": 2.8969518065209523,
+      "semantic_height": 14.645227777143552,
+      "importance": 0.05428523675338238,
+      "novelty_importance": 0.112422,
+      "purpose_similarity": 0.350892,
+      "semantic_density": 0.887578,
+      "is_orphan": false,
+      "description": "Project relevance 5%. Descends 47.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.reverseLookup$overload_2",
+          "cosine": 0.839849
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.get",
+          "cosine": 0.528347
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.put",
+          "cosine": 0.509215
+        }
+      ],
+      "drop_from_parent": 47.34002339908427
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.reverseLookup$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.reverseLookup$overload_2",
+      "label": "reverseLookup$overload_2",
+      "displayName": "reverseLookup$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 2,
+      "x_fan": -6.450416767143813,
+      "y_fan": 5.541274520138407,
+      "height": 11.439237275212433,
+      "raw_height": -75.68327668086438,
+      "x_umap": -6.450416767143813,
+      "y_umap": 5.541274520138407,
+      "semantic_height": 11.439237275212433,
+      "importance": 0.4419744228208139,
+      "novelty_importance": 0.192731,
+      "purpose_similarity": 0.494183,
+      "semantic_density": 0.807269,
+      "is_orphan": false,
+      "description": "Project relevance 44%. Descends 28.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.reverseLookup",
+          "cosine": 0.839849
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.get",
+          "cosine": 0.623673
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.containsValue$overload_2",
+          "cosine": 0.613218
+        }
+      ],
+      "drop_from_parent": 28.343253281780118
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.rotateLeft",
+      "qname": "Assignment4.src.RedBlackTree.rotateLeft",
+      "label": "rotateLeft",
+      "displayName": "rotateLeft",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 6,
+      "x_fan": -23.68379853234579,
+      "y_fan": -3.0338827404111974,
+      "height": 3.3736286782154643,
+      "raw_height": -146.98903607057198,
+      "x_umap": -23.68379853234579,
+      "y_umap": -3.0338827404111974,
+      "semantic_height": 3.3736286782154643,
+      "importance": 0.48387773286506774,
+      "novelty_importance": 0.441782,
+      "purpose_similarity": 0.50392,
+      "semantic_density": 0.558218,
+      "is_orphan": false,
+      "description": "Project relevance 48%. Descends 26.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.rotateRight",
+          "cosine": 0.835088
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.fix",
+          "cosine": 0.59363
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.flipColors",
+          "cosine": 0.45849
+        }
+      ],
+      "drop_from_parent": 26.289991089611682
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.rotateRight",
+      "qname": "Assignment4.src.RedBlackTree.rotateRight",
+      "label": "rotateRight",
+      "displayName": "rotateRight",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -20.03285899133786,
+      "y_fan": 3.184349833987688,
+      "height": 4.001980332543795,
+      "raw_height": -141.43395720245746,
+      "x_umap": -20.03285899133786,
+      "y_umap": 3.184349833987688,
+      "semantic_height": 4.001980332543795,
+      "importance": 0.3814295584301109,
+      "novelty_importance": 0.468962,
+      "purpose_similarity": 0.464897,
+      "semantic_density": 0.531038,
+      "is_orphan": false,
+      "description": "Project relevance 38%. Descends 31.3 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.rotateLeft",
+          "cosine": 0.835088
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.fix",
+          "cosine": 0.586726
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.465346
+        }
+      ],
+      "drop_from_parent": 31.30995163692457
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.select",
+      "qname": "Assignment4.src.RedBlackTree.select",
+      "label": "select",
+      "displayName": "select",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": -11.201474859415914,
+      "y_fan": 5.915425391605036,
+      "height": 7.6472684982432515,
+      "raw_height": -109.20699779529102,
+      "x_umap": -11.201474859415914,
+      "y_umap": 5.915425391605036,
+      "semantic_height": 7.6472684982432515,
+      "importance": 0.24726274361182643,
+      "novelty_importance": 0.240924,
+      "purpose_similarity": 0.420099,
+      "semantic_density": 0.759076,
+      "is_orphan": false,
+      "description": "Project relevance 25%. Descends 37.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findRank",
+          "cosine": 0.666508
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findFirstKey",
+          "cosine": 0.661393
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findLastKey",
+          "cosine": 0.645297
+        }
+      ],
+      "drop_from_parent": 37.884125563020504
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.size",
+      "qname": "Assignment4.src.RedBlackTree.size",
+      "label": "size",
+      "displayName": "size",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 11.596235846969206,
+      "y_fan": 5.108728671553486,
+      "height": 7.623973808479171,
+      "raw_height": -109.41293954455887,
+      "x_umap": 11.596235846969206,
+      "y_umap": 5.108728671553486,
+      "semantic_height": 7.623973808479171,
+      "importance": 0.24305985076962547,
+      "novelty_importance": 0.060275,
+      "purpose_similarity": 0.422847,
+      "semantic_density": 0.939725,
+      "is_orphan": false,
+      "description": "Project relevance 24%. Descends 38.1 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+          "cosine": 0.747142
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.722465
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.isEmpty",
+          "cosine": 0.682049
+        }
+      ],
+      "drop_from_parent": 38.090067312288355
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.size$overload_2",
+      "label": "size$overload_2",
+      "displayName": "size$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -7.9406120500308734,
+      "y_fan": -18.874248461119205,
+      "height": 2.936596398100601,
+      "raw_height": -150.85271458120644,
+      "x_umap": -7.9406120500308734,
+      "y_umap": -18.874248461119205,
+      "semantic_height": 2.936596398100601,
+      "importance": 0.18921002008829482,
+      "novelty_importance": 0.09448,
+      "purpose_similarity": 0.401859,
+      "semantic_density": 0.90552,
+      "is_orphan": false,
+      "description": "Project relevance 19%. Descends 40.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.size",
+          "cosine": 0.747142
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+          "cosine": 0.658327
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.639607
+        }
+      ],
+      "drop_from_parent": 40.72870901567355
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.swapData",
+      "qname": "Assignment4.src.RedBlackTree.swapData",
+      "label": "swapData",
+      "displayName": "swapData",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 5,
+      "x_fan": -4.267498394135139,
+      "y_fan": -20.19970274519433,
+      "height": 2.0,
+      "raw_height": -159.13289785629047,
+      "x_umap": -4.267498394135139,
+      "y_umap": -20.19970274519433,
+      "semantic_height": 2.0,
+      "importance": 0.020226687943722968,
+      "novelty_importance": 0.362774,
+      "purpose_similarity": 0.332146,
+      "semantic_density": 0.6372260000000001,
+      "is_orphan": false,
+      "description": "Project relevance 2%. Descends 49.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.reverseLookup$overload_2",
+          "cosine": 0.487043
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+          "cosine": 0.47705
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.put",
+          "cosine": 0.46378
+        }
+      ],
+      "drop_from_parent": 49.00889229075757
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.treeToString",
+      "qname": "Assignment4.src.RedBlackTree.treeToString",
+      "label": "treeToString",
+      "displayName": "treeToString",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 2,
+      "x_fan": -1.5683462584796597,
+      "y_fan": 7.599216290783079,
+      "height": 15.564946326468213,
+      "raw_height": -39.209052400961085,
+      "x_umap": -1.5683462584796597,
+      "y_umap": 7.599216290783079,
+      "semantic_height": 15.564946326468213,
+      "importance": 0.4697105348042749,
+      "novelty_importance": 0.137688,
+      "purpose_similarity": 0.505889,
+      "semantic_density": 0.862312,
+      "is_orphan": false,
+      "description": "Project relevance 47%. Descends 27.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 1,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.treeToString$overload_2",
+          "cosine": 0.644417
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.RedBlackTree",
+          "cosine": 0.572498
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.main",
+          "cosine": 0.484703
+        }
+      ],
+      "drop_from_parent": 26.98418379459053
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.treeToString$overload_2",
+      "qname": "Assignment4.src.RedBlackTree.treeToString$overload_2",
+      "label": "treeToString$overload_2",
+      "displayName": "treeToString$overload_2",
+      "file": "Assignment4/src/RedBlackTree.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": -2.3612972420070966,
+      "y_fan": 11.441356378939071,
+      "height": 13.106716546039516,
+      "raw_height": -60.94156509853059,
+      "x_umap": -2.3612972420070966,
+      "y_umap": 11.441356378939071,
+      "semantic_height": 13.106716546039516,
+      "importance": 0.5768874959679694,
+      "novelty_importance": 0.509991,
+      "purpose_similarity": 0.537126,
+      "semantic_density": 0.49000900000000003,
+      "is_orphan": false,
+      "description": "Project relevance 58%. Descends 21.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.treeToString",
+          "cosine": 0.644417
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.fix",
+          "cosine": 0.507973
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.main",
+          "cosine": 0.480226
+        }
+      ],
+      "drop_from_parent": 21.7325126975695
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.main",
+      "qname": "Assignment4.src.WordFreqs2.main",
+      "label": "main",
+      "displayName": "main",
+      "file": "Assignment4/src/WordFreqs2.java",
+      "class": null,
+      "depth": 1,
+      "x_fan": 2.1204741236325044,
+      "y_fan": -3.9208653672780116,
+      "height": 14.57972768821978,
+      "raw_height": -47.91909111910007,
+      "x_umap": 2.1204741236325044,
+      "y_umap": -3.9208653672780116,
+      "semantic_height": 14.57972768821978,
+      "importance": 0.042467528181631395,
+      "novelty_importance": 0.752759,
+      "purpose_similarity": 0.317072,
+      "semantic_density": 0.24724100000000004,
+      "is_orphan": false,
+      "description": "Project relevance 4%. Descends 47.9 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 2,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+          "cosine": 0.499585
+        },
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree",
+          "cosine": 0.414344
+        },
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.printHelpMenu",
+          "cosine": 0.319988
+        }
+      ],
+      "drop_from_parent": 47.91909111910007
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree",
+      "qname": "Assignment4.src.WordFreqs2.makeRedBlackTree",
+      "label": "makeRedBlackTree",
+      "displayName": "makeRedBlackTree",
+      "file": "Assignment4/src/WordFreqs2.java",
+      "class": null,
+      "depth": 2,
+      "x_fan": 3.2125077046578863,
+      "y_fan": 7.784389362897851,
+      "height": 11.896616825982987,
+      "raw_height": -71.63971371784622,
+      "x_umap": 3.2125077046578863,
+      "y_umap": 7.784389362897851,
+      "semantic_height": 11.896616825982987,
+      "importance": 0.5363138245153846,
+      "novelty_importance": 0.613837,
+      "purpose_similarity": 0.519444,
+      "semantic_density": 0.38616300000000003,
+      "is_orphan": false,
+      "description": "Project relevance 54%. Descends 23.7 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 3,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.RedBlackTree",
+          "cosine": 0.508847
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.main",
+          "cosine": 0.491207
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+          "cosine": 0.48728
+        }
+      ],
+      "drop_from_parent": 23.720622598746157
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.parseInt",
+      "qname": "Assignment4.src.WordFreqs2.parseInt",
+      "label": "parseInt",
+      "displayName": "parseInt",
+      "file": "Assignment4/src/WordFreqs2.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 10.838071885546128,
+      "y_fan": 6.953687025683367,
+      "height": 6.485956228900258,
+      "raw_height": -119.47383039176965,
+      "x_umap": 10.838071885546128,
+      "y_umap": 6.953687025683367,
+      "semantic_height": 6.485956228900258,
+      "importance": 0.03773554776532358,
+      "novelty_importance": 0.678688,
+      "purpose_similarity": 0.103235,
+      "semantic_density": 0.32131200000000004,
+      "is_orphan": false,
+      "description": "Project relevance 4%. Descends 48.2 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth$overload_2",
+          "cosine": 0.203197
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.findRank",
+          "cosine": 0.194981
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight",
+          "cosine": 0.168184
+        }
+      ],
+      "drop_from_parent": 48.15095815949914
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.printHelpMenu",
+      "qname": "Assignment4.src.WordFreqs2.printHelpMenu",
+      "label": "printHelpMenu",
+      "displayName": "printHelpMenu",
+      "file": "Assignment4/src/WordFreqs2.java",
+      "class": null,
+      "depth": 3,
+      "x_fan": 9.628077112193004,
+      "y_fan": 8.54592126477256,
+      "height": 6.504235597919791,
+      "raw_height": -119.3122276715995,
+      "x_umap": 9.628077112193004,
+      "y_umap": 8.54592126477256,
+      "semantic_height": 6.504235597919791,
+      "importance": 0.04103356246267377,
+      "novelty_importance": 0.730319,
+      "purpose_similarity": 0.2707,
+      "semantic_density": 0.26968099999999995,
+      "is_orphan": false,
+      "description": "Project relevance 4%. Descends 48.0 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 0,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+          "cosine": 0.56095
+        },
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.main",
+          "cosine": 0.327588
+        },
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.main",
+          "cosine": 0.319988
+        }
+      ],
+      "drop_from_parent": 47.98935543932899
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "qname": "Assignment4.src.WordFreqs2.queryUser",
+      "label": "queryUser",
+      "displayName": "queryUser",
+      "file": "Assignment4/src/WordFreqs2.java",
+      "class": null,
+      "depth": 2,
+      "x_fan": 1.0075793912373037,
+      "y_fan": -8.354211112645881,
+      "height": 11.932455717985778,
+      "raw_height": -71.32287223227051,
+      "x_umap": 1.0075793912373037,
+      "y_umap": -8.354211112645881,
+      "semantic_height": 11.932455717985778,
+      "importance": 0.5427799772822358,
+      "novelty_importance": 1.0,
+      "purpose_similarity": 0.512628,
+      "semantic_density": 0.0,
+      "is_orphan": false,
+      "description": "Project relevance 54%. Descends 23.4 units from its terrain parent.",
+      "source_lines": 0,
+      "n_callees": 15,
+      "language": "java",
+      "location": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "boundaries": [],
+      "routes": [],
+      "similar": [
+        {
+          "id": "java:fn:Assignment4.src.RedBlackTree.main",
+          "cosine": 0.586411
+        },
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.printHelpMenu",
+          "cosine": 0.56095
+        },
+        {
+          "id": "java:fn:Assignment4.src.WordFreqs2.main",
+          "cosine": 0.499585
+        }
+      ],
+      "drop_from_parent": 23.403781113170446
+    }
+  ],
+  "edges": [
+    {
+      "id": "project:redblack->java:fn:Assignment4.src.RedBlackTree.containsValue",
+      "from": "project:redblack",
+      "to": "java:fn:Assignment4.src.RedBlackTree.containsValue",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:redblack->java:fn:Assignment4.src.RedBlackTree.main",
+      "from": "project:redblack",
+      "to": "java:fn:Assignment4.src.RedBlackTree.main",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:redblack->java:fn:Assignment4.src.RedBlackTree.reverseLookup",
+      "from": "project:redblack",
+      "to": "java:fn:Assignment4.src.RedBlackTree.reverseLookup",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "project:redblack->java:fn:Assignment4.src.WordFreqs2.main",
+      "from": "project:redblack",
+      "to": "java:fn:Assignment4.src.WordFreqs2.main",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "project_branch",
+      "relation": "starts branch",
+      "evidence": "Synthetic terrain connection from the project summit",
+      "callsite": {
+        "path": "Project",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth->java:fn:Assignment4.src.RedBlackTree.calcAverageDepth$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth",
+      "to": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth->java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight->java:fn:Assignment4.src.RedBlackTree.calcBlackHeight$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight",
+      "to": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight$overload_2->java:fn:Assignment4.src.RedBlackTree.isRed",
+      "from": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight$overload_2",
+      "to": "java:fn:Assignment4.src.RedBlackTree.isRed",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.calcHeight->java:fn:Assignment4.src.RedBlackTree.calcHeight$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.calcHeight",
+      "to": "java:fn:Assignment4.src.RedBlackTree.calcHeight$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.containsValue->java:fn:Assignment4.src.RedBlackTree.containsValue$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.containsValue",
+      "to": "java:fn:Assignment4.src.RedBlackTree.containsValue$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes->java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+      "to": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2->java:fn:Assignment4.src.RedBlackTree.isRed",
+      "from": "java:fn:Assignment4.src.RedBlackTree.countRedNodes$overload_2",
+      "to": "java:fn:Assignment4.src.RedBlackTree.isRed",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.delete->java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "from": "java:fn:Assignment4.src.RedBlackTree.delete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.delete->java:fn:Assignment4.src.RedBlackTree.fix",
+      "from": "java:fn:Assignment4.src.RedBlackTree.delete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndAdd->java:fn:Assignment4.src.RedBlackTree.fix",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndAdd",
+      "to": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndAdd->java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndAdd",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.findPredecessorNode",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findPredecessorNode",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.fix",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "4 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.flipColors",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.flipColors",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.isRed",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.isRed",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "7 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.rotateRight",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.rotateRight",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findAndDelete->java:fn:Assignment4.src.RedBlackTree.swapData",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findAndDelete",
+      "to": "java:fn:Assignment4.src.RedBlackTree.swapData",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "4 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findPredecessor->java:fn:Assignment4.src.RedBlackTree.findPredecessorNode",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findPredecessor",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findPredecessorNode",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findRank->java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findRank",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.findSuccessor->java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+      "from": "java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findSuccessorNode",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.fix->java:fn:Assignment4.src.RedBlackTree.flipColors",
+      "from": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "to": "java:fn:Assignment4.src.RedBlackTree.flipColors",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.fix->java:fn:Assignment4.src.RedBlackTree.isRed",
+      "from": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "to": "java:fn:Assignment4.src.RedBlackTree.isRed",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "7 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.fix->java:fn:Assignment4.src.RedBlackTree.rotateLeft",
+      "from": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "to": "java:fn:Assignment4.src.RedBlackTree.rotateLeft",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "3 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.fix->java:fn:Assignment4.src.RedBlackTree.rotateRight",
+      "from": "java:fn:Assignment4.src.RedBlackTree.fix",
+      "to": "java:fn:Assignment4.src.RedBlackTree.rotateRight",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "3 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.flipColors->java:fn:Assignment4.src.RedBlackTree.isRed",
+      "from": "java:fn:Assignment4.src.RedBlackTree.flipColors",
+      "to": "java:fn:Assignment4.src.RedBlackTree.isRed",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.main->java:fn:Assignment4.src.RedBlackTree.delete",
+      "from": "java:fn:Assignment4.src.RedBlackTree.main",
+      "to": "java:fn:Assignment4.src.RedBlackTree.delete",
+      "is_primary": false,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.main->java:fn:Assignment4.src.RedBlackTree.put",
+      "from": "java:fn:Assignment4.src.RedBlackTree.main",
+      "to": "java:fn:Assignment4.src.RedBlackTree.put",
+      "is_primary": false,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.main->java:fn:Assignment4.src.RedBlackTree.treeToString",
+      "from": "java:fn:Assignment4.src.RedBlackTree.main",
+      "to": "java:fn:Assignment4.src.RedBlackTree.treeToString",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "4 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.put->java:fn:Assignment4.src.RedBlackTree.findAndAdd",
+      "from": "java:fn:Assignment4.src.RedBlackTree.put",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findAndAdd",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.reverseLookup->java:fn:Assignment4.src.RedBlackTree.reverseLookup$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.reverseLookup",
+      "to": "java:fn:Assignment4.src.RedBlackTree.reverseLookup$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.rotateLeft->java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.rotateLeft",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.rotateLeft->java:fn:Assignment4.src.RedBlackTree.swapData",
+      "from": "java:fn:Assignment4.src.RedBlackTree.rotateLeft",
+      "to": "java:fn:Assignment4.src.RedBlackTree.swapData",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.rotateRight->java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.rotateRight",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.rotateRight->java:fn:Assignment4.src.RedBlackTree.swapData",
+      "from": "java:fn:Assignment4.src.RedBlackTree.rotateRight",
+      "to": "java:fn:Assignment4.src.RedBlackTree.swapData",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.select->java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.select",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size$overload_2",
+      "is_primary": false,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "5 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.RedBlackTree.treeToString->java:fn:Assignment4.src.RedBlackTree.treeToString$overload_2",
+      "from": "java:fn:Assignment4.src.RedBlackTree.treeToString",
+      "to": "java:fn:Assignment4.src.RedBlackTree.treeToString$overload_2",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/RedBlackTree.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.main->java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree",
+      "from": "java:fn:Assignment4.src.WordFreqs2.main",
+      "to": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.main->java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "from": "java:fn:Assignment4.src.WordFreqs2.main",
+      "to": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree->java:fn:Assignment4.src.RedBlackTree.containsKey",
+      "from": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree",
+      "to": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree->java:fn:Assignment4.src.RedBlackTree.get",
+      "from": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree",
+      "to": "java:fn:Assignment4.src.RedBlackTree.get",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree->java:fn:Assignment4.src.RedBlackTree.put",
+      "from": "java:fn:Assignment4.src.WordFreqs2.makeRedBlackTree",
+      "to": "java:fn:Assignment4.src.RedBlackTree.put",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.calcAverageDepth",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.calcAverageDepth",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.calcBlackHeight",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.calcBlackHeight",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.calcHeight",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.calcHeight",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.containsKey",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.containsKey",
+      "is_primary": false,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.countRedNodes",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.delete",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.delete",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.findFirstKey",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findFirstKey",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.findLastKey",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findLastKey",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.findPredecessor",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findPredecessor",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.findRank",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findRank",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.findSuccessor",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.get",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.get",
+      "is_primary": false,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.getRootKey",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.getRootKey",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.put",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.put",
+      "is_primary": false,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "2 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.select",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.select",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.RedBlackTree.size",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.RedBlackTree.size",
+      "is_primary": true,
+      "confidence": "heuristic",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "5 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.WordFreqs2.parseInt",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.WordFreqs2.parseInt",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    },
+    {
+      "id": "java:fn:Assignment4.src.WordFreqs2.queryUser->java:fn:Assignment4.src.WordFreqs2.printHelpMenu",
+      "from": "java:fn:Assignment4.src.WordFreqs2.queryUser",
+      "to": "java:fn:Assignment4.src.WordFreqs2.printHelpMenu",
+      "is_primary": true,
+      "confidence": "resolved",
+      "kind": "call",
+      "relation": "calls",
+      "evidence": "1 static call site(s)",
+      "callsite": {
+        "path": "Assignment4/src/WordFreqs2.java",
+        "line": 1
+      }
+    }
+  ],
+  "entries": [
+    "project:redblack"
+  ],
+  "prototype": {
+    "height_rule": "child = parent - drop(relevance)",
+    "branch_summits": 4,
+    "detached_foothills": 3,
+    "seam_gap_degrees": 23.322259136212597
+  }
+}
