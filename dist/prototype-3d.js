@@ -18274,6 +18274,149 @@ var QuadraticBezierCurve3 = class extends Curve {
     return this;
   }
 };
+var CylinderGeometry = class _CylinderGeometry extends BufferGeometry {
+  constructor(radiusTop = 1, radiusBottom = 1, height = 1, radialSegments = 32, heightSegments = 1, openEnded = false, thetaStart = 0, thetaLength = Math.PI * 2) {
+    super();
+    this.type = "CylinderGeometry";
+    this.parameters = {
+      radiusTop,
+      radiusBottom,
+      height,
+      radialSegments,
+      heightSegments,
+      openEnded,
+      thetaStart,
+      thetaLength
+    };
+    const scope = this;
+    radialSegments = Math.floor(radialSegments);
+    heightSegments = Math.floor(heightSegments);
+    const indices = [];
+    const vertices = [];
+    const normals = [];
+    const uvs = [];
+    let index = 0;
+    const indexArray = [];
+    const halfHeight = height / 2;
+    let groupStart = 0;
+    generateTorso();
+    if (openEnded === false) {
+      if (radiusTop > 0) generateCap(true);
+      if (radiusBottom > 0) generateCap(false);
+    }
+    this.setIndex(indices);
+    this.setAttribute("position", new Float32BufferAttribute(vertices, 3));
+    this.setAttribute("normal", new Float32BufferAttribute(normals, 3));
+    this.setAttribute("uv", new Float32BufferAttribute(uvs, 2));
+    function generateTorso() {
+      const normal = new Vector3();
+      const vertex2 = new Vector3();
+      let groupCount = 0;
+      const slope = (radiusBottom - radiusTop) / height;
+      for (let y = 0; y <= heightSegments; y++) {
+        const indexRow = [];
+        const v2 = y / heightSegments;
+        const radius = v2 * (radiusBottom - radiusTop) + radiusTop;
+        for (let x = 0; x <= radialSegments; x++) {
+          const u4 = x / radialSegments;
+          const theta = u4 * thetaLength + thetaStart;
+          const sinTheta = Math.sin(theta);
+          const cosTheta = Math.cos(theta);
+          vertex2.x = radius * sinTheta;
+          vertex2.y = -v2 * height + halfHeight;
+          vertex2.z = radius * cosTheta;
+          vertices.push(vertex2.x, vertex2.y, vertex2.z);
+          normal.set(sinTheta, slope, cosTheta).normalize();
+          normals.push(normal.x, normal.y, normal.z);
+          uvs.push(u4, 1 - v2);
+          indexRow.push(index++);
+        }
+        indexArray.push(indexRow);
+      }
+      for (let x = 0; x < radialSegments; x++) {
+        for (let y = 0; y < heightSegments; y++) {
+          const a = indexArray[y][x];
+          const b = indexArray[y + 1][x];
+          const c = indexArray[y + 1][x + 1];
+          const d = indexArray[y][x + 1];
+          indices.push(a, b, d);
+          indices.push(b, c, d);
+          groupCount += 6;
+        }
+      }
+      scope.addGroup(groupStart, groupCount, 0);
+      groupStart += groupCount;
+    }
+    function generateCap(top) {
+      const centerIndexStart = index;
+      const uv = new Vector2();
+      const vertex2 = new Vector3();
+      let groupCount = 0;
+      const radius = top === true ? radiusTop : radiusBottom;
+      const sign = top === true ? 1 : -1;
+      for (let x = 1; x <= radialSegments; x++) {
+        vertices.push(0, halfHeight * sign, 0);
+        normals.push(0, sign, 0);
+        uvs.push(0.5, 0.5);
+        index++;
+      }
+      const centerIndexEnd = index;
+      for (let x = 0; x <= radialSegments; x++) {
+        const u4 = x / radialSegments;
+        const theta = u4 * thetaLength + thetaStart;
+        const cosTheta = Math.cos(theta);
+        const sinTheta = Math.sin(theta);
+        vertex2.x = radius * sinTheta;
+        vertex2.y = halfHeight * sign;
+        vertex2.z = radius * cosTheta;
+        vertices.push(vertex2.x, vertex2.y, vertex2.z);
+        normals.push(0, sign, 0);
+        uv.x = cosTheta * 0.5 + 0.5;
+        uv.y = sinTheta * 0.5 * sign + 0.5;
+        uvs.push(uv.x, uv.y);
+        index++;
+      }
+      for (let x = 0; x < radialSegments; x++) {
+        const c = centerIndexStart + x;
+        const i = centerIndexEnd + x;
+        if (top === true) {
+          indices.push(i, i + 1, c);
+        } else {
+          indices.push(i + 1, i, c);
+        }
+        groupCount += 3;
+      }
+      scope.addGroup(groupStart, groupCount, top === true ? 1 : 2);
+      groupStart += groupCount;
+    }
+  }
+  copy(source) {
+    super.copy(source);
+    this.parameters = Object.assign({}, source.parameters);
+    return this;
+  }
+  static fromJSON(data) {
+    return new _CylinderGeometry(data.radiusTop, data.radiusBottom, data.height, data.radialSegments, data.heightSegments, data.openEnded, data.thetaStart, data.thetaLength);
+  }
+};
+var ConeGeometry = class _ConeGeometry extends CylinderGeometry {
+  constructor(radius = 1, height = 1, radialSegments = 32, heightSegments = 1, openEnded = false, thetaStart = 0, thetaLength = Math.PI * 2) {
+    super(0, radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength);
+    this.type = "ConeGeometry";
+    this.parameters = {
+      radius,
+      height,
+      radialSegments,
+      heightSegments,
+      openEnded,
+      thetaStart,
+      thetaLength
+    };
+  }
+  static fromJSON(data) {
+    return new _ConeGeometry(data.radius, data.height, data.radialSegments, data.heightSegments, data.openEnded, data.thetaStart, data.thetaLength);
+  }
+};
 var _v0 = /* @__PURE__ */ new Vector3();
 var _v1$1 = /* @__PURE__ */ new Vector3();
 var _normal = /* @__PURE__ */ new Vector3();
@@ -21917,6 +22060,69 @@ function* flatIterable(points, fx, fy, that) {
 }
 
 // prototype-entrypoints.js
+function confidenceWeight(edge) {
+  return edge.confidence === "resolved" ? 1 : edge.confidence === "heuristic" ? 0.68 : 0.38;
+}
+function compareEdges(a, b) {
+  return Number(b.primary) - Number(a.primary) || confidenceWeight(b) - confidenceWeight(a) || (b.count || 0) - (a.count || 0) || a.from.localeCompare(b.from);
+}
+function chooseUnrootedForest(nodes, edges) {
+  const byId = new Map(nodes.map((node) => [node.id, node]));
+  const incoming = new Map(nodes.map((node) => [node.id, []]));
+  for (const edge of edges) {
+    if (byId.has(edge.from) && byId.has(edge.to)) incoming.get(edge.to).push(edge);
+  }
+  const parent = /* @__PURE__ */ new Map();
+  const primaryEdges = [];
+  for (const node of nodes) {
+    const candidates = incoming.get(node.id).sort(compareEdges);
+    for (const edge of candidates) {
+      let current = edge.from;
+      let cyclic = current === node.id;
+      while (!cyclic && parent.has(current)) {
+        current = parent.get(current);
+        cyclic = current === node.id;
+      }
+      if (!cyclic) {
+        parent.set(node.id, edge.from);
+        primaryEdges.push(edge);
+        break;
+      }
+    }
+  }
+  return { parent, primaryEdges };
+}
+function chooseEntrypointForest(nodes, edges, declaredEntrypoints = []) {
+  const nodeIds = new Set(nodes.map((node) => node.id));
+  const validEdges = edges.filter((edge) => nodeIds.has(edge.from) && nodeIds.has(edge.to));
+  const roots = [...new Set(declaredEntrypoints)].filter((id) => nodeIds.has(id));
+  if (!roots.length) return chooseUnrootedForest(nodes, validEdges);
+  const parent = /* @__PURE__ */ new Map();
+  const primaryEdges = [];
+  const reached = new Set(roots);
+  const remaining = new Set(nodes.map((node) => node.id).filter((id) => !reached.has(id)));
+  while (remaining.size) {
+    const additions = [];
+    for (const node of nodes) {
+      if (!remaining.has(node.id)) continue;
+      const candidate = validEdges.filter((edge) => edge.to === node.id && reached.has(edge.from)).sort(compareEdges)[0];
+      if (candidate) additions.push([node.id, candidate]);
+    }
+    if (!additions.length) break;
+    for (const [id, edge] of additions) {
+      parent.set(id, edge.from);
+      primaryEdges.push(edge);
+      reached.add(id);
+      remaining.delete(id);
+    }
+  }
+  const detachedNodes = nodes.filter((node) => remaining.has(node.id));
+  const detachedEdges = validEdges.filter((edge) => remaining.has(edge.from) && remaining.has(edge.to));
+  const detached = chooseUnrootedForest(detachedNodes, detachedEdges);
+  for (const [child, owner] of detached.parent) parent.set(child, owner);
+  primaryEdges.push(...detached.primaryEdges);
+  return { parent, primaryEdges };
+}
 function classifyEntryBasins(nodes, parent, children, declaredEntrypoints = []) {
   const allRoots = nodes.filter((node) => !parent.has(node.id)).map((node) => node.id);
   const nodeIds = new Set(nodes.map((node) => node.id));
@@ -22148,6 +22354,8 @@ function createTerrainView(canvas, onSelect) {
     const b = currentPositions.get(to);
     if (!a || !b) return;
     let geometry;
+    let arrowDirection = null;
+    let arrowTip = null;
     if (secondary) {
       const distance = Math.hypot(b.x - a.x, b.z - a.z);
       const mid = a.clone().lerp(b, 0.5);
@@ -22157,7 +22365,10 @@ function createTerrainView(canvas, onSelect) {
         mid,
         b.clone().add(new Vector3(0, 0.45, 0))
       );
-      geometry = new BufferGeometry().setFromPoints(curve.getPoints(24));
+      const points = curve.getPoints(24);
+      geometry = new BufferGeometry().setFromPoints(points);
+      arrowTip = points.at(-1);
+      arrowDirection = arrowTip.clone().sub(points.at(-2)).normalize();
     } else {
       geometry = new BufferGeometry().setFromPoints([
         a.clone().add(new Vector3(0, 0.42, 0)),
@@ -22170,6 +22381,15 @@ function createTerrainView(canvas, onSelect) {
     line.userData = { from, to, secondary };
     world.add(line);
     edgeLines.push(line);
+    if (secondary && arrowDirection && arrowTip) {
+      const arrow = new Mesh(
+        new ConeGeometry(0.13, 0.38, 8),
+        new MeshBasicMaterial({ color: 14018012, transparent: true, opacity: 0.72, depthWrite: false })
+      );
+      arrow.position.copy(arrowTip).addScaledVector(arrowDirection, -0.19);
+      arrow.quaternion.setFromUnitVectors(new Vector3(0, 1, 0), arrowDirection);
+      world.add(arrow);
+    }
   }
   function addNodes(model) {
     const orphanSet = new Set(model.orphans);
@@ -22378,6 +22598,7 @@ function createTerrainView(canvas, onSelect) {
   return api;
 }
 export {
+  chooseEntrypointForest,
   classifyEntryBasins,
   createTerrainView
 };
