@@ -21916,6 +21916,25 @@ function* flatIterable(points, fx, fy, that) {
   }
 }
 
+// prototype-entrypoints.js
+function classifyEntryBasins(nodes, parent, children, declaredEntrypoints = []) {
+  const allRoots = nodes.filter((node) => !parent.has(node.id)).map((node) => node.id);
+  const nodeIds = new Set(nodes.map((node) => node.id));
+  const declared = declaredEntrypoints.filter((id) => nodeIds.has(id));
+  let roots = declared.length ? declared : allRoots.filter((id) => (children.get(id) || []).length > 0);
+  if (!roots.length) roots = [...allRoots];
+  const reachable = /* @__PURE__ */ new Set();
+  const queue = [...roots];
+  while (queue.length) {
+    const id = queue.shift();
+    if (reachable.has(id)) continue;
+    reachable.add(id);
+    queue.push(...children.get(id) || []);
+  }
+  const detached = nodes.map((node) => node.id).filter((id) => !reachable.has(id));
+  return { roots, detached };
+}
+
 // prototype-3d.js
 var LOW = new Color(6588283);
 var MID = new Color(10995633);
@@ -22053,7 +22072,7 @@ function createTerrainView(canvas, onSelect) {
     const scale2 = 34 / span;
     const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
     const cz = (Math.min(...zs) + Math.max(...zs)) / 2;
-    const values = [...model.heights.values()];
+    const values = active.map(([id]) => model.heights.get(id));
     const low = Math.min(...values);
     const high = Math.max(...values);
     const heightSpan = Math.max(1, high - low);
@@ -22062,9 +22081,10 @@ function createTerrainView(canvas, onSelect) {
       const point = model.positions.get(node.id);
       if (!point) continue;
       const height = model.heights.get(node.id) ?? low;
+      const normalizedHeight = Math.max(0, (height - low) / heightSpan);
       result.set(node.id, new Vector3(
         (point.x - cx) * scale2,
-        1.4 + 15.5 * (height - low) / heightSpan,
+        1.4 + 15.5 * normalizedHeight,
         (point.y - cz) * scale2
       ));
     }
@@ -22358,6 +22378,7 @@ function createTerrainView(canvas, onSelect) {
   return api;
 }
 export {
+  classifyEntryBasins,
   createTerrainView
 };
 /*! Bundled license information:
