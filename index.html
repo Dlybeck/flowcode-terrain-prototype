@@ -204,7 +204,7 @@
   </main>
 
   <script type="module">
-    import { chooseEntrypointForest, classifyEntryBasins, validateFixture, createTerrainView, essentialView, layoutSpines } from './dist/prototype-3d.js?v=mobile-labels-v1';
+    import { chooseEntrypointForest, classifyEntryBasins, validateFixture, createTerrainView, essentialView, layoutSpines } from './dist/prototype-3d.js?v=selected-labels-v1';
     const FIXTURES = await fetch(new URL("./prototype-fixtures.json", import.meta.url)).then(response => { if (!response.ok) throw new Error("Could not load project fixtures"); return response.json(); });
 
     const state = {

@@ -22714,7 +22714,6 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
   function addNodes(model) {
     const orphanSet = new Set(model.orphans);
     const branchHeads = new Set(model.children.get("__project__") || model.roots);
-    const landmarks = new Set(model.nodes.filter((n) => branchHeads.has(n.id) && !orphanSet.has(n.id)).sort((a, b) => b.score - a.score || a.id.localeCompare(b.id)).slice(0, 24).map((n) => n.id));
     const geometry = new SphereGeometry(0.34, 14, 10);
     for (const node of model.nodes) {
       const position = currentPositions.get(node.id);
@@ -22743,38 +22742,6 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
         const ring = new Mesh(new TorusGeometry(0.49, 0.045, 4, 16), new MeshBasicMaterial({ color: 14214621 }));
         ring.rotation.x = Math.PI / 2;
         mesh.add(ring);
-      }
-      if (project || node.kind === "supporting-group" || landmarks.has(node.id)) {
-        const element = document.createElement(project ? "div" : "button");
-        element.textContent = project || node.kind === "supporting-group" ? node.label : `Entry \xB7 ${node.label}`;
-        element.title = node.qname;
-        element.dataset.kind = project ? "project" : node.kind === "supporting-group" ? "group" : "entry";
-        if (!project) element.addEventListener("click", () => onSelect?.(node.id));
-        Object.assign(element.style, {
-          position: "absolute",
-          zIndex: "3",
-          pointerEvents: project ? "none" : "auto",
-          transform: "translate(-50%, -115%)",
-          maxWidth: "170px",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap",
-          padding: "4px 7px",
-          borderRadius: "4px",
-          background: "#fff4cb",
-          color: "#173b35",
-          fontSize: "11px",
-          fontWeight: "700",
-          boxShadow: "0 2px 7px #0005"
-        });
-        canvas.parentElement.append(element);
-        let leader = null;
-        if (!project) {
-          leader = document.createElement("span");
-          Object.assign(leader.style, { position: "absolute", zIndex: "2", pointerEvents: "none", height: "1px", background: "#f8f1d980", transformOrigin: "left center" });
-          canvas.parentElement.append(leader);
-        }
-        labels.push({ element, mesh, leader });
       }
     }
   }
