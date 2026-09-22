@@ -19606,224 +19606,6 @@ var ConeGeometry = class _ConeGeometry extends CylinderGeometry {
     return new _ConeGeometry(data.radius, data.height, data.radialSegments, data.heightSegments, data.openEnded, data.thetaStart, data.thetaLength);
   }
 };
-var PolyhedronGeometry = class _PolyhedronGeometry extends BufferGeometry {
-  constructor(vertices = [], indices = [], radius = 1, detail = 0) {
-    super();
-    this.type = "PolyhedronGeometry";
-    this.parameters = {
-      vertices,
-      indices,
-      radius,
-      detail
-    };
-    const vertexBuffer = [];
-    const uvBuffer = [];
-    subdivide(detail);
-    applyRadius(radius);
-    generateUVs();
-    this.setAttribute("position", new Float32BufferAttribute(vertexBuffer, 3));
-    this.setAttribute("normal", new Float32BufferAttribute(vertexBuffer.slice(), 3));
-    this.setAttribute("uv", new Float32BufferAttribute(uvBuffer, 2));
-    if (detail === 0) {
-      this.computeVertexNormals();
-    } else {
-      this.normalizeNormals();
-    }
-    function subdivide(detail2) {
-      const a = new Vector3();
-      const b = new Vector3();
-      const c = new Vector3();
-      for (let i = 0; i < indices.length; i += 3) {
-        getVertexByIndex(indices[i + 0], a);
-        getVertexByIndex(indices[i + 1], b);
-        getVertexByIndex(indices[i + 2], c);
-        subdivideFace(a, b, c, detail2);
-      }
-    }
-    function subdivideFace(a, b, c, detail2) {
-      const cols = detail2 + 1;
-      const v = [];
-      for (let i = 0; i <= cols; i++) {
-        v[i] = [];
-        const aj = a.clone().lerp(c, i / cols);
-        const bj = b.clone().lerp(c, i / cols);
-        const rows = cols - i;
-        for (let j = 0; j <= rows; j++) {
-          if (j === 0 && i === cols) {
-            v[i][j] = aj;
-          } else {
-            v[i][j] = aj.clone().lerp(bj, j / rows);
-          }
-        }
-      }
-      for (let i = 0; i < cols; i++) {
-        for (let j = 0; j < 2 * (cols - i) - 1; j++) {
-          const k = Math.floor(j / 2);
-          if (j % 2 === 0) {
-            pushVertex(v[i][k + 1]);
-            pushVertex(v[i + 1][k]);
-            pushVertex(v[i][k]);
-          } else {
-            pushVertex(v[i][k + 1]);
-            pushVertex(v[i + 1][k + 1]);
-            pushVertex(v[i + 1][k]);
-          }
-        }
-      }
-    }
-    function applyRadius(radius2) {
-      const vertex2 = new Vector3();
-      for (let i = 0; i < vertexBuffer.length; i += 3) {
-        vertex2.x = vertexBuffer[i + 0];
-        vertex2.y = vertexBuffer[i + 1];
-        vertex2.z = vertexBuffer[i + 2];
-        vertex2.normalize().multiplyScalar(radius2);
-        vertexBuffer[i + 0] = vertex2.x;
-        vertexBuffer[i + 1] = vertex2.y;
-        vertexBuffer[i + 2] = vertex2.z;
-      }
-    }
-    function generateUVs() {
-      const vertex2 = new Vector3();
-      for (let i = 0; i < vertexBuffer.length; i += 3) {
-        vertex2.x = vertexBuffer[i + 0];
-        vertex2.y = vertexBuffer[i + 1];
-        vertex2.z = vertexBuffer[i + 2];
-        const u = azimuth(vertex2) / 2 / Math.PI + 0.5;
-        const v = inclination(vertex2) / Math.PI + 0.5;
-        uvBuffer.push(u, 1 - v);
-      }
-      correctUVs();
-      correctSeam();
-    }
-    function correctSeam() {
-      for (let i = 0; i < uvBuffer.length; i += 6) {
-        const x0 = uvBuffer[i + 0];
-        const x1 = uvBuffer[i + 2];
-        const x2 = uvBuffer[i + 4];
-        const max = Math.max(x0, x1, x2);
-        const min = Math.min(x0, x1, x2);
-        if (max > 0.9 && min < 0.1) {
-          if (x0 < 0.2) uvBuffer[i + 0] += 1;
-          if (x1 < 0.2) uvBuffer[i + 2] += 1;
-          if (x2 < 0.2) uvBuffer[i + 4] += 1;
-        }
-      }
-    }
-    function pushVertex(vertex2) {
-      vertexBuffer.push(vertex2.x, vertex2.y, vertex2.z);
-    }
-    function getVertexByIndex(index, vertex2) {
-      const stride = index * 3;
-      vertex2.x = vertices[stride + 0];
-      vertex2.y = vertices[stride + 1];
-      vertex2.z = vertices[stride + 2];
-    }
-    function correctUVs() {
-      const a = new Vector3();
-      const b = new Vector3();
-      const c = new Vector3();
-      const centroid = new Vector3();
-      const uvA = new Vector2();
-      const uvB = new Vector2();
-      const uvC = new Vector2();
-      for (let i = 0, j = 0; i < vertexBuffer.length; i += 9, j += 6) {
-        a.set(vertexBuffer[i + 0], vertexBuffer[i + 1], vertexBuffer[i + 2]);
-        b.set(vertexBuffer[i + 3], vertexBuffer[i + 4], vertexBuffer[i + 5]);
-        c.set(vertexBuffer[i + 6], vertexBuffer[i + 7], vertexBuffer[i + 8]);
-        uvA.set(uvBuffer[j + 0], uvBuffer[j + 1]);
-        uvB.set(uvBuffer[j + 2], uvBuffer[j + 3]);
-        uvC.set(uvBuffer[j + 4], uvBuffer[j + 5]);
-        centroid.copy(a).add(b).add(c).divideScalar(3);
-        const azi = azimuth(centroid);
-        correctUV(uvA, j + 0, a, azi);
-        correctUV(uvB, j + 2, b, azi);
-        correctUV(uvC, j + 4, c, azi);
-      }
-    }
-    function correctUV(uv, stride, vector, azimuth2) {
-      if (azimuth2 < 0 && uv.x === 1) {
-        uvBuffer[stride] = uv.x - 1;
-      }
-      if (vector.x === 0 && vector.z === 0) {
-        uvBuffer[stride] = azimuth2 / 2 / Math.PI + 0.5;
-      }
-    }
-    function azimuth(vector) {
-      return Math.atan2(vector.z, -vector.x);
-    }
-    function inclination(vector) {
-      return Math.atan2(-vector.y, Math.sqrt(vector.x * vector.x + vector.z * vector.z));
-    }
-  }
-  copy(source) {
-    super.copy(source);
-    this.parameters = Object.assign({}, source.parameters);
-    return this;
-  }
-  static fromJSON(data) {
-    return new _PolyhedronGeometry(data.vertices, data.indices, data.radius, data.details);
-  }
-};
-var OctahedronGeometry = class _OctahedronGeometry extends PolyhedronGeometry {
-  constructor(radius = 1, detail = 0) {
-    const vertices = [
-      1,
-      0,
-      0,
-      -1,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -1,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -1
-    ];
-    const indices = [
-      0,
-      2,
-      4,
-      0,
-      4,
-      3,
-      0,
-      3,
-      5,
-      0,
-      5,
-      2,
-      1,
-      2,
-      5,
-      1,
-      5,
-      3,
-      1,
-      3,
-      4,
-      1,
-      4,
-      2
-    ];
-    super(vertices, indices, radius, detail);
-    this.type = "OctahedronGeometry";
-    this.parameters = {
-      radius,
-      detail
-    };
-  }
-  static fromJSON(data) {
-    return new _OctahedronGeometry(data.radius, data.detail);
-  }
-};
 var SphereGeometry = class _SphereGeometry extends BufferGeometry {
   constructor(radius = 1, widthSegments = 32, heightSegments = 16, phiStart = 0, phiLength = Math.PI * 2, thetaStart = 0, thetaLength = Math.PI) {
     super();
@@ -22162,7 +21944,7 @@ function constrainedSurface(points, paths) {
 }
 
 // prototype-essential.js
-function essentialView(full, { budget = 40, branchLimit = 6, expanded = /* @__PURE__ */ new Set(), revealed = /* @__PURE__ */ new Set() } = {}) {
+function essentialView(full, { budget = 40, branchLimit = 6, revealed = /* @__PURE__ */ new Set() } = {}) {
   const detached = new Set(full.orphans);
   const entries = new Set(full.children.get("__project__") || full.roots);
   const pathToEntry = (id) => {
@@ -22173,73 +21955,51 @@ function essentialView(full, { budget = 40, branchLimit = 6, expanded = /* @__PU
     }
     return path.reverse();
   };
-  function project(anchors2, expandedIds = /* @__PURE__ */ new Set()) {
+  function buildProjection(anchors2, revealedPath2 = /* @__PURE__ */ new Set()) {
     const included = new Set(full.byId.has("__project__") ? ["__project__"] : []);
     for (const id of anchors2) for (const step of pathToEntry(id)) included.add(step);
     const children = new Map([...included].map((id) => [id, (full.children.get(id) || []).filter((c) => included.has(c))]));
-    const explicit = /* @__PURE__ */ new Set([...anchors2, ...expandedIds]);
-    for (const id of included) if (entries.has(id) || id === "__project__" || children.get(id).length !== 1) explicit.add(id);
-    const groups = /* @__PURE__ */ new Map(), representative = /* @__PURE__ */ new Map();
+    const visible2 = /* @__PURE__ */ new Set([...anchors2, ...revealedPath2]);
     for (const id of included) {
-      if (explicit.has(id)) {
-        representative.set(id, id);
-        continue;
-      }
-      const owner = full.parent.get(id);
-      if (included.has(owner) && !explicit.has(owner)) continue;
-      const members = [];
+      if (entries.has(id) || id === "__project__" || children.get(id).length !== 1) visible2.add(id);
+    }
+    const visibleAncestorByIncludedId = /* @__PURE__ */ new Map();
+    for (const id of included) {
       let cursor = id;
-      while (cursor && !explicit.has(cursor)) {
-        members.push(cursor);
-        cursor = children.get(cursor)?.[0];
-      }
-      let groupId = members.length === 1 ? id : `__steps__:${JSON.stringify(members)}`;
-      if (members.length > 1) while (full.byId.has(groupId) || groups.has(groupId)) groupId += ":group";
-      if (members.length > 1) groups.set(groupId, members);
-      for (const member of members) representative.set(member, groupId);
+      while (cursor && !visible2.has(cursor)) cursor = full.parent.get(cursor);
+      if (cursor) visibleAncestorByIncludedId.set(id, cursor);
     }
     const nodes = [], byId = /* @__PURE__ */ new Map(), heights = /* @__PURE__ */ new Map(), scores = /* @__PURE__ */ new Map(), parent = /* @__PURE__ */ new Map();
-    for (const id of new Set(representative.values())) {
-      const members = groups.get(id);
-      const source = members ? members[0] : id;
-      const original = full.byId.get(source);
-      const node = members ? {
-        ...original,
-        id,
-        kind: "supporting-group",
-        label: `${members.length} supporting steps`,
-        qname: `${members.length} supporting steps`,
-        members,
-        score: Math.max(...members.map((i) => full.byId.get(i).score))
-      } : original;
-      nodes.push(node);
-      byId.set(id, node);
-      heights.set(id, full.heights.get(source));
-      scores.set(id, full.scores.get(source));
+    for (const original of full.nodes) {
+      if (!visible2.has(original.id)) continue;
+      nodes.push(original);
+      byId.set(original.id, original);
+      heights.set(original.id, full.heights.get(original.id));
+      scores.set(original.id, full.scores.get(original.id));
     }
     const primaryEdges = [], representedPaths = /* @__PURE__ */ new Map();
-    for (const [child, owner] of full.parent) {
-      const a = representative.get(owner), b = representative.get(child);
-      if (!a || !b || a === b) continue;
-      parent.set(b, a);
-      const from = groups.get(a)?.[0] || a, to = groups.get(b)?.[0] || b;
-      const steps = [to];
-      let cursor = to;
-      while (cursor !== from && full.parent.has(cursor)) {
+    for (const child of visible2) {
+      let owner = full.parent.get(child);
+      while (owner && !visible2.has(owner)) owner = full.parent.get(owner);
+      if (!owner) continue;
+      parent.set(child, owner);
+      const steps = [child];
+      let cursor = child;
+      while (cursor !== owner && full.parent.has(cursor)) {
         cursor = full.parent.get(cursor);
         steps.push(cursor);
       }
       steps.reverse();
       const evidence = steps.slice(1).map((id, i) => full.primaryEdges.find((e) => e.from === steps[i] && e.to === id)).filter(Boolean);
-      const grouping = a === "__project__";
-      const summarized = steps.length > 2 || groups.has(a) || groups.has(b);
-      primaryEdges.push({ from: a, to: b, confidence: grouping ? "grouping" : evidence.every((e) => e.confidence === "resolved") ? "resolved" : "heuristic", summarized, representedPath: steps, evidence });
-      representedPaths.set(`${a}|${b}`, steps);
+      const grouping = owner === "__project__";
+      const summarized = steps.length > 2;
+      primaryEdges.push({ from: owner, to: child, confidence: grouping ? "grouping" : evidence.every((e) => e.confidence === "resolved") ? "resolved" : "heuristic", summarized, representedPath: steps, evidence });
+      representedPaths.set(`${owner}|${child}`, steps);
     }
     const childMap = new Map(nodes.map((n) => [n.id, []]));
     for (const [child, owner] of parent) childMap.get(owner).push(child);
-    const roots = full.roots.map((id) => representative.get(id)).filter(Boolean);
-    return { nodes, byId, heights, scores, parent, children: childMap, roots, groups, representedPaths, primaryEdges, included, representative };
+    const roots = full.roots.map((id) => visibleAncestorByIncludedId.get(id)).filter(Boolean);
+    return { nodes, byId, heights, scores, parent, children: childMap, roots, representedPaths, primaryEdges, included, visibleAncestorByIncludedId };
   }
   const candidates = full.nodes.filter((n) => n.id !== "__project__" && !detached.has(n.id)).sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
   const anchors = /* @__PURE__ */ new Set(), branches = /* @__PURE__ */ new Set(), reasons = /* @__PURE__ */ new Map();
@@ -22249,16 +22009,16 @@ function essentialView(full, { budget = 40, branchLimit = 6, expanded = /* @__PU
     const duplicate = [...anchors].some((id) => (node.similar || []).some((s) => s.id === id && s.cosine >= 0.9) || (full.byId.get(id).similar || []).some((s) => s.id === node.id && s.cosine >= 0.9));
     if (duplicate) continue;
     const proposed = /* @__PURE__ */ new Set([...anchors, node.id]);
-    const trial = project(proposed);
+    const trial = buildProjection(proposed);
     if (trial.nodes.length - Number(full.byId.has("__project__")) > budget) continue;
     anchors.add(node.id);
     branches.add(branch);
     reasons.set(node.id, "Project relevance; retained with its entry path");
   }
   for (const id of revealed) if (full.byId.has(id) && !detached.has(id)) anchors.add(id);
-  const expandedPath = new Set(expanded);
-  for (const id of revealed) if (!detached.has(id)) for (const step of pathToEntry(id)) expandedPath.add(step);
-  const view = project(anchors, expandedPath);
+  const revealedPath = /* @__PURE__ */ new Set();
+  for (const id of revealed) if (!detached.has(id)) for (const step of pathToEntry(id)) revealedPath.add(step);
+  const view = buildProjection(anchors, revealedPath);
   const orphans = [...revealed].filter((id) => detached.has(id));
   for (const id of orphans) {
     view.nodes.push(full.byId.get(id));
@@ -22272,10 +22032,10 @@ function essentialView(full, { budget = 40, branchLimit = 6, expanded = /* @__PU
   const drops = new Map([...view.parent].map(([child, owner]) => [child, view.heights.get(owner) - view.heights.get(child)]));
   const omitted = /* @__PURE__ */ new Map();
   for (const n of full.nodes) {
-    if (view.included.has(n.id) || detached.has(n.id)) continue;
+    if (view.byId.has(n.id) || detached.has(n.id)) continue;
     let cursor = full.parent.get(n.id);
-    while (cursor && !view.representative.has(cursor)) cursor = full.parent.get(cursor);
-    cursor = view.representative.get(cursor);
+    while (cursor && !view.visibleAncestorByIncludedId.has(cursor)) cursor = full.parent.get(cursor);
+    cursor = view.visibleAncestorByIncludedId.get(cursor);
     if (cursor) {
       if (!omitted.has(cursor)) omitted.set(cursor, []);
       omitted.get(cursor).push(n.id);
@@ -22499,7 +22259,6 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
   const nodeMeshes = [];
   const edgeLines = [];
   const terrainMeshes = [];
-  const labels = [];
   const nodeById = /* @__PURE__ */ new Map();
   let currentModel = null;
   let currentPositions = /* @__PURE__ */ new Map();
@@ -22598,10 +22357,6 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
     nodeMeshes.length = 0;
     edgeLines.length = 0;
     terrainMeshes.length = 0;
-    labels.splice(0).forEach((item) => {
-      item.element.remove();
-      item.leader?.remove();
-    });
     focusTarget = null;
     focusLabel.hidden = true;
     nodeById.clear();
@@ -22731,7 +22486,7 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
         transparent: false,
         opacity: 1
       });
-      const mesh = new Mesh(node.kind === "supporting-group" ? new OctahedronGeometry(0.44) : geometry, material);
+      const mesh = new Mesh(geometry, material);
       mesh.position.copy(position).add(new Vector3(0, 0.48, 0));
       mesh.scale.setScalar(project ? 2.1 : 0.72 + score * 0.72);
       mesh.userData = { id: node.id, base, branch, score, relevance: node.score };
@@ -22950,7 +22705,8 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
     }
     const shown = points.filter((p) => p.id !== "__project__" && p.onScreen && visible.has(p.id)).length;
     const total = currentModel.nodes.filter((n) => n.id !== "__project__").length;
-    const status = currentModel.essential ? `Essential \xB7 ${total} items, including ${currentModel.groups.size} supporting groups. Expand groups or search to explore more.` : detail === "all" ? `All ${total} function markers enabled.` : `Overview \xB7 ${shown} of ${total} function markers in view. Zoom to reveal more; select to trace every step.`;
+    const condensed = currentModel.primaryEdges.filter((edge) => edge.summarized).length;
+    const status = currentModel.essential ? `Essential \xB7 ${total} real functions, with ${condensed} condensed paths. Select an endpoint to inspect hidden steps.` : detail === "all" ? `All ${total} function markers enabled.` : `Overview \xB7 ${shown} of ${total} function markers in view. Zoom to reveal more; select to trace every step.`;
     if (status !== detailStatus) {
       detailStatus = status;
       onDetailChange?.(status);
@@ -22961,57 +22717,8 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
     controls.update();
     const rect = canvas.getBoundingClientRect();
     updateDetail(rect);
-    let projectScreen = null;
     const keyBox = relevanceKey.getBoundingClientRect();
     const hostBox = labelHost.getBoundingClientRect();
-    const occupied = [{
-      left: keyBox.left - hostBox.left,
-      right: keyBox.right - hostBox.left,
-      top: keyBox.top - hostBox.top,
-      bottom: keyBox.bottom - hostBox.top
-    }];
-    labels.sort((a, b) => Number(b.element.dataset.kind === "project") - Number(a.element.dataset.kind === "project") || b.mesh.userData.score - a.mesh.userData.score);
-    let landmarkCount = 0;
-    for (const { element, mesh, leader } of labels) {
-      const point = mesh.position.clone().project(camera);
-      let visible = mesh.visible && Math.abs(point.x) <= 1 && Math.abs(point.y) <= 1 && Math.abs(point.z) <= 1;
-      const project = element.dataset.kind === "project";
-      if (!project && rect.width < 500) visible = false;
-      if (!project && (mesh.userData.id === selectedId || mesh.userData.id === hoveredId)) visible = false;
-      if (visible && !project) {
-        const direction = mesh.position.clone().sub(camera.position);
-        const distance = direction.length();
-        raycaster.set(camera.position, direction.normalize());
-        if (raycaster.intersectObjects(terrainMeshes, false).some((hit) => hit.distance < distance - 0.5)) visible = false;
-      }
-      if (!project && landmarkCount >= 6) visible = false;
-      element.hidden = !visible;
-      if (leader) leader.hidden = !visible;
-      if (visible) {
-        const x = canvas.offsetLeft + (point.x + 1) * rect.width / 2;
-        const y = canvas.offsetTop + (1 - point.y) * rect.height / 2;
-        const width = element.offsetWidth, height = element.offsetHeight;
-        const candidates = project ? [{ x, y }] : [{ x: x + 108, y: y - 28 }, { x: x - 108, y: y - 28 }, { x: x + 108, y: y + 42 }, { x: x - 108, y: y + 42 }, { x, y: y - 72 }, { x, y: y + 85 }];
-        const chosen = candidates.map((position) => ({ ...position, left: position.x - width / 2, right: position.x + width / 2, top: position.y - height * 1.15, bottom: position.y })).find((box) => box.left >= 8 && box.right <= rect.width - 8 && box.top >= 8 && box.bottom < rect.height - 40 && !occupied.some((other) => box.left < other.right + 6 && box.right > other.left - 6 && box.top < other.bottom + 6 && box.bottom > other.top - 6));
-        if (!chosen) {
-          element.hidden = true;
-          if (leader) leader.hidden = true;
-          continue;
-        }
-        element.style.left = `${chosen.x}px`;
-        element.style.top = `${chosen.y}px`;
-        occupied.push(chosen);
-        if (project) projectScreen = { x, y };
-        else {
-          landmarkCount++;
-          const targetY = chosen.y - height / 2;
-          leader.style.left = `${x}px`;
-          leader.style.top = `${y}px`;
-          leader.style.width = `${Math.hypot(chosen.x - x, targetY - y)}px`;
-          leader.style.transform = `rotate(${Math.atan2(targetY - y, chosen.x - x)}rad)`;
-        }
-      }
-    }
     if (focusTarget) {
       const point = focusTarget.position.clone().project(camera);
       const visible = Math.abs(point.x) <= 1 && Math.abs(point.y) <= 1 && Math.abs(point.z) <= 1;
@@ -23019,9 +22726,7 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
       if (visible) {
         const x = canvas.offsetLeft + (point.x + 1) * rect.width / 2;
         let y = canvas.offsetTop + (1 - point.y) * rect.height / 2;
-        const collides = projectScreen && Math.abs(x - projectScreen.x) < 120 && Math.abs(y - projectScreen.y) < 52;
-        focusLabel.style.transform = collides ? "translate(-50%, 12px)" : "translate(-50%, -115%)";
-        if (collides) y += 5;
+        focusLabel.style.transform = "translate(-50%, -115%)";
         focusLabel.style.left = `${x}px`;
         focusLabel.style.top = `${y}px`;
         let focusBox = focusLabel.getBoundingClientRect();
@@ -23029,14 +22734,6 @@ function createTerrainView(canvas, onSelect, onDetailChange) {
           focusLabel.style.transform = "translate(-50%, 0)";
           focusLabel.style.top = `${keyBox.bottom - hostBox.top + 8}px`;
           focusBox = focusLabel.getBoundingClientRect();
-        }
-        for (const { element, leader } of labels) {
-          if (element.hidden) continue;
-          const box = element.getBoundingClientRect();
-          if (box.left < focusBox.right + 6 && box.right > focusBox.left - 6 && box.top < focusBox.bottom + 6 && box.bottom > focusBox.top - 6) {
-            element.hidden = true;
-            if (leader) leader.hidden = true;
-          }
         }
       }
     }

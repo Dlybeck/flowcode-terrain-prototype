@@ -169,7 +169,6 @@
       <div class="verdict" id="verdict"></div>
       <p id="coverage" class="lede"></p>
       <p id="detail-status" class="lede"></p>
-      <details id="supporting-groups"><summary>Expandable supporting steps</summary><div id="group-list"></div></details>
       <details id="unknown-functions"><summary>Relevant functions with unknown entry paths</summary><div id="unknown-list"></div></details>
       <h3>All indexed functions</h3>
       <label for="search">Find a function, file or language</label>
@@ -197,18 +196,18 @@
       <p><strong>The project summit groups entry points.</strong> Its spokes show membership, not runtime calls. A terrain branch uses one possible caller for placement; other callers remain available when you select a function.</p>
       <p><strong>Among siblings compares the next choices of one caller.</strong> Project-wide uses one relevance scale across the selected source. Neither is a measure of execution time or proof of importance. A sole child receives a neutral drop in sibling mode.</p>
       <p><strong>Unplaced does not mean unimportant.</strong> Points outside the mountain have no established path from an entry in this analysis. Their display height is not a relevance score. They remain searchable, with all known callers and callees.</p>
-      <p><strong>Essential shows selected entry paths.</strong> Supporting sequences can be expanded. Collapsed connections represent multiple original calls; scores and cumulative drops come from the complete graph. Complete restores the full mountain.</p>
+      <p><strong>Essential keeps only real functions as markers.</strong> A solid connection can condense less-important intermediate functions while preserving their original call order. Select its endpoint to reveal that complete path. Scores and cumulative drops come from the complete graph.</p>
       <p><strong>Complete-view overview shows spaced markers.</strong> Zoom in to reveal nearby functions, or choose All nodes. The complete terrain, relevance scores and call graph stay the same. Selecting a function reveals every caller along its primary path; search always includes the full inventory.</p>
-      <p>Solid lines follow a branch; dotted arrows show extra calls. Gold highlights your selected path. Select a node to inspect its calls, supporting steps or project membership. By default, only extra calls touching the selected function are shown. Static analysis includes alternatives, not a chronological runtime trace.</p>
+      <p>Solid lines follow a branch; dotted arrows show extra calls. Gold highlights your selected path. Select a node to inspect its calls or project membership. By default, only extra calls touching the selected function are shown. Static analysis includes alternatives, not a chronological runtime trace.</p>
     </section>
   </main>
 
   <script type="module">
-    import { chooseEntrypointForest, classifyEntryBasins, validateFixture, createTerrainView, essentialView, layoutSpines } from './dist/prototype-3d.js?v=selected-labels-v1';
+    import { chooseEntrypointForest, classifyEntryBasins, validateFixture, createTerrainView, essentialView, layoutSpines } from './dist/prototype-3d.js?v=real-nodes-v1';
     const FIXTURES = await fetch(new URL("./prototype-fixtures.json", import.meta.url)).then(response => { if (!response.ok) throw new Error("Could not load project fixtures"); return response.json(); });
 
     const state = {
-      content: 'essential', expanded: new Set(), revealed: new Set(),
+      content: 'essential', revealed: new Set(),
       dataset: 'scribblescan', normalization: 'siblings', summits: 'anchor',
       minDrop: 1, maxDrop: 50, yaw: -0.58, zoom: 1,
       selected: null, tour: 'free', dragStart: null,
@@ -627,8 +626,6 @@
       const sourceEntries = fullModel.children.get('__project__') || fullModel.roots;
       const entryIds = state.summits === 'forest' ? model.roots : model.children.get('__project__') || [];
       $('#verdict').textContent = `${connected} / ${count} functions connected across ${sourceEntries.length} source entry branches. ${fullModel.orphans.length} entry paths not established. ${terrainError ? 'Terrain unavailable: '+terrainError : model.violations.length ? 'Elevation invariant broken.' : 'Primary terrain paths descend.'}`;
-      $('#supporting-groups').hidden = !model.groups?.size;
-      $('#group-list').replaceChildren(...[...(model.groups?.keys()||[])].map(id=>functionButton(id)));
       $('#unknown-functions').hidden = state.content !== 'essential';
       $('#unknown-list').replaceChildren(...(model.unknownHighlights || []).map(n=>functionButton(n.id,'Entry path unknown · '+n.qname)));
       const coverage = fixture.coverage || {};
@@ -648,12 +645,6 @@
           const summary = document.createElement('summary'); summary.textContent = `Browse ${entryIds.length} entry branches`; entries.append(summary);
           for (const entry of entryIds) entries.append(functionButton(entry, (model.byId.get(entry).entry_evidence || ['detected entry']).join(', ').replaceAll('_', ' ')));
           $('#connections').append(entries);
-        } else if (node.kind === 'supporting-group') {
-          info.textContent = `${node.members.length} original functions, in call order. Connections through this group represent multiple steps, not direct calls.`;
-          const expand=document.createElement('button');expand.textContent='Expand supporting steps';expand.id='expand-group';
-          expand.addEventListener('click',()=>{for(const member of node.members)state.expanded.add(member);state.selected=node.members[0];rebuild();terrain3d.focus(state.selected);});
-          detail.append(expand);
-          for(const member of node.members)$('#connections').append(functionButton(member));
         } else {
           const owner = fullModel.parent.get(id);
           const unplaced = fullModel.orphans.includes(id);
@@ -688,7 +679,7 @@
       } else detail.textContent = 'Select a point or search for a function.';
       const reason=model.reasons?.get(id);if(reason){const why=document.createElement('p');why.textContent=`Included: ${reason}.`;detail.append(why);}
       const omitted=model.omitted?.get(id)||[];
-      if(omitted.length){const list=document.createElement('details');const summary=document.createElement('summary');summary.textContent=`${omitted.length} more functions in supporting branches`;list.append(summary);for(const item of omitted)list.append(functionButton(item));$('#connections').append(list);}
+      if(omitted.length){const list=document.createElement('details');const summary=document.createElement('summary');summary.textContent=`${omitted.length} more functions along or below this branch`;list.append(summary);for(const item of omitted)list.append(functionButton(item));$('#connections').append(list);}
       const path = selectedPath();
       $('#state').textContent = JSON.stringify({
         prototype: true,
@@ -711,7 +702,7 @@
       fullModel = buildModel();
       const heights=[...fullModel.heights].filter(([id])=>!fullModel.orphans.includes(id)).map(([,h])=>h);
       fullModel.heightRange={low:Math.min(...heights,8),high:Math.max(...heights,8)};
-      model = state.content === 'essential' ? essentialView(fullModel,{expanded:state.expanded,revealed:state.revealed}) : {...fullModel,full:fullModel,essential:false};
+      model = state.content === 'essential' ? essentialView(fullModel,{revealed:state.revealed}) : {...fullModel,full:fullModel,essential:false};
       model = layoutSpines(model);
       $('#detail').disabled = state.content === 'essential';
       $('#reset-overview').disabled = state.content !== 'essential';
@@ -743,7 +734,7 @@
       if (name === 'normalization') { state.dataset = 'scribblescan'; state.summits = 'anchor'; }
       if (name === 'seam') { state.dataset = 'fieldhouse'; state.summits = 'anchor'; state.yaw = -1.35; }
       if (name === 'summits') { state.dataset = 'scribblescan'; state.summits = 'forest'; }
-      state.expanded.clear(); state.revealed.clear();
+      state.revealed.clear();
       syncControls(); rebuild({preserveSelection: false});
     }
 
@@ -767,7 +758,7 @@
         let option = dataset.querySelector('option[value="local-import"]');
         if (!option) { option = document.createElement('option'); option.value = key; dataset.append(option); }
         option.textContent = fixture.title;
-        state.dataset = key; state.expanded.clear(); state.revealed.clear(); $('#search').value = ''; $('#inventory-filter').value = 'all';
+        state.dataset = key; state.revealed.clear(); $('#search').value = ''; $('#inventory-filter').value = 'all';
         syncControls(); rebuild({preserveSelection: false});
         $('#load-status').textContent = `Opened ${file.name} locally.`;
       } catch (error) { $('#load-status').textContent = `Could not open map: ${error.message}`; }
@@ -775,11 +766,11 @@
     $('#search').addEventListener('input', renderInventory);
     $('#inventory-filter').addEventListener('change', renderInventory);
     $('#content').addEventListener('change',event=>{state.content=event.target.value;rebuild({preserveSelection:false});});
-    $('#reset-overview').addEventListener('click',()=>{state.expanded.clear();state.revealed.clear();rebuild({preserveSelection:false});});
+    $('#reset-overview').addEventListener('click',()=>{state.revealed.clear();rebuild({preserveSelection:false});});
     $('#detail').addEventListener('change', event => terrain3d.setDetail(event.target.value));
     $('#all-secondary').addEventListener('change', event => terrain3d.showAllSecondary(event.target.checked));
 
-    dataset.addEventListener('change', event => { state.dataset = event.target.value; state.expanded.clear(); state.revealed.clear(); rebuild({preserveSelection: false}); });
+    dataset.addEventListener('change', event => { state.dataset = event.target.value; state.revealed.clear(); rebuild({preserveSelection: false}); });
     $('#normalization').addEventListener('change', event => { state.normalization = event.target.value; rebuild(); });
     $('#summits').addEventListener('change', event => { state.summits = event.target.value; rebuild(); });
     $('#min-drop').addEventListener('input', event => { state.minDrop = Number(event.target.value); $('#min-output').value = state.minDrop; rebuild(); });
