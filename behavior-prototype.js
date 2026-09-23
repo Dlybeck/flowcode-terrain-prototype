@@ -336,7 +336,7 @@ function render() {
 }
 
 async function start() {
-  datasets = await fetch('./behavior-fixtures.json').then(response => {
+  datasets = await fetch('./behavior-fixtures.json?v=2').then(response => {
     if (!response.ok) throw new Error(`Fixture load failed: ${response.status}`);
     return response.json();
   });
