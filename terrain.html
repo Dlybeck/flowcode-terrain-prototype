@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROTOTYPE — monotonic circular terrain</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f7f0d8;
+      --muted: #b9c8bd;
+      --paper: #173b35;
+      --panel: #102c29;
+      --line: #92b7a8;
+      --gold: #f4d06f;
+      --orange: #ef9563;
+      --green: #9be28f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 60% 20%, #245147, var(--paper) 45%, #0d2825);
+      color: var(--ink);
+      font: 15px/1.45 ui-rounded, "Trebuchet MS", system-ui, sans-serif;
+    }
+    button, select, input { font: inherit; }
+    button, select {
+      border: 1px solid #b9ccb9;
+      border-radius: 7px;
+      background: #f8f1d9;
+      color: #173b35;
+      padding: .5rem .7rem;
+    }
+    button { cursor: pointer; }
+    button[aria-pressed="true"] { background: var(--gold); font-weight: 700; }
+    header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.25rem 1.5rem .75rem;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: .2rem; font-size: clamp(1.45rem, 3vw, 2.35rem); }
+    .prototype-badge {
+      display: inline-block;
+      margin-bottom: .45rem;
+      padding: .15rem .45rem;
+      border: 1px solid var(--orange);
+      border-radius: 999px;
+      color: #ffd0b8;
+      font-size: .76rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lede { max-width: 72ch; color: var(--muted); }
+    .tabs, .controls { display: flex; flex-wrap: wrap; gap: .55rem; align-items: end; }
+    .tabs { padding: 0 1.5rem .9rem; }
+    .controls {
+      margin: 0 1.5rem 1rem;
+      padding: .85rem;
+      border: 1px solid #50736a;
+      border-radius: 12px;
+      background: rgb(10 35 32 / .76);
+    }
+    label { display: grid; gap: .2rem; color: var(--muted); font-size: .78rem; }
+    label span { color: var(--ink); font-size: .88rem; }
+    input[type="range"] { width: 120px; }
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 1rem;
+      padding: 0 1.5rem 1.5rem;
+    }
+    .stage, .panel {
+      border: 1px solid #50736a;
+      border-radius: 14px;
+      background: rgb(7 27 25 / .76);
+      box-shadow: 0 22px 60px rgb(0 0 0 / .22);
+    }
+    .stage { min-width: 0; overflow: hidden; position: relative; }
+    #terrain { display: block; width: 100%; height: min(68vh, 720px); touch-action: none; }
+    .stage-note {
+      position: absolute;
+      left: 1rem;
+      bottom: .75rem;
+      max-width: min(66ch, calc(100% - 2rem));
+      padding: .45rem .65rem;
+      border-radius: 7px;
+      background: rgb(7 27 25 / .85);
+      color: var(--muted);
+      pointer-events: none;
+    }
+    .panel { padding: 1rem; overflow: auto; max-height: min(68vh, 720px); }
+    .panel h2 { font-size: 1.1rem; margin-bottom: .35rem; }
+    .panel h3 { margin: 1.1rem 0 .35rem; font-size: .92rem; color: var(--gold); }
+    .verdict { padding: .65rem; border-left: 3px solid var(--gold); background: #183a34; }
+    #node-detail { min-height: 7rem; }
+    #node-detail { overflow-wrap: anywhere; }
+    #inventory { max-height: 150px; overflow: auto; }
+    .function-link { display: block; width: 100%; text-align: left; margin: .3rem 0; padding: .35rem .5rem; background: #193d35; color: var(--ink); border-color: #50736a; overflow-wrap: anywhere; font-size: .8rem; }
+    .function-link small { display: block; color: var(--muted); font-size: .7rem; }
+    #search { width: 100%; padding: .5rem; background: #0d2825; color: var(--ink); border: 1px solid #92b7a8; }
+    #state {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font: 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+      color: #c8d7d0;
+    }
+    .profile-wrap {
+      grid-column: 1 / -1;
+      padding: .9rem 1rem 1rem;
+    }
+    #profile { width: 100%; height: 180px; display: block; }
+    .legend { display: flex; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .82rem; }
+    .swatch { display: inline-block; width: 1.25rem; margin-right: .3rem; vertical-align: middle; border-top: 3px solid; }
+    .swatch.secondary { border-top-style: dotted; }
+    .status-good { color: var(--green); }
+    .status-bad { color: #ff9d8b; }
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+      .panel { max-height: none; }
+      #terrain { height: 58vh; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <span class="prototype-badge">Interactive 3D logic prototype</span>
+      <h1>Explore the code behind the project</h1>
+      <p class="lede">Follow a branch from its entry point. Each step descends from its caller; embedding relevance controls the size of that drop. Search the complete function inventory to inspect any part of the selected source.</p>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Guided walkthroughs">
+    <button data-tour="free" aria-pressed="true">Free play</button>
+    <button data-tour="monotonic" aria-pressed="false">1. Follow a slope</button>
+    <button data-tour="normalization" aria-pressed="false">2. Compare scoring</button>
+    <button data-tour="seam" aria-pressed="false">3. Inspect the seam</button>
+    <button data-tour="summits" aria-pressed="false">4. Compare summits</button>
+  </nav>
+
+  <section class="controls" aria-label="Prototype controls">
+    <label>Codebase<span><select id="dataset"></select></span></label>
+    <label>Relevance normalization<span><select id="normalization"><option value="global">Project-wide</option><option value="siblings">Among siblings</option></select></span></label>
+    <label>Entrypoints<span><select id="summits"><option value="anchor">One project summit</option><option value="forest">Independent summits</option></select></span></label>
+    <label>Minimum drop <output id="min-output">1</output><span><input id="min-drop" type="range" min="1" max="18" value="1"></span></label>
+    <label>Maximum drop <output id="max-output">50</output><span><input id="max-drop" type="range" min="24" max="80" value="50"></span></label>
+    <label>Map content<span><select id="content"><option value="essential">Essential</option><option value="complete">Complete</option></select></span></label>
+    <button id="reset-overview">Reset overview</button>
+    <label>Visible detail<span><select id="detail"><option value="overview">Overview · reveal on zoom</option><option value="all">All nodes</option></select></span></label>
+    <label>Extra connections<span><input type="checkbox" id="all-secondary"> Show all dotted calls</span></label>
+    <button id="rotate">Rotate 30°</button>
+    <button id="reset">Reset view</button>
+    <label>Open your map<input type="file" id="open-fixture" accept=".json,application/json"></label>
+    <span id="load-status" role="status"></span>
+  </section>
+
+  <main>
+    <section class="stage">
+      <canvas id="terrain"></canvas>
+      <p class="stage-note" id="tour-copy">Drag to rotate. Scroll to zoom. Select any function to inspect its accumulated descent.</p>
+    </section>
+    <aside class="panel">
+      <h2 id="project-title">Project</h2>
+      <details><summary>Project description</summary><p id="project-purpose" class="lede"></p></details>
+      <div class="verdict" id="verdict"></div>
+      <p id="coverage" class="lede"></p>
+      <p id="detail-status" class="lede"></p>
+      <details id="unknown-functions"><summary>Relevant functions with unknown entry paths</summary><div id="unknown-list"></div></details>
+      <h3>All indexed functions</h3>
+      <label for="search">Find a function, file or language</label>
+      <input type="search" id="search" placeholder="Search the codebase…">
+      <label>Show<select id="inventory-filter"><option value="all">All functions</option><option value="connected">Entry-connected</option><option value="unplaced">Entry path not established</option></select></label>
+      <p id="inventory-count"></p>
+      <div id="inventory"></div>
+      <h3>Selected function</h3>
+      <div id="node-detail">Select a point on the terrain.</div>
+      <div id="connections"></div>
+      <details><summary>Scope and analysis limits</summary><p id="limits"></p></details>
+      <details><summary>Prototype diagnostics</summary><pre id="state"></pre></details>
+    </aside>
+    <section class="stage profile-wrap">
+      <h2>Accumulated execution descent</h2>
+      <canvas id="profile"></canvas>
+      <div class="legend">
+        <span><i class="swatch" style="border-color:#f4d06f"></i>selected primary path</span>
+        <span><i class="swatch" style="border-color:#9be28f"></i>high relevance means a shallow next drop</span>
+        <span><i class="swatch secondary" style="border-color:#c8d7d0"></i>secondary call</span>
+      </div>
+    </section>
+    <section class="stage profile-wrap">
+      <h2>Reading this map</h2>
+      <p><strong>The project summit groups entry points.</strong> Its spokes show membership, not runtime calls. A terrain branch uses one possible caller for placement; other callers remain available when you select a function.</p>
+      <p><strong>Among siblings compares the next choices of one caller.</strong> Project-wide uses one relevance scale across the selected source. Neither is a measure of execution time or proof of importance. A sole child receives a neutral drop in sibling mode.</p>
+      <p><strong>Unplaced does not mean unimportant.</strong> Points outside the mountain have no established path from an entry in this analysis. Their display height is not a relevance score. They remain searchable, with all known callers and callees.</p>
+      <p><strong>Essential keeps only real functions as markers.</strong> A solid connection can condense less-important intermediate functions while preserving their original call order. Select its endpoint to reveal that complete path. Scores and cumulative drops come from the complete graph.</p>
+      <p><strong>Complete-view overview shows spaced markers.</strong> Zoom in to reveal nearby functions, or choose All nodes. The complete terrain, relevance scores and call graph stay the same. Selecting a function reveals every caller along its primary path; search always includes the full inventory.</p>
+      <p>Solid lines follow a branch; dotted arrows show extra calls. Gold highlights your selected path. Select a node to inspect its calls or project membership. By default, only extra calls touching the selected function are shown. Static analysis includes alternatives, not a chronological runtime trace.</p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { chooseEntrypointForest, classifyEntryBasins, validateFixture, createTerrainView, essentialView, layoutSpines } from './dist/prototype-3d.js?v=real-nodes-v1';
+    const FIXTURES = await fetch(new URL("./prototype-fixtures.json", import.meta.url)).then(response => { if (!response.ok) throw new Error("Could not load project fixtures"); return response.json(); });
+
+    const state = {
+      content: 'essential', revealed: new Set(),
+      dataset: 'scribblescan', normalization: 'siblings', summits: 'anchor',
+      minDrop: 1, maxDrop: 50, yaw: -0.58, zoom: 1,
+      selected: null, tour: 'free', dragStart: null,
+    };
+    let model = null;
+    let fullModel = null;
+    let terrainError = null;
+    let screenNodes = [];
+    let terrain3d = null;
+
+    const $ = selector => document.querySelector(selector);
+    const terrain = $('#terrain');
+    const profile = $('#profile');
+    const dataset = $('#dataset');
+    for (const [key, fixture] of Object.entries(FIXTURES)) {
+      const option = document.createElement('option');
+      option.value = key; option.textContent = fixture.title;
+      dataset.append(option);
+    }
+
+    function confidenceWeight(edge) {
+      return edge.confidence === 'resolved' ? 1 : edge.confidence === 'heuristic' ? .68 : .38;
+    }
+
+    function normalizeScores(nodes, children, mode) {
+      const scores = new Map();
+      if (mode === 'global') {
+        const values = nodes.map(node => node.score);
+        const low = Math.min(...values), high = Math.max(...values);
+        for (const node of nodes) scores.set(node.id, high > low ? (node.score - low) / (high - low) : .5);
+        return scores;
+      }
+      const handled = new Set();
+      for (const kids of children.values()) {
+        if (!kids.length) continue;
+        const values = kids.map(id => nodes.find(node => node.id === id).score);
+        const low = Math.min(...values), high = Math.max(...values);
+        kids.forEach(id => {
+          const raw = nodes.find(node => node.id === id).score;
+          scores.set(id, high > low ? (raw - low) / (high - low) : .5);
+          handled.add(id);
+        });
+      }
+      const roots = nodes.filter(node => !handled.has(node.id));
+      const values = roots.map(node => node.score);
+      const low = Math.min(...values), high = Math.max(...values);
+      for (const node of roots) scores.set(node.id, high > low ? (node.score - low) / (high - low) : .5);
+      return scores;
+    }
+
+    function cycleOrder(ids, affinity) {
+      if (ids.length < 3) return [...ids].sort();
+      let best = null, bestCost = Infinity;
+      const edgeCost = (a, b) => 1 / (0.08 + (affinity.get(`${a}|${b}`) || affinity.get(`${b}|${a}`) || 0));
+      // Bounded deterministic starts keep large entry sets interactive. This
+      // optimizes circular proximity only; it never changes call relationships.
+      const sorted = [...ids].sort();
+      const starts = sorted.length <= 12 ? sorted : Array.from({length: 8}, (_, i) => sorted[Math.floor(i * sorted.length / 8)]);
+      for (const start of starts) {
+        const remaining = new Set(ids); remaining.delete(start);
+        const order = [start];
+        while (remaining.size) {
+          const last = order.at(-1);
+          const next = [...remaining].sort((a, b) => edgeCost(last, a) - edgeCost(last, b) || a.localeCompare(b))[0];
+          order.push(next); remaining.delete(next);
+        }
+        let cost = 0;
+        for (let i = 0; i < order.length; i++) cost += edgeCost(order[i], order[(i + 1) % order.length]);
+        if (cost < bestCost) { bestCost = cost; best = order; }
+      }
+      return best;
+    }
+
+    function buildModel() {
+      const fixture = structuredClone(FIXTURES[state.dataset]);
+      const nodes = fixture.nodes;
+      const byId = new Map(nodes.map(node => [node.id, node]));
+      const {parent, primaryEdges} = chooseEntrypointForest(nodes, fixture.edges, fixture.entrypoints);
+      const primaryPairs = new Set(primaryEdges.map(edge => `${edge.from}|${edge.to}`));
+      const secondaryEdges = fixture.edges.filter(edge => !primaryPairs.has(`${edge.from}|${edge.to}`));
+      const children = new Map(nodes.map(node => [node.id, []]));
+      for (const [child, owner] of parent) children.get(owner)?.push(child);
+      let {roots, detached: orphans} = classifyEntryBasins(nodes, parent, children, fixture.entrypoints);
+
+      let anchor = null;
+      if (state.summits === 'anchor') {
+        anchor = {id: '__project__', label: fixture.title, qname: 'Project summit', score: 1, language: 'project'};
+        nodes.push(anchor); byId.set(anchor.id, anchor); children.set(anchor.id, roots);
+        for (const root of roots) parent.set(root, anchor.id);
+        roots = [anchor.id];
+      }
+
+      const scores = normalizeScores(nodes.filter(node => node.id !== '__project__'), children, state.normalization);
+      if (anchor) scores.set(anchor.id, 1);
+      const edgeByPair = new Map(fixture.edges.map(edge => [`${edge.from}|${edge.to}`, edge]));
+      const heights = new Map();
+      const drops = new Map();
+      const queue = [...roots]; roots.forEach(root => heights.set(root, 0));
+      while (queue.length) {
+        const owner = queue.shift();
+        for (const child of children.get(owner) || []) {
+          const relevance = scores.get(child) ?? .5;
+          const drop = state.maxDrop - relevance * (state.maxDrop - state.minDrop);
+          drops.set(child, drop);
+          heights.set(child, heights.get(owner) - drop);
+          queue.push(child);
+        }
+      }
+      const minimum = Math.min(...heights.values());
+      for (const [id, height] of heights) heights.set(id, height - minimum + 8);
+      // Unplaced functions have no anchored execution altitude. Their flat
+      // shelf is outside the mesh and is explicitly labelled as unplaced.
+      const detachedSet = new Set(orphans);
+      for (const id of orphans) heights.set(id, 0);
+
+      const descendants = new Map();
+      function collect(id) {
+        if (descendants.has(id)) return descendants.get(id);
+        const result = new Set([id]);
+        for (const child of children.get(id) || []) for (const item of collect(child)) result.add(item);
+        descendants.set(id, result); return result;
+      }
+      roots.forEach(collect);
+      const affinity = new Map();
+      const semanticAffinity = new Map();
+      for (const node of nodes) for (const match of node.similar || []) {
+        const key = node.id < match.id ? `${node.id}|${match.id}` : `${match.id}|${node.id}`;
+        semanticAffinity.set(key, Math.max(semanticAffinity.get(key) || 0, match.cosine || 0));
+      }
+      function addAffinity(a, b, value) {
+        if (a === b) return;
+        const key = a < b ? `${a}|${b}` : `${b}|${a}`;
+        affinity.set(key, (affinity.get(key) || 0) + value);
+      }
+      for (const kids of children.values()) {
+        for (let i = 0; i < kids.length; i++) for (let j = i + 1; j < kids.length; j++) {
+          const left = descendants.get(kids[i]) || collect(kids[i]);
+          const right = descendants.get(kids[j]) || collect(kids[j]);
+          let semantic = 0, callEvidence = 0, repetition = 0;
+          for (const a of left) for (const b of right) {
+            const key = a < b ? `${a}|${b}` : `${b}|${a}`;
+            semantic = Math.max(semantic, semanticAffinity.get(key) || 0);
+          }
+          for (const edge of fixture.edges) {
+            if ((left.has(edge.from) && right.has(edge.to)) || (right.has(edge.from) && left.has(edge.to))) {
+              callEvidence = Math.max(callEvidence, confidenceWeight(edge));
+              repetition += Math.log2((edge.count ?? 1) + 1);
+            }
+          }
+          addAffinity(kids[i], kids[j], .55 * semantic + .30 * callEvidence + .15 * Math.min(1, repetition / 3));
+        }
+      }
+
+      const positions = new Map();
+      const angleRanges = new Map();
+      const full = Math.PI * 2;
+      const synthetic = state.summits === 'forest' ? '__layout_origin__' : roots[0];
+      if (state.summits === 'forest') {
+        const orderedRoots = cycleOrder(roots, affinity);
+        orderedRoots.forEach((root, index) => {
+          const angle = full * index / Math.max(1, orderedRoots.length);
+          positions.set(root, {x: 82 * Math.cos(angle), y: 82 * Math.sin(angle), angle, radius: 82});
+          angleRanges.set(root, [angle - Math.PI / orderedRoots.length, angle + Math.PI / orderedRoots.length]);
+        });
+      } else {
+        positions.set(synthetic, {x: 0, y: 0, angle: 0, radius: 0});
+        angleRanges.set(synthetic, [0, full]);
+      }
+
+      function place(owner) {
+        let kids = children.get(owner) || [];
+        if (!kids.length) return;
+        kids = cycleOrder(kids, affinity);
+        children.set(owner, kids);
+        const range = angleRanges.get(owner) || [0, full];
+        const sizes = kids.map(child => (descendants.get(child) || collect(child)).size);
+        const total = sizes.reduce((sum, size) => sum + size, 0);
+        let cursor = range[0];
+        kids.forEach((child, index) => {
+          const width = (range[1] - range[0]) * sizes[index] / total;
+          const childRange = [cursor, cursor + width];
+          const angle = (childRange[0] + childRange[1]) / 2;
+          const ownerPosition = positions.get(owner);
+          const edge = edgeByPair.get(`${owner}|${child}`);
+          const confidence = edge ? confidenceWeight(edge) : .75;
+          const scoreDelta = Math.abs((scores.get(owner) || 1) - (scores.get(child) || 0));
+          const step = 48 + 18 * (1 - confidence) + 15 * scoreDelta;
+          const radius = ownerPosition.radius + step;
+          positions.set(child, {x: radius * Math.cos(angle), y: radius * Math.sin(angle), angle, radius});
+          angleRanges.set(child, childRange);
+          cursor += width;
+          place(child);
+        });
+      }
+      if (state.summits === 'forest') roots.forEach(place); else place(synthetic);
+
+      // Detached functions sit outside the terrain mesh, as in the original
+      // prototype. They remain inspectable but cannot flatten the summit into
+      // an umbrella or create a crown of false peaks.
+      const mountainRadius = Math.max(0, ...[...positions.values()].map(p => p.radius || 0));
+      orphans.sort().forEach((id, index) => {
+        const angle = Math.PI * .58 + Math.PI * .84 * (index + .5) / Math.max(1, orphans.length);
+        const radius = mountainRadius + 54 + 18 * (index % 2);
+        positions.set(id, {x: radius * Math.cos(angle), y: radius * Math.sin(angle), angle, radius});
+      });
+
+      // Rotate the unavoidable display seam into the largest empty angular gap.
+      const orphanSet = new Set(orphans);
+      const angles = [...positions.entries()].filter(([id]) => id !== '__project__' && !orphanSet.has(id)).map(([, p]) => (p.angle % full + full) % full).sort((a, b) => a - b);
+      let largest = {gap: 0, center: 0};
+      angles.forEach((angle, index) => {
+        const next = index === angles.length - 1 ? angles[0] + full : angles[index + 1];
+        if (next - angle > largest.gap) largest = {gap: next - angle, center: (angle + next) / 2};
+      });
+      const seamTarget = Math.PI / 2;
+      const seamRotation = seamTarget - largest.center;
+      for (const point of positions.values()) {
+        const radius = Math.hypot(point.x, point.y);
+        const angle = Math.atan2(point.y, point.x) + seamRotation;
+        point.x = radius * Math.cos(angle); point.y = radius * Math.sin(angle); point.angle = angle;
+      }
+
+      const violations = [];
+      for (const [child, owner] of parent) {
+        if (!orphanSet.has(child) && !(heights.get(child) < heights.get(owner))) violations.push({owner, child});
+      }
+      return {fixture, nodes, byId, parent, children, roots, orphans, primaryEdges, secondaryEdges, scores, heights, drops, positions, violations, seamGapDegrees: largest.gap * 180 / Math.PI, seamRotation};
+    }
+
+    function relevanceColor(value, alpha = 1) {
+      const low = [84, 113, 103], high = [244, 208, 111];
+      const rgb = low.map((channel, index) => Math.round(channel + (high[index] - channel) * value));
+      return `rgba(${rgb.join(',')},${alpha})`;
+    }
+
+    function resizeCanvas(canvas) {
+      const ratio = Math.min(2, devicePixelRatio || 1);
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.round(rect.width * ratio));
+      canvas.height = Math.max(1, Math.round(rect.height * ratio));
+      const context = canvas.getContext('2d');
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      return {context, width: rect.width, height: rect.height};
+    }
+
+    function projectedPoints(width, height) {
+      const raw = [];
+      const cos = Math.cos(state.yaw), sin = Math.sin(state.yaw);
+      for (const node of model.nodes) {
+        const point = model.positions.get(node.id) || {x: 0, y: 0};
+        const x = point.x * cos - point.y * sin;
+        const y = point.x * sin + point.y * cos;
+        const z = model.heights.get(node.id);
+        raw.push({node, x: (x - y) * .72, y: (x + y) * .26 - z * 1.35, depth: y + z * .08, z});
+      }
+      const xs = raw.map(p => p.x), ys = raw.map(p => p.y);
+      const bounds = {minX: Math.min(...xs), maxX: Math.max(...xs), minY: Math.min(...ys), maxY: Math.max(...ys)};
+      const scale = Math.min((width - 90) / Math.max(1, bounds.maxX - bounds.minX), (height - 90) / Math.max(1, bounds.maxY - bounds.minY)) * state.zoom;
+      const centerX = width / 2 - (bounds.minX + bounds.maxX) * scale / 2;
+      const centerY = height / 2 - (bounds.minY + bounds.maxY) * scale / 2;
+      return raw.map(point => ({...point, sx: centerX + point.x * scale, sy: centerY + point.y * scale, scale}));
+    }
+
+    function drawTerrain(resetView = false) {
+      if (terrain3d) {
+        terrain3d.update(model, {resetView});
+        terrain3d.select(state.selected);
+        return;
+      }
+      const {context: ctx, width, height} = resizeCanvas(terrain);
+      ctx.clearRect(0, 0, width, height);
+      const points = projectedPoints(width, height);
+      const screen = new Map(points.map(point => [point.node.id, point]));
+      screenNodes = points;
+
+      // Ground contours communicate the circular footprint without creating depth rings.
+      const maxRadius = Math.max(...[...model.positions.values()].map(p => Math.hypot(p.x, p.y)), 1);
+      ctx.save(); ctx.translate(width / 2, height * .67); ctx.rotate(-.05);
+      for (let ring = 1; ring <= 4; ring++) {
+        ctx.strokeStyle = `rgba(185,204,185,${.05 + ring * .018})`; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.ellipse(0, 0, maxRadius * ring / 4 * .58, maxRadius * ring / 4 * .19, 0, 0, Math.PI * 2); ctx.stroke();
+      }
+      ctx.restore();
+
+      const faces = [];
+      for (const [owner, kids] of model.children) {
+        if (kids.length < 2 || !screen.has(owner)) continue;
+        const ordered = [...kids].sort((a, b) => (model.positions.get(a)?.angle || 0) - (model.positions.get(b)?.angle || 0));
+        for (let index = 0; index < ordered.length - 1; index++) {
+          const vertices = [screen.get(owner), screen.get(ordered[index]), screen.get(ordered[index + 1])];
+          if (vertices.some(value => !value)) continue;
+          faces.push({vertices, depth: vertices.reduce((sum, p) => sum + p.depth, 0) / 3, relevance: vertices.reduce((sum, p) => sum + (model.scores.get(p.node.id) || 0), 0) / 3});
+        }
+      }
+      faces.sort((a, b) => a.depth - b.depth);
+      for (const face of faces) {
+        ctx.beginPath(); ctx.moveTo(face.vertices[0].sx, face.vertices[0].sy);
+        face.vertices.slice(1).forEach(point => ctx.lineTo(point.sx, point.sy)); ctx.closePath();
+        ctx.fillStyle = relevanceColor(face.relevance, .24); ctx.fill();
+        ctx.strokeStyle = 'rgba(182,206,192,.13)'; ctx.stroke();
+      }
+
+      // Secondary calls first: dotted curves that never define terrain height.
+      for (const edge of model.secondaryEdges) {
+        const from = screen.get(edge.from), to = screen.get(edge.to);
+        if (!from || !to) continue;
+        const midX = (from.sx + to.sx) / 2, midY = (from.sy + to.sy) / 2 - 18;
+        ctx.beginPath(); ctx.moveTo(from.sx, from.sy); ctx.quadraticCurveTo(midX, midY, to.sx, to.sy);
+        ctx.setLineDash([3, 6]); ctx.strokeStyle = 'rgba(213,229,220,.36)'; ctx.lineWidth = 1.2; ctx.stroke(); ctx.setLineDash([]);
+      }
+      for (const edge of model.primaryEdges) {
+        const from = screen.get(edge.from), to = screen.get(edge.to);
+        if (!from || !to) continue;
+        const selected = state.selected && (edge.from === state.selected || edge.to === state.selected);
+        ctx.beginPath(); ctx.moveTo(from.sx, from.sy); ctx.lineTo(to.sx, to.sy);
+        ctx.strokeStyle = selected ? '#fff0a8' : relevanceColor(model.scores.get(edge.to) || 0, .72);
+        ctx.lineWidth = selected ? 3.5 : 2; ctx.stroke();
+      }
+
+      points.sort((a, b) => a.depth - b.depth);
+      const labels = [];
+      const orphanSet = new Set(model.orphans);
+      for (const point of points) {
+        const score = model.scores.get(point.node.id) || 0;
+        const selected = point.node.id === state.selected;
+        const orphan = orphanSet.has(point.node.id);
+        const radius = point.node.id === '__project__' ? 10 : orphan ? 2.8 : 3.5 + score * 5;
+        ctx.beginPath(); ctx.arc(point.sx, point.sy, radius, 0, Math.PI * 2);
+        ctx.fillStyle = selected ? '#ff8f70' : point.node.id === '__project__' ? '#f8f1d9' : orphan ? 'rgba(158,177,168,.45)' : relevanceColor(score);
+        ctx.fill(); ctx.strokeStyle = '#193a34'; ctx.lineWidth = 1.4; ctx.stroke();
+        if (selected || point.node.id === '__project__' || (!orphan && score > .78) || model.roots.includes(point.node.id)) labels.push(point);
+      }
+      ctx.font = '12px ui-rounded, system-ui';
+      for (const point of labels.slice(0, 18)) {
+        const label = point.node.label.length > 30 ? `${point.node.label.slice(0, 27)}…` : point.node.label;
+        const metrics = ctx.measureText(label); const x = point.sx + 7, y = point.sy - 9;
+        ctx.fillStyle = 'rgba(248,241,217,.93)'; ctx.fillRect(x - 3, y - 12, metrics.width + 6, 17);
+        ctx.fillStyle = '#173b35'; ctx.fillText(label, x, y);
+      }
+    }
+
+    function selectedPath() {
+      let id = state.selected;
+      if (!id || !model.byId.has(id)) id = model.nodes.filter(node => node.id !== '__project__').sort((a, b) => (model.heights.get(b.id) - model.heights.get(a.id)) || (b.score - a.score))[0]?.id;
+      const path = [];
+      while (id) { path.push(id); id = model.parent.get(id); }
+      return path.reverse();
+    }
+
+    function drawProfile() {
+      const {context: ctx, width, height} = resizeCanvas(profile);
+      ctx.clearRect(0, 0, width, height);
+      const path = selectedPath();
+      if (model.orphans.includes(state.selected)) {
+        ctx.fillStyle = '#d5e5dd'; ctx.font = '14px system-ui';
+        ctx.fillText('Entry path not established. Inspect known callers and callees in the panel.', 20, 40);
+        return;
+      }
+      if (!path.length) return;
+      const values = path.map(id => model.heights.get(id));
+      const low = Math.min(...values), high = Math.max(...values);
+      const left = 32, right = width - 28, top = 22, bottom = height - 42;
+      const point = (value, index) => ({
+        x: path.length === 1 ? (left + right) / 2 : left + (right - left) * index / (path.length - 1),
+        y: bottom - (bottom - top) * (value - low) / Math.max(1, high - low),
+      });
+      ctx.strokeStyle = 'rgba(185,204,185,.25)'; ctx.beginPath(); ctx.moveTo(left, bottom); ctx.lineTo(right, bottom); ctx.stroke();
+      ctx.beginPath(); path.forEach((id, index) => { const p = point(values[index], index); index ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y); });
+      ctx.strokeStyle = '#f4d06f'; ctx.lineWidth = 3; ctx.stroke();
+      path.forEach((id, index) => {
+        const p = point(values[index], index); const score = model.scores.get(id) || 0;
+        ctx.beginPath(); ctx.arc(p.x, p.y, 4 + score * 3, 0, Math.PI * 2); ctx.fillStyle = relevanceColor(score); ctx.fill();
+        const label = model.byId.get(id)?.label || id; ctx.save(); ctx.translate(p.x + 3, bottom + 8); ctx.rotate(-.42); ctx.fillStyle = '#d5e5dd'; ctx.font = '10px ui-rounded, system-ui'; ctx.textAlign = index === path.length - 1 ? 'right' : 'left'; ctx.fillText(label.slice(0, Math.max(8, Math.min(24, width / Math.max(1, path.length) / 6))), 0, 0); ctx.restore();
+      });
+    }
+
+    function selectFunction(id, focus = true) {
+      if (state.content === 'essential' && id !== '__project__' && fullModel.byId.has(id) && !state.revealed.has(id)) {
+        state.revealed.add(id); rebuild();
+      }
+      state.selected = id;
+      terrain3d.select(id); if (focus) terrain3d.focus(id);
+      drawProfile(); renderText();
+    }
+
+    function functionButton(id, description = '') {
+      const node = model.byId.get(id) || fullModel.byId.get(id);
+      const button = document.createElement('button');
+      button.className = 'function-link'; button.dataset.nodeId = id;
+      button.textContent = node?.label || id;
+      const detail = document.createElement('small');
+      detail.textContent = description || node?.qname || id;
+      button.append(detail);
+      button.addEventListener('click', () => selectFunction(id));
+      return button;
+    }
+
+    function renderInventory() {
+      const query = $('#search').value.trim().toLowerCase();
+      const filter = $('#inventory-filter').value;
+      const detached = new Set(fullModel.orphans);
+      const nodes = fullModel.nodes.filter(n => n.id !== '__project__'
+        && `${n.qname} ${n.location?.path || ''} ${n.language}`.toLowerCase().includes(query)
+        && (filter === 'all' || (filter === 'unplaced') === detached.has(n.id)));
+      $('#inventory-count').textContent = `${nodes.length} matching functions`;
+      $('#inventory').replaceChildren(...nodes.map(n => functionButton(n.id,
+        `${detached.has(n.id) ? 'Entry path unknown · ' : ''}${n.qname}`)));
+    }
+
+    function renderText() {
+      const fixture = model.fixture;
+      $('#project-title').textContent = fixture.title;
+      $('#project-purpose').textContent = fixture.purpose;
+      const count = fixture.nodes.filter(n => n.id !== '__project__').length;
+      const connected = count - fullModel.orphans.length;
+      const sourceEntries = fullModel.children.get('__project__') || fullModel.roots;
+      const entryIds = state.summits === 'forest' ? model.roots : model.children.get('__project__') || [];
+      $('#verdict').textContent = `${connected} / ${count} functions connected across ${sourceEntries.length} source entry branches. ${fullModel.orphans.length} entry paths not established. ${terrainError ? 'Terrain unavailable: '+terrainError : model.violations.length ? 'Elevation invariant broken.' : 'Primary terrain paths descend.'}`;
+      $('#unknown-functions').hidden = state.content !== 'essential';
+      $('#unknown-list').replaceChildren(...(model.unknownHighlights || []).map(n=>functionButton(n.id,'Entry path unknown · '+n.qname)));
+      const coverage = fixture.coverage || {};
+      $('#coverage').textContent = `${coverage.included_functions ?? count} / ${coverage.indexed_functions ?? count} indexed functions included · ${(coverage.source_roots || []).join(', ')}. ${coverage.boundary_calls ?? 0} external or unresolved call records retained.`;
+      $('#limits').textContent = (coverage.known_limits || []).join(' ') + ' Source snapshot: ' + (coverage.source_digest || 'legacy fixture') + '. Relationships: ' + (coverage.relationship_source || 'stored export') + '.';
+      const id = state.selected;
+      const node = id ? model.byId.get(id) : null;
+      const detail = $('#node-detail');
+      detail.replaceChildren(); $('#connections').replaceChildren();
+      if (node) {
+        const title = document.createElement('strong'); title.textContent = node.label;
+        const info = document.createElement('p');
+        detail.append(title, info);
+        if (id === '__project__') {
+          info.textContent = `Project grouping · ${entryIds.length} shown entry branches. These spokes are not calls.`;
+          const entries = document.createElement('details');
+          const summary = document.createElement('summary'); summary.textContent = `Browse ${entryIds.length} entry branches`; entries.append(summary);
+          for (const entry of entryIds) entries.append(functionButton(entry, (model.byId.get(entry).entry_evidence || ['detected entry']).join(', ').replaceAll('_', ' ')));
+          $('#connections').append(entries);
+        } else {
+          const owner = fullModel.parent.get(id);
+          const unplaced = fullModel.orphans.includes(id);
+          const edge = fullModel.primaryEdges.find(e => e.to === id);
+          const placement = unplaced ? 'Entry path not established; display height has no relevance meaning.'
+            : owner === '__project__' || !owner ? `Entry branch · ${(node.entry_evidence || []).join(', ').replaceAll('_', ' ')}.`
+            : `Placed below ${fullModel.byId.get(owner)?.label}: ${edge?.confidence === 'resolved' ? 'statically resolved call' : 'inferred possible call'}. Drop ${fullModel.drops.get(id)?.toFixed(1)}.`;
+          info.textContent = `${node.qname} · ${node.location?.path || ''}:${node.location?.start_line || ''}. ${placement} Embedding relevance ${(node.score * 100).toFixed(1)}%; normalized here ${((model.scores.get(id) || 0) * 100).toFixed(1)}%.`;
+          for (const [label, edges, target] of [
+            ['Callers', fixture.edges.filter(e => e.to === id), 'from'],
+            ['Callees', fixture.edges.filter(e => e.from === id), 'to']]) {
+            const heading = document.createElement('h3'); heading.textContent = `${label} (${edges.length})`;
+            $('#connections').append(heading);
+            for (const e of edges) {
+              const site = e.evidence?.[0]?.callsite;
+              $('#connections').append(functionButton(e[target], `${e.confidence === 'resolved' ? 'Static call' : 'Possible call'} · ${site?.path || ''}:${site?.line || ''}`));
+            }
+          }
+          const boundaries = node.boundaries || [];
+          if (boundaries.length) {
+            const list = document.createElement('details');
+            const summary = document.createElement('summary'); summary.textContent = `${boundaries.length} external / unresolved call records`;
+            list.append(summary);
+            for (const boundary of boundaries) {
+              const row = document.createElement('p');
+              row.textContent = `${boundary.target} · ${boundary.boundary_kind || 'unresolved'} · line ${boundary.callsite?.line || '?'}`;
+              list.append(row);
+            }
+            $('#connections').append(list);
+          }
+        }
+      } else detail.textContent = 'Select a point or search for a function.';
+      const reason=model.reasons?.get(id);if(reason){const why=document.createElement('p');why.textContent=`Included: ${reason}.`;detail.append(why);}
+      const omitted=model.omitted?.get(id)||[];
+      if(omitted.length){const list=document.createElement('details');const summary=document.createElement('summary');summary.textContent=`${omitted.length} more functions along or below this branch`;list.append(summary);for(const item of omitted)list.append(functionButton(item));$('#connections').append(list);}
+      const path = selectedPath();
+      $('#state').textContent = JSON.stringify({
+        prototype: true,
+        dataset: state.dataset,
+        normalization: state.normalization,
+        summit_model: state.summits,
+        drop_range: [state.minDrop, state.maxDrop],
+        function_count: model.nodes.length - Number(Boolean(model.byId.get('__project__'))),
+        connected_entry_basins: entryIds.length,
+        connected_entry_labels: (state.summits === 'forest' ? model.roots : model.children.get('__project__') || []).map(id => model.byId.get(id)?.label || id),
+        detached_foothill_functions: model.orphans.length,
+        secondary_calls: model.secondaryEdges.length,
+        monotonic_violations: model.violations.length,
+        seam_gap_degrees: Number(model.seamGapDegrees.toFixed(1)),
+        selected_path: path.map(id => ({function: model.byId.get(id)?.label || id, relevance: Number((model.scores.get(id) || 0).toFixed(3)), drop: Number((model.drops.get(id) || 0).toFixed(1)), height: Number(model.heights.get(id).toFixed(1))})),
+      }, null, 2);
+    }
+
+    function rebuild({preserveSelection = true} = {}) {
+      fullModel = buildModel();
+      const heights=[...fullModel.heights].filter(([id])=>!fullModel.orphans.includes(id)).map(([,h])=>h);
+      fullModel.heightRange={low:Math.min(...heights,8),high:Math.max(...heights,8)};
+      model = state.content === 'essential' ? essentialView(fullModel,{revealed:state.revealed}) : {...fullModel,full:fullModel,essential:false};
+      model = layoutSpines(model);
+      $('#detail').disabled = state.content === 'essential';
+      $('#reset-overview').disabled = state.content !== 'essential';
+      if (!preserveSelection || !state.selected || !model.byId.has(state.selected)) {
+        if (model.byId.has('__project__') && state.tour === 'free') state.selected = '__project__';
+        else {
+          const pathDepth = id => { let depth = 0; while (model.parent.has(id)) { depth++; id = model.parent.get(id); } return depth; };
+          state.selected = model.nodes.filter(node => node.id !== '__project__' && !model.orphans.includes(node.id)).sort((a, b) =>
+            ((model.scores.get(b.id) || 0) + pathDepth(b.id) * .08) - ((model.scores.get(a.id) || 0) + pathDepth(a.id) * .08) || a.id.localeCompare(b.id))[0]?.id;
+        }
+      }
+      terrainError=null;
+      try { drawTerrain(!preserveSelection); } catch(error) { terrainError=error.message; }
+      drawProfile(); renderText(); renderInventory();
+    }
+
+    function setTour(name) {
+      state.tour = name;
+      document.querySelectorAll('[data-tour]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.tour === name)));
+      const copy = {
+        free: 'Drag to rotate. Scroll to zoom. Select any function to inspect its accumulated descent.',
+        monotonic: 'Follow the gold profile below: every child is lower than its parent, but highly relevant functions lose very little altitude.',
+        normalization: 'Switch project-wide and sibling-relative scoring. Geometry stays downhill; only the size of each parent-relative drop changes.',
+        seam: 'Rotate the mountain. Branches on either side of the display seam remain physical neighbors, and dotted calls take the short route.',
+        summits: 'Switch between one project anchor and independent summits. The forest keeps disconnected entry basins separate instead of inventing calls.',
+      };
+      $('#tour-copy').textContent = copy[name];
+      if (name === 'monotonic') { state.dataset = 'redblack'; state.normalization = 'global'; state.summits = 'anchor'; }
+      if (name === 'normalization') { state.dataset = 'scribblescan'; state.summits = 'anchor'; }
+      if (name === 'seam') { state.dataset = 'fieldhouse'; state.summits = 'anchor'; state.yaw = -1.35; }
+      if (name === 'summits') { state.dataset = 'scribblescan'; state.summits = 'forest'; }
+      state.revealed.clear();
+      syncControls(); rebuild({preserveSelection: false});
+    }
+
+    function syncControls() {
+      $('#content').value = state.content; dataset.value = state.dataset; $('#normalization').value = state.normalization; $('#summits').value = state.summits;
+      $('#min-drop').value = state.minDrop; $('#max-drop').value = state.maxDrop;
+      $('#min-output').value = state.minDrop; $('#max-output').value = state.maxDrop;
+    }
+
+    terrain3d = createTerrainView(terrain, id => {
+      selectFunction(id, false);
+    }, status => { $('#detail-status').textContent = status; });
+
+    $('#open-fixture').addEventListener('change', async event => {
+      const file = event.target.files[0];
+      if (!file) return;
+      try {
+        const fixture = validateFixture(JSON.parse(await file.text()));
+        const key = 'local-import';
+        FIXTURES[key] = fixture;
+        let option = dataset.querySelector('option[value="local-import"]');
+        if (!option) { option = document.createElement('option'); option.value = key; dataset.append(option); }
+        option.textContent = fixture.title;
+        state.dataset = key; state.revealed.clear(); $('#search').value = ''; $('#inventory-filter').value = 'all';
+        syncControls(); rebuild({preserveSelection: false});
+        $('#load-status').textContent = `Opened ${file.name} locally.`;
+      } catch (error) { $('#load-status').textContent = `Could not open map: ${error.message}`; }
+    });
+    $('#search').addEventListener('input', renderInventory);
+    $('#inventory-filter').addEventListener('change', renderInventory);
+    $('#content').addEventListener('change',event=>{state.content=event.target.value;rebuild({preserveSelection:false});});
+    $('#reset-overview').addEventListener('click',()=>{state.revealed.clear();rebuild({preserveSelection:false});});
+    $('#detail').addEventListener('change', event => terrain3d.setDetail(event.target.value));
+    $('#all-secondary').addEventListener('change', event => terrain3d.showAllSecondary(event.target.checked));
+
+    dataset.addEventListener('change', event => { state.dataset = event.target.value; state.revealed.clear(); rebuild({preserveSelection: false}); });
+    $('#normalization').addEventListener('change', event => { state.normalization = event.target.value; rebuild(); });
+    $('#summits').addEventListener('change', event => { state.summits = event.target.value; rebuild(); });
+    $('#min-drop').addEventListener('input', event => { state.minDrop = Number(event.target.value); $('#min-output').value = state.minDrop; rebuild(); });
+    $('#max-drop').addEventListener('input', event => { state.maxDrop = Number(event.target.value); $('#max-output').value = state.maxDrop; rebuild(); });
+    $('#rotate').addEventListener('click', () => terrain3d.rotate(Math.PI / 6));
+    $('#reset').addEventListener('click', () => terrain3d.reset());
+    document.querySelectorAll('[data-tour]').forEach(button => button.addEventListener('click', () => setTour(button.dataset.tour)));
+
+    addEventListener('resize', drawProfile);
+
+    syncControls(); rebuild({preserveSelection: false});
+  </script>
+</body>
+</html>
