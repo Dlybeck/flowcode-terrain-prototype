@@ -77,7 +77,10 @@ function nodeButton(node, index) {
   button.style.setProperty('--order', index);
   const role = document.createElement('span');
   role.className = 'node-role';
-  role.textContent = node.kind === 'seed' ? 'SEED' : node.kind.toUpperCase();
+  const roleParts = [node.kind === 'seed' ? 'SEED' : node.kind.toUpperCase()];
+  if (node.call_count > 1) roleParts.push(`${node.call_count} CALLS`);
+  if (node.candidate_count > 1) roleParts.push(`${node.candidate_count} POSSIBLE TARGETS`);
+  role.textContent = roleParts.join(' · ');
   const label = document.createElement('strong');
   label.textContent = node.label;
   button.append(role, label);
