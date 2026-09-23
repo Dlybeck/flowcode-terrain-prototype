@@ -93,8 +93,12 @@ function nodeButton(node, index) {
   }
   button.addEventListener('click', event => {
     event.stopPropagation();
-    showEvidence(node);
-    if (node.kind === 'seed') openSeed(node);
+    if (node.kind === 'seed') {
+      $('#evidence').hidden = true;
+      openSeed(node);
+    } else {
+      showEvidence(node);
+    }
   });
   return button;
 }
@@ -125,6 +129,10 @@ function nodeDepths(active) {
   return depths;
 }
 
+function mobileSceneHeight(nodeCount) {
+  return Math.max(360, 120 + nodeCount * 118);
+}
+
 function graphPositions(active, mode) {
   const rows = orderedNodes(active);
   const rowOrder = new Map(rows.map((node, index) => [node.id, index]));
@@ -137,15 +145,26 @@ function graphPositions(active, mode) {
     groups.get(depth).push(node);
   });
   const positions = new Map();
+  if (mode === 'flow' && innerWidth <= 650) {
+    const sequence = [...rows].sort((a, b) =>
+      (depths.get(a.id) ?? maxDepth) - (depths.get(b.id) ?? maxDepth)
+      || rowOrder.get(a.id) - rowOrder.get(b.id));
+    const edgePadding = 52 / mobileSceneHeight(sequence.length) * 100;
+    sequence.forEach((node, index) => {
+      const stagger = node.kind === 'root' ? 0 : (index % 2 === 0 ? -3.5 : 3.5);
+      positions.set(node.id, {
+        x: 50 + stagger,
+        y: sequence.length === 1
+          ? 50
+          : edgePadding + ((100 - edgePadding * 2) * index) / (sequence.length - 1),
+      });
+    });
+    return {positions, maxDepth, maxGroup: 1, rows: sequence};
+  }
   [...groups.entries()].sort(([a], [b]) => a - b).forEach(([depth, nodes]) => {
     nodes.sort((a, b) => rowOrder.get(a.id) - rowOrder.get(b.id));
     nodes.forEach((node, index) => {
-      if (mode === 'flow' && innerWidth <= 650) {
-        positions.set(node.id, {
-          x: nodes.length === 1 ? 50 : 16 + (68 * index) / (nodes.length - 1),
-          y: 10 + (80 * depth) / maxDepth,
-        });
-      } else if (mode === 'flow') {
+      if (mode === 'flow') {
         positions.set(node.id, {
           x: 11 + (78 * depth) / maxDepth,
           y: nodes.length === 1 ? 50 : 14 + (72 * index) / (nodes.length - 1),
@@ -163,22 +182,25 @@ function graphPositions(active, mode) {
   return {positions, maxDepth, maxGroup, rows};
 }
 
-function appendEdges(svg, active, positions) {
+function appendEdges(svg, active, positions, orientation = 'horizontal') {
   const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
   group.classList.add('graph-links');
   active.edges.forEach(edge => {
     const from = positions.get(edge.from);
     const to = positions.get(edge.to);
     if (!from || !to) return;
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.classList.add('graph-edge');
-    line.dataset.from = edge.from;
-    line.dataset.to = edge.to;
-    line.setAttribute('x1', from.x);
-    line.setAttribute('y1', from.y);
-    line.setAttribute('x2', to.x);
-    line.setAttribute('y2', to.y);
-    group.append(line);
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.classList.add('graph-edge', edge.kind || 'relationship');
+    path.dataset.from = edge.from;
+    path.dataset.to = edge.to;
+    if (orientation === 'vertical') {
+      const middle = (from.y + to.y) / 2;
+      path.setAttribute('d', `M ${from.x} ${from.y} C ${from.x} ${middle}, ${to.x} ${middle}, ${to.x} ${to.y}`);
+    } else {
+      const middle = (from.x + to.x) / 2;
+      path.setAttribute('d', `M ${from.x} ${from.y} C ${middle} ${from.y}, ${middle} ${to.y}, ${to.x} ${to.y}`);
+    }
+    group.append(path);
   });
   svg.append(group);
 }
@@ -191,8 +213,9 @@ function renderFlow(active) {
   scene.className = 'flow-scene';
   const {positions, maxDepth, maxGroup, rows} = graphPositions(active, 'flow');
   if (innerWidth <= 650) {
-    scene.style.height = `${Math.max(540, 170 + maxDepth * 165)}px`;
-    scene.style.minWidth = `${Math.max(350, maxGroup * 300)}px`;
+    scene.classList.add('mobile-trail');
+    scene.style.height = `${mobileSceneHeight(rows.length)}px`;
+    scene.style.minWidth = '100%';
   } else {
     scene.style.height = `${Math.max(520, maxGroup * 125)}px`;
     scene.style.minWidth = `${Math.max(900, 300 + maxDepth * 185)}px`;
@@ -201,7 +224,7 @@ function renderFlow(active) {
   svg.classList.add('flow-links');
   svg.setAttribute('viewBox', '0 0 100 100');
   svg.setAttribute('preserveAspectRatio', 'none');
-  appendEdges(svg, active, positions);
+  appendEdges(svg, active, positions, innerWidth <= 650 ? 'vertical' : 'horizontal');
   scene.append(svg);
   rows.forEach((node, index) => {
     const button = nodeButton(node, index);
@@ -227,7 +250,7 @@ function renderMountain(active) {
   </svg>`;
   const {positions, maxGroup, rows} = graphPositions(active, 'mountain');
   scene.style.height = `${Math.max(520, maxGroup * 110)}px`;
-  appendEdges(scene.querySelector('.mountain'), active, positions);
+  appendEdges(scene.querySelector('.mountain'), active, positions, 'vertical');
   rows.forEach((node, index) => {
     const button = nodeButton(node, index);
     const position = positions.get(node.id);
@@ -337,7 +360,7 @@ function render() {
 }
 
 async function start() {
-  datasets = await fetch('./behavior-fixtures.json?v=3').then(response => {
+  datasets = await fetch('./behavior-fixtures.json?v=4').then(response => {
     if (!response.ok) throw new Error(`Fixture load failed: ${response.status}`);
     return response.json();
   });

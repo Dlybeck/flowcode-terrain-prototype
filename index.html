@@ -36,22 +36,25 @@
     .overview-actions button { border:1px solid #ffffff2e; border-radius:999px; padding:8px 18px; background:transparent; color:#d6e3da; }
     .layer-head { display:flex; align-items:end; justify-content:space-between; gap:16px; margin:6px 0 15px; }
     .layer-head p { margin:0; color:#abc0b5; }
-    .map { min-height:58vh; border:1px solid #ffffff1c; border-radius:20px; background:#081f1c; overflow:auto; box-shadow:inset 0 0 60px #0004; }
-    .flow-scene { position:relative; min-width:900px; min-height:520px; height:58vh; }
+    .map { min-height:58vh; border:1px solid #ffffff1c; border-radius:24px; background:#081f1c; overflow:auto; box-shadow:inset 0 0 70px #0005; }
+    .flow-scene { position:relative; min-width:900px; min-height:520px; height:58vh; isolation:isolate; background:radial-gradient(circle at 18% 24%,#1b4a4038 0 1px,transparent 2px),radial-gradient(circle at 76% 68%,#f0cb6230 0 1px,transparent 2px); background-size:54px 54px,73px 73px; }
+    .flow-scene::before { content:""; position:absolute; inset:6%; z-index:-1; opacity:.18; background:repeating-radial-gradient(ellipse at 45% 52%,transparent 0 34px,#8eb3a72b 35px 36px,transparent 37px 57px); mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent); }
     .flow-links { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; }
-    .graph-edge { stroke:#82aa9a; stroke-width:1.2; vector-effect:non-scaling-stroke; opacity:.75; }
+    .graph-edge { fill:none; stroke:#77ab98; stroke-width:1.35; stroke-linecap:round; vector-effect:non-scaling-stroke; opacity:.72; filter:drop-shadow(0 0 3px #9ed9c733); }
+    .graph-edge.completion { stroke:#d5bd69; opacity:.82; }
     .flow-scene .map-node { position:absolute; transform:translate(-50%,-50%); }
-    .map-node { position:relative; width:150px; min-height:78px; display:flex; flex-direction:column; justify-content:center; gap:3px; border:1px solid #ffffff30; border-radius:13px; padding:12px; background:#173b34; color:#edf3e8; text-align:left; box-shadow:0 9px 25px #0005; }
-    .map-node.root { background:var(--paper); color:#16352f; border-color:var(--paper); }
-    .map-node.seed { border-color:var(--gold); }
-    .map-node.leaf { background:#294a3f; border-color:#9dc1ae; }
-    .map-node.leaf:first-of-type { border-color:var(--gold); }
-    .node-role { font:10px/1 system-ui,sans-serif; letter-spacing:.12em; opacity:.65; }
+    .flow-scene .map-node:hover { transform:translate(-50%,-50%) translateY(-3px); }
+    .map-node { position:relative; width:158px; min-height:72px; display:flex; flex-direction:column; justify-content:center; gap:5px; border:1px solid transparent; border-radius:20px 20px 20px 7px; padding:13px 14px; background:linear-gradient(145deg,#19443b,#10332d) padding-box,linear-gradient(145deg,#ffffff45,#ffffff0d) border-box; color:#edf3e8; text-align:left; box-shadow:0 14px 32px #0007,0 1px 0 #ffffff12 inset; backdrop-filter:blur(8px); transition:transform .18s ease,box-shadow .18s ease; }
+    .map-node.root { background:linear-gradient(145deg,#fff5d1,#ebd996); color:#16352f; border-color:#f7e9b7; border-radius:28px 28px 28px 9px; box-shadow:0 18px 38px #0007,0 0 30px #f1cf6230; }
+    .map-node.seed { background:linear-gradient(145deg,#1b493f,#12352f) padding-box,linear-gradient(145deg,#f1cf62,#8f7b3780) border-box; box-shadow:0 16px 38px #0007,0 0 22px #f1cf6215; }
+    .map-node.leaf { background:linear-gradient(145deg,#30564a,#1e4138) padding-box,linear-gradient(145deg,#a9d3bf,#5f8e7b55) border-box; border-radius:9px 24px 24px 24px; }
+    .map-node strong { line-height:1.18; text-wrap:balance; }
+    .node-role { width:max-content; max-width:100%; border-radius:999px; padding:3px 6px; background:#ffffff0d; font:9px/1 system-ui,sans-serif; letter-spacing:.13em; opacity:.72; }
     .dive { margin-top:5px; color:var(--gold); font-size:12px; }
     .mountain-map { overflow:hidden; perspective:900px; }
     .mountain-scene { position:relative; width:min(100%,1000px); height:64vh; min-height:520px; margin:auto; transform:rotateX(4deg); transform-origin:50% 80%; }
     .mountain { position:absolute; inset:2% 4% 0; width:92%; height:96%; filter:drop-shadow(0 24px 25px #0008); }
-    .mountain .graph-edge { stroke:#174940; stroke-width:1.15; opacity:.9; }
+    .mountain .graph-edge { stroke:#174940; stroke-width:1.15; opacity:.9; filter:none; }
     .mountain-scene .map-node { position:absolute; width:132px; min-height:58px; transform:translate(-50%,-50%); padding:8px 10px; }
     aside { position:fixed; right:18px; bottom:18px; z-index:8; width:min(360px,calc(100vw - 36px)); border:1px solid #ffffff2b; border-radius:15px; padding:16px; background:#071c19f2; box-shadow:0 18px 50px #0008; }
     aside header { min-height:0; padding:0; border:0; background:transparent; }
@@ -77,11 +80,16 @@
       .intro { margin-top:2vh; }
       #behavior-grid { grid-template-columns:1fr; }
       .behavior-card { min-height:78px; }
-      .map { min-height:62vh; }
-      .flow-scene { width:100%; min-height:540px; }
-      .map-node { width:min(280px,80vw); }
+      .layer-head { align-items:start; flex-direction:column; }
+      #crumbs { display:flex; flex-wrap:wrap; gap:4px; }
+      .flow-map { min-height:0; overflow:hidden; border:0; border-radius:0; background:transparent; box-shadow:none; }
+      .flow-scene { width:100%; min-width:100%; min-height:360px; background-size:42px 42px,57px 57px; }
+      .flow-scene::before { inset:2% 4%; mask-image:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent); }
+      .flow-scene .map-node { width:min(320px,calc(100vw - 52px)); min-height:70px; }
+      .flow-scene .map-node:hover { transform:translate(-50%,-50%); }
       .mountain-scene { min-width:680px; transform-origin:20% 80%; }
       .mountain-map { overflow:auto; }
+      aside { right:8px; bottom:8px; width:calc(100vw - 16px); max-height:42vh; overflow:auto; }
     }
   </style>
 </head>
@@ -127,6 +135,6 @@
       <div id="code-list"></div>
     </div>
   </section>
-  <script type="module" src="behavior-prototype.js?v=3"></script>
+  <script type="module" src="behavior-prototype.js?v=4"></script>
 </body>
 </html>
