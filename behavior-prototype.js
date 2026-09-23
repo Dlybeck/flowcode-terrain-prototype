@@ -80,6 +80,7 @@ function nodeButton(node, index) {
   const roleParts = [node.kind === 'seed' ? 'SEED' : node.kind.toUpperCase()];
   if (node.call_count > 1) roleParts.push(`${node.call_count} CALLS`);
   if (node.candidate_count > 1) roleParts.push(`${node.candidate_count} POSSIBLE TARGETS`);
+  if (node.exit_count > 1) roleParts.push(`${node.exit_count} VARIANTS`);
   role.textContent = roleParts.join(' · ');
   const label = document.createElement('strong');
   label.textContent = node.label;
@@ -336,7 +337,7 @@ function render() {
 }
 
 async function start() {
-  datasets = await fetch('./behavior-fixtures.json?v=2').then(response => {
+  datasets = await fetch('./behavior-fixtures.json?v=3').then(response => {
     if (!response.ok) throw new Error(`Fixture load failed: ${response.status}`);
     return response.json();
   });
